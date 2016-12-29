@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="/assets/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="/assets/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="/assets/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/assets/css/animate.min.css" rel="stylesheet">
+    <link href="/assets/css/style.min.css?v=4.0.0" rel="stylesheet">
+    <link href="/assets/css/pagination.css" rel="stylesheet" >
+    <!-- Sweet Alert -->
+    <link href="/assets/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- 引用控制层插件样式 -->
+    <link rel="stylesheet" href="/assets/css/zyUpload.css" type="text/css">
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <label style="font-size:14px">用户名：</label>
+                            <select style="width:150px; height:32px; margin-top:2px">
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                            </select>
+                            <input type="text" style="height:32px">
+                            <input type="text" style="height:32px">
+                            <input type="text" style="height:32px">
+                            <input type="text" style="height:32px">
+                            <button type="button" class="btn btn-primary pull-right">搜索</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <button class="btn btn-primary" type="submit" data-toggle="modal" data-target="#myModal0_1">添加
+                    </button>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>酒店名称</th>
+                            <th>更新时间</th>
+                            <th>商户类型</th>
+                            <th>星级</th>
+                            <th>联系人</th>
+                            <th>联系电话</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>2015041616</td>
+                            <td>永庆弯酒店</td>
+                            <td>2015-04-16</td>
+                            <td> 酒店</td>
+                            <td>5星</td>
+                            <td>游小美</td>
+                            <td>1510894542</td>
+                            <td>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal0">查看</a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal">修改</a>
+                                <a href="javascript:;" class="delete-action">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2015041616</td>
+                            <td>永庆弯酒店</td>
+                            <td>2015-04-16</td>
+                            <td> 酒店</td>
+                            <td>5星</td>
+                            <td>游小美</td>
+                            <td>1510894542</td>
+                            <td>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal0">查看</a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal">修改</a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2015041616</td>
+                            <td>永庆弯酒店</td>
+                            <td>2015-04-16</td>
+                            <td> 酒店</td>
+                            <td>5星</td>
+                            <td>游小美</td>
+                            <td>1510894542</td>
+                            <td>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal0">查看</a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal">修改</a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2015041616</td>
+                            <td>永庆弯酒店</td>
+                            <td>2015-04-16</td>
+                            <td> 酒店</td>
+                            <td>5星</td>
+                            <td>游小美</td>
+                            <td>1510894542</td>
+                            <td>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal0">查看</a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal">修改</a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2015041616</td>
+                            <td>永庆弯酒店</td>
+                            <td>2015-04-16</td>
+                            <td> 酒店</td>
+                            <td>5星</td>
+                            <td>游小美</td>
+                            <td>1510894542</td>
+                            <td>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal0">查看</a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal">修改</a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2015041616</td>
+                            <td>永庆弯酒店</td>
+                            <td>2015-04-16</td>
+                            <td> 酒店</td>
+                            <td>5星</td>
+                            <td>游小美</td>
+                            <td>1510894542</td>
+                            <td>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal0">查看</a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal">修改</a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">删除</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--分页 S-->
+                    <div class="pages clearfix">
+                        <div id="Pagination"></div>
+                        <div class="searchPage">
+                            <span class="page-sum">共<strong class="allPage">15</strong>页</span>
+                            <span class="page-go">跳转<input type="text">页</span>
+                            <a href="javascript:;" class="page-btn">GO</a>
+                        </div>
+                    </div>
+                    <!--分页 E-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 2016-4-7 add -->
+
+<!--添加 S-->
+<div class="modal fade" id="myModal0_1" tabindex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <div class="modal-worppar">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="h5Class">添加商户信息</h2>
+                <a type="button" class="btn btn-primary" data-dismiss="modal"
+                   style="position:absolute; right: 31px; top: 10px;">关闭</a>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" novalidate="novalidate">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">商户名称：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">商户简介：</label>
+                            <div class="col-sm-10">
+                                <textarea id="ccomment" name="comment" class="form-control" required
+                                          aria-required="true"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">商户地址：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">商户星级：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account">
+                                    <option>三星级</option>
+                                    <option>四星级</option>
+                                    <option>五星级</option>
+                                    <option>六星级</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">联 系 人：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">联系电话：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                    </form>
+                    <div id="demo" class="demo col-sm-10">
+                        <form id="uploadForm" action="'+para.url+'" method="post" enctype="multipart/form-data">
+                            <div class="upload_box">
+                                <div class="upload_main">
+                                    <div class="upload_choose">
+                                        <div class="convent_choice">
+                                            <div class="andArea">
+                                                <div class="filePicker">点击选择文件</div>
+                                                <input id="fileImage" type="file" size="30" name="fileselect[]"
+                                                '+multiple+'>
+                                            </div>
+                                        </div>
+                                        <span id="fileDragArea" class="upload_drag_area"><img src="/assets/img/p1.jpg" alt=""
+                                                                                              height="100"><img
+                                            src="/assets/img/p2.jpg" alt="" height="100"><img src="/assets/img/p3.jpg" alt=""
+                                                                                      height="100"><img src="/assets/img/p1.jpg"
+                                                                                                        alt=""
+                                                                                                        height="100"></span>
+                                    </div>
+                                    <div class="status_bar">
+                                        <div id="status_info" class="info">选中0张文件，共0B。</div>
+                                        <div class="btns">
+                                            <div class="webuploader_pick">继续选择</div>
+                                            <div class="upload_btn">开始上传</div>
+                                        </div>
+                                    </div>
+                                    <div id="preview" class="upload_preview"></div>
+                                </div>
+                                <div class="upload_submit">
+                                    <button type="button" id="fileSubmit" class="upload_submit_btn">确认上传文件</button>
+                                </div>
+                                <div id="uploadInf" class="upload_inf"></div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-2 pb20">
+                            <a class="btn btn-primary" type="submit">保存</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--添加 E-->
+<!--查看 S-->
+<div class="modal fade" id="myModal0" tabindex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-worppar">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="h5Class">修改商户信息</h2>
+                <a type="button" class="btn btn-primary" data-dismiss="modal"
+                   style="position:absolute; right: 31px; top: 10px;">关闭</a>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" novalidate="novalidate">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">商户名称：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">商户简介：</label>
+                            <div class="col-sm-10">
+                                <textarea id="ccomment" name="comment" class="form-control" required
+                                          aria-required="true"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">商户地址：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">商户星级：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account">
+                                    <option>三星级</option>
+                                    <option>四星级</option>
+                                    <option>五星级</option>
+                                    <option>六星级</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">联 系 人：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">联系电话：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <a class="btn btn-primary" type="submit">保存</a>
+
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--查看 E-->
+<!--  修改（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <div class="modal-worppar">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="h5Class">修改商户信息</h2>
+                <a type="button" class="btn btn-primary" data-dismiss="modal"
+                   style="position:absolute; right: 31px; top: 10px;">关闭</a>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" novalidate="novalidate">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">商户名称：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">商户简介：</label>
+                            <div class="col-sm-10">
+                                <textarea id="ccomment" name="comment" class="form-control" required
+                                          aria-required="true"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">商户地址：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">商户星级：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account">
+                                    <option>三星级</option>
+                                    <option>四星级</option>
+                                    <option>五星级</option>
+                                    <option>六星级</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">联 系 人：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">联系电话：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="demo col-sm-10">
+                            <form action="'+para.url+'" method="post" enctype="multipart/form-data">
+                                <div class="upload_box">
+                                    <div class="upload_main">
+                                        <div class="upload_choose">
+                                            <div class="convent_choice">
+                                                <div class="andArea">
+                                                    <div class="filePicker">点击选择文件</div>
+                                                    <input id="fileImage" type="file" size="30" name="fileselect[]"
+                                                    '+multiple+'>
+                                                </div>
+                                            </div>
+                                            <span class="upload_drag_area"><img src="/assets/img/p1.jpg" alt=""
+                                                                                height="100"><img src="/assets/img/p2.jpg"
+                                                                                                  alt=""
+                                                                                                  height="100"><img
+                                                src="/assets/img/p3.jpg" alt="" height="100"><img src="/assets/img/p1.jpg" alt=""
+                                                                                          height="100"><img
+                                                src="/assets/img/p1.jpg" alt="" height="100"><img src="/assets/img/p1.jpg" alt=""
+                                                                                          height="100"></span>
+                                        </div>
+                                        <div class="status_bar">
+                                            <div class="info">选中0张文件，共0B。</div>
+                                            <div class="btns">
+                                                <div class="webuploader_pick">继续选择</div>
+                                                <div class="upload_btn">开始上传</div>
+                                            </div>
+                                        </div>
+                                        <div class="upload_preview"></div>
+                                    </div>
+                                    <div class="upload_submit">
+                                        <button type="button" class="upload_submit_btn">确认上传文件</button>
+                                    </div>
+                                    <div class="upload_inf"></div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2 pb20">
+                                <a class="btn btn-primary" type="submit">保存</a>
+
+
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- （修改 （Modal））  -->
+<!--  删除（Modal） -->
+<div class="modal fade" id="myModal2" tabindex="-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog custom_modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">是否删除 <span data-dismiss="modal"><Img
+                    src="/assets/img/close.png"></span></h4>
+            </div>
+            <div class="modal-body wilq">
+                <div class="modal-body-img">
+                    <img src="/assets/img/11.png">
+                </div>
+                <div class="modal-body-p">
+                    <p>你确定要删除吗？</p>
+                    <p>如果是请点击"确定"，否则点"取消"</p>
+                    <p class="add_button">
+                        <button type="button" class="btn btn-primary qd"
+                                data-dismiss="modal">确定
+                        </button>
+                        <button type="button" class="btn btn-primary qx"
+                                data-dismiss="modal">取消
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!-- 删除 （Modal） -->
+<style>
+    .fileWopr {
+        width: 600px;
+        height: 600px;
+    }
+
+    .wilq a {
+        font-size: 15px;
+        padding-right: 5px;
+    }
+
+    .h5Class {
+        padding: 0;
+        margin: 0;
+        height: 50px;
+        line-height: 50px;
+        text-indent: 20px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .modal-worppar {
+        max-width: 1200px;
+        background: #fff;
+        border-radius: 5px;
+        margin: 30px auto;
+    }
+
+    .ibox-content table tr th,
+    .ibox-content table tr td {
+        text-align: center;
+        font-size: 14px;
+        height: 27px;
+        line-height: 27px;
+    }
+
+    .ibox-content table tr td a {
+        padding: 0 5px;
+    }
+
+    .titleCon {
+        margin-top: -10px;
+    }
+
+    .titleCon a i {
+        position: relative;
+        font-size: 25px;
+        color: #000;
+    }
+
+    .ibox-title {
+        margin-top: 10px;
+        border-width: 1px 0 0;
+    }
+
+    /*弹出框*/
+    .theme-popover-mask {
+        z-index: 9998;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.4;
+        filter: alpha(opacity=40);
+        display: none;
+    }
+
+    .theme-popover {
+        z-index: 9999;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background-color: #f3f3f4;
+        display: none;
+    }
+
+    .theme-poptit {
+        border-bottom: 1px solid #eef1f6;
+        padding: 15px;
+        position: relative;
+    }
+
+    .theme-poptit .close {
+        float: right;
+        color: #999;
+        padding: 5px;
+        margin: -2px -5px -5px;
+        font: bold 14px/14px simsun;
+        text-shadow: 0 1px 0 #ddd;
+    }
+</style>
+<script src="/assets/js/jquery.min.js?v=2.1.4"></script>
+<script src="/assets/js/bootstrap.min.js?v=3.3.5"></script>
+<script src="/assets/js/content.min.js?v=1.0.0"></script>
+<script src="/assets/js/jquery.pagination.js"></script>
+<script src="/assets/js/plugins/sweetalert/sweetalert.min.js"></script>
+
+<script>
+    $("#Pagination").pagination("150");
+    $('.delete-action').click(function() {
+        swal({
+            title: "太帅了",
+            text: "小手一抖就打开了一个框",
+            type: "success"
+        });
+    });
+</script>
+
+</body>
+</html>
