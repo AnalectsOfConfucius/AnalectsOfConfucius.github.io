@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="/assets/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/assets/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="/assets/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/assets/css/animate.css" rel="stylesheet">
+    <link href="/assets/css/style.css?v=4.1.0" rel="stylesheet">
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>个人资料 </h5>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="get" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">姓名：</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">电子邮件：</label>
+                                <div class="col-sm-6">
+                                    <input type="email" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">联系方式：</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" name="password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">所属工商所：
+                                </label>
+                                <div class="col-sm-6">
+                                        <label class="radio-inline i-checks"><input type="radio" value="option1" name="a"> <i></i> 选项1</label>
+                                        <label class="radio-inline i-checks"><input type="radio" value="option2" name="a"> <i></i> 选项2</label>
+                                        <label class="radio-inline i-checks"><input type="radio" value="option2" name="a"> <i></i> 选项2</label>
+                                        <label class="radio-inline i-checks"><input type="radio" value="option2" name="a"> <i></i> 选项2</label>
+                                        <label class="radio-inline i-checks"><input type="radio" value="option2" name="a"> <i></i> 选项2</label>
+                                        <label class="radio-inline i-checks"><input type="radio" value="option2" name="a"> <i></i> 选项2</label>
+                                        <label class="radio-inline i-checks"><input type="radio" value="option2" name="a"> <i></i> 选项2</label>
+                                        <label class="radio-inline i-checks"><input type="radio" value="option2" name="a"> <i></i> 选项2</label>
+                                        <label class="radio-inline i-checks"><input type="radio" value="option2" name="a"> <i></i> 选项2</label>
+                                        <label class="radio-inline i-checks"><input type="radio" value="option2" name="a"> <i></i> 选项2</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">执法区域：</label>
+                                <div class="col-sm-6">
+                                    <label class="checkbox-inline i-checks"><input type="checkbox" value="option1">选项1</label>
+                                    <label class="checkbox-inline i-checks"><input type="checkbox" value="option2">选项1</label>
+                                    <label class="checkbox-inline i-checks"><input type="checkbox" value="option3">选项1</label>
+                                    <label class="checkbox-inline i-checks"><input type="checkbox" value="option3">选项1</label>
+                                    <label class="checkbox-inline i-checks"><input type="checkbox" value="option3">选项1</label>
+                                    <label class="checkbox-inline i-checks"><input type="checkbox" value="option3">选项1</label>
+                                    <label class="checkbox-inline i-checks"><input type="checkbox" value="option3">选项1</label>
+                                    <label class="checkbox-inline i-checks"><input type="checkbox" value="option3">选项1</label>
+                                    <label class="checkbox-inline i-checks"><input type="checkbox" value="option3">选项1</label>
+                                    <label class="checkbox-inline i-checks"><input type="checkbox" value="option3">选项1</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">黑白名单：</label>
+                                <div class="col-sm-2">
+                                    <input type="text" disabled="" value="黑名单" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">检查企业数量：</label>
+                                <div class="col-sm-2">
+                                    <input type="text" disabled="" value="100" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="submit">保存内容</button>
+                                    <button class="btn btn-white" type="submit">取消</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 全局js -->
+    <script src="/assets/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/assets/js/bootstrap.min.js?v=3.3.6"></script>
+
+    <!-- 自定义js -->
+    <script src="/assets/js/content.js?v=1.0.0"></script>
+    <!-- iCheck -->
+    <script src="/assets/js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+        });
+    </script>
+
+</body>
+</html>
