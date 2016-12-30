@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="/assets/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/assets/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="/assets/css/animate.css" rel="stylesheet">
+    <link href="/assets/css/style.css?v=4.1.0" rel="stylesheet">
+</head>
+<body class="gray-bg">
+    <div class="wrapper wrapper-content  animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <h3>被警告任务<span class="pull-right label label-info">10件</span></h3>
+                        <ul class="sortable-list connectList agile-list">
+                            <li class="warning-element">
+                                加强过程管理，及时统计教育经费使用情况，做到底码清楚，
+                                <div class="agile-detail">
+                                    <i class="fa fa-clock-o"></i> 2015.09.01
+                                </div>
+                            </li>
+                            <li class="danger-element">
+                                要求会计、出纳人员严格执行财务制度，遵守岗位职责，按时上报各种资料。
+                                <div class="agile-detail">
+                                    <i class="fa fa-clock-o"></i> 2015.06.10
+                                </div>
+                            </li>
+                            <li class="warning-element">
+                                做好职工公费医疗工作，按时发放门诊费。
+                                <div class="agile-detail">
+                                    <i class="fa fa-clock-o"></i> 2015.09.09
+                                </div>
+                            </li>
+                            <li class="warning-element">
+                                有计划地把课本复习三至五遍。
+                                <div class="agile-detail">
+                                    <i class="fa fa-clock-o"></i> 2015.08.04
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <h3>计划中任务<span class="pull-right label label-info">2件</span></h3>
+                        <ul class="sortable-list connectList agile-list">
+                            <li class="info-element">
+                                在总结和摸索中前进。
+                                <div class="agile-detail">
+                                    <a href="#" class="pull-right btn btn-xs btn-primary">延期申请</a>
+                                    <i class="fa fa-clock-o"></i> 2015.08.04
+                                </div>
+                            </li>
+                            <li class="info-element">
+                                不断学习行业知识、产品知识，为客户带来实用介绍内容
+                                <div class="agile-detail">
+                                    <a href="#" class="pull-right btn btn-xs btn-primary">延期申请</a>
+                                    <i class="fa fa-clock-o"></i> 2015.05.12
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <h3>已完成任务<span class="pull-right label label-info">2件</span></h3>
+                        <ul class="sortable-list connectList agile-list">
+                            <li class="success-element">
+                                提高自己电话营销技巧，灵活专业地与客户进行电话交流
+                                <div class="agile-detail">
+                                    <i class="fa fa-clock-o"></i> 2015.08.04
+                                </div>
+                            </li>
+                            <li class="success-element">
+                                通过电话销售过程中了解各盛市的设备仪器使用、采购情况及相关重要追踪人
+                                <div class="agile-detail">
+                                    <i class="fa fa-clock-o"></i> 2015.05.12
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!-- 全局js -->
+    <script src="/assets/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/assets/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="/assets/js/jquery-ui-1.10.4.min.js"></script>
+
+    <!-- 自定义js -->
+    <script src="/assets/js/content.js?v=1.0.0"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".sortable-list").sortable({
+                connectWith: ".connectList"
+            }).disableSelection();
+
+        });
+    </script>
+</body>
+</html>
