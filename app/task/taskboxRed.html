@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="/assets/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/assets/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="/assets/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/assets/css/animate.css" rel="stylesheet">
+    <link href="/assets/css/style.css?v=4.1.0" rel="stylesheet">
+</head>
+<body class="gray-bg">
+    <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content mailbox-content">
+                        <div class="file-manager">
+                            <h5>我的任务</h5>
+                            <ul class="folder-list m-b-md" style="padding: 0">
+                                <li>
+                                    <a href="taskboxList.html"> <i class="fa fa-inbox "></i> 任务列表
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="taskboxRed.html"> <i class="fa fa-certificate"></i> 红牌警告 <span class="label label-danger pull-right">2</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="taskboxYellow.html"> <i class="fa fa-file-text-o"></i> 黄牌预警 <span class="label label-warning pull-right">2</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 animated fadeInRight">
+                <div class="mail-box-header">
+
+                    <form method="get" action="index.html" class="pull-right mail-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control input-sm" name="search" placeholder="搜索任务标题，正文等">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-sm btn-primary">
+                                    搜索
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <h2>
+                    红牌警告
+                </h2>
+                    <div class="mail-tools tooltip-demo m-t-md">
+                        <div class="btn-group pull-right">
+                            <button class="btn btn-white btn-sm"><i class="fa fa-arrow-left"></i>
+                            </button>
+                            <button class="btn btn-white btn-sm"><i class="fa fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+                        <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="left" title="刷新邮件列表"><i class="fa fa-refresh"></i> 刷新</button>
+                        <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="申请延期"><i class="fa fa-eye"></i>
+                        </button>
+
+                    </div>
+                </div>
+                <div class="mail-box">
+
+                    <table class="table table-hover table-mail">
+                        <tbody>
+                            <tr class="read">
+                                <td class="check-mail">
+                                    <input type="checkbox" class="i-checks">
+                                </td>
+                                <td class="mail-ontact"><a href="mail_detail.html">万宁市美都酒店</a><span class="label label-danger pull-right">红牌</span>
+                                </td>
+                                <td class="mail-subject"><a href="mail_detail.html">支付宝提醒</a>
+                                </td>
+                                <td class="">
+                                </td>
+                                <td class="text-right mail-date">2016年12月26号</td>
+                            </tr>
+                            <tr class="unread">
+                                <td class="check-mail">
+                                    <input type="checkbox" class="i-checks" checked>
+                                </td>
+                                <td class="mail-ontact"><a href="mail_detail.html">万宁市美都酒店</a><span class="label label-danger pull-right">红牌</span>
+                                </td>
+                                <td class="mail-subject"><a href="mail_detail.html">支付检查</a>
+                                </td>
+                                <td class=""></td>
+                                <td class="text-right mail-date">上午10:57</td>
+                            </tr>
+                            <tr class="read">
+                                <td class="check-mail">
+                                    <input type="checkbox" class="i-checks" disabled>
+                                </td>
+                                <td class="mail-ontact"><a href="mail_detail.html">万宁市美都酒店</a> <span class="label label-danger pull-right">红牌</span>
+                                </td>
+                                <td class="mail-subject"><a href="mail_detail.html">检查经营不合规</a>
+                                </td>
+                                <td class=""></td>
+                                <td class="text-right mail-date">上午9:21</td>
+                            </tr>
+                            <tr class="read">
+                                <td class="check-mail">
+                                    <input type="checkbox" class="i-checks">
+                                </td>
+                                <td class="mail-ontact"><a href="mail_detail.html">万宁市美都酒店</a><span class="label label-danger pull-right">红牌</span>
+                                </td>
+                                <td class="mail-subject"><a href="mail_detail.html">商标检查，视觉检查</a>
+                                </td>
+                                <td class=""></td>
+                                <td class="text-right mail-date">中午12:24</td>
+                            </tr>
+                            <tr class="unread">
+                                <td class="check-mail">
+                                    <input type="checkbox" class="i-checks" disabled>
+                                </td>
+                                <td class="mail-ontact"><a href="mail_detail.html">万宁市美都酒店</a> <span class="label label-danger pull-right">红牌</span>
+                                </td>
+                                <td class="mail-subject"><a href="mail_detail.html">检查服务资料</a>
+                                </td>
+                                <td class="">
+                                </td>
+                                <td class="text-right mail-date">上午6:48</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 全局js -->
+    <script src="/assets/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/assets/js/bootstrap.min.js?v=3.3.6"></script>
+
+    <!-- 自定义js -->
+    <script src="/assets/js/content.js?v=1.0.0"></script>
+
+    <!-- iCheck -->
+    <script src="/assets/js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+        });
+    </script>
+</body>
+</html>
