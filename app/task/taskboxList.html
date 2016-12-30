@@ -9,7 +9,6 @@
     <link rel="shortcut icon" href="favicon.ico">
     <link href="/assets/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
     <link href="/assets/css/font-awesome.css?v=4.4.0" rel="stylesheet">
-    <link href="/assets/css/plugins/iCheck/custom.css" rel="stylesheet">
     <link href="/assets/css/animate.css" rel="stylesheet">
     <link href="/assets/css/style.css?v=4.1.0" rel="stylesheet">
 </head>
@@ -65,7 +64,6 @@
 
                         </div>
                         <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="left" title="刷新邮件列表"><i class="fa fa-refresh"></i> 刷新</button>
-                        <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="申请延期"><i class="fa fa-eye"></i>
                         </button>
 
                     </div>
@@ -76,7 +74,6 @@
                         <tbody>
                             <tr class="read">
                                 <td class="check-mail">
-                                    <input type="checkbox" class="i-checks">
                                 </td>
                                 <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a>
                                 </td>
@@ -88,7 +85,7 @@
                             </tr>
                             <tr class="unread">
                                 <td class="check-mail">
-                                    <input type="checkbox" class="i-checks" checked>
+                                    <span class="label label-warning">黄牌</span>
                                 </td>
                                 <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a>
                                 </td>
@@ -99,9 +96,8 @@
                             </tr>
                             <tr class="read">
                                 <td class="check-mail">
-                                    <input type="checkbox" class="i-checks" disabled>
                                 </td>
-                                <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a> <span class="label label-warning pull-right">黄牌</span>
+                                <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a> 
                                 </td>
                                 <td class="mail-subject"><a href="taskDetail.html">检查经营不合规</a>
                                 </td>
@@ -110,7 +106,6 @@
                             </tr>
                             <tr class="read">
                                 <td class="check-mail">
-                                    <input type="checkbox" class="i-checks">
                                 </td>
                                 <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a>
                                 </td>
@@ -121,9 +116,9 @@
                             </tr>
                             <tr class="unread">
                                 <td class="check-mail">
-                                    <input type="checkbox" class="i-checks" disabled>
+                                    <span class="label label-danger">红牌</span>
                                 </td>
-                                <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a> <span class="label label-danger pull-right">红牌</span>
+                                <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a> 
                                 </td>
                                 <td class="mail-subject"><a href="taskDetail.html">检查服务资料</a>
                                 </td>
@@ -146,16 +141,5 @@
 
     <!-- 自定义js -->
     <script src="/assets/js/content.js?v=1.0.0"></script>
-
-    <!-- iCheck -->
-    <script src="/assets/js/plugins/iCheck/icheck.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('.i-checks').iCheck({
-                checkboxClass: 'icheckbox_square-green',
-                radioClass: 'iradio_square-green',
-            });
-        });
-    </script>
 </body>
 </html>
