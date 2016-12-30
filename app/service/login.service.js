@@ -8,6 +8,6 @@ $(function() {
 	$('.logout-action').click(function() {
 		localStorage.removeItem('token');
 		console.log(localStorage.getItem('token'));
-		location.reload();
+		loginFilter();
 	});
 });
