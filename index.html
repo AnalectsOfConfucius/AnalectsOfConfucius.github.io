@@ -43,6 +43,7 @@
         $("#ff").submit(function(){
             var username = $("#ff").find("input[name=username]").val();
             var password = $("#ff").find("input[name=password]").val();
+            localStorage.setItem('token', 'token');
             if (username == "admin") {
                 location.href = "/app/main/backend.html";
                 window.event.returnValue=false;
