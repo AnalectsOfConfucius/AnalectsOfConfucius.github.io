@@ -15,8 +15,109 @@
     <!-- Sweet Alert -->
     <link href="/assets/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/plugins/chosen/chosen.min.css">
+    <style>
+        .fileWopr {
+            width: 600px;
+            height: 600px;
+        }
+
+        .wilq a {
+            font-size: 15px;
+            padding-right: 5px;
+        }
+
+        .h5Class {
+            padding: 0;
+            margin: 0;
+            height: 50px;
+            line-height: 50px;
+            text-indent: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .modal-worppar {
+            max-width: 1200px;
+            background: #fff;
+            border-radius: 5px;
+            margin: 30px auto;
+        }
+
+        .ibox-content table tr th,
+        .ibox-content table tr td {
+            text-align: center;
+            font-size: 14px;
+            height: 27px;
+            line-height: 27px;
+        }
+
+        .ibox-content table tr td a {
+            padding: 0 5px;
+        }
+
+        .titleCon {
+            margin-top: -10px;
+        }
+
+        .titleCon a i {
+            position: relative;
+            font-size: 25px;
+            color: #000;
+        }
+
+        .ibox-title {
+            margin-top: 10px;
+            border-width: 1px 0 0;
+        }
+
+        /*弹出框*/
+        .theme-popover-mask {
+            z-index: 9998;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: 0.4;
+            filter: alpha(opacity=40);
+            display: none;
+        }
+
+        .theme-popover {
+            z-index: 9999;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            background-color: #f3f3f4;
+            display: none;
+        }
+
+        .theme-poptit {
+            border-bottom: 1px solid #eef1f6;
+            padding: 15px;
+            position: relative;
+        }
+
+        .theme-poptit .close {
+            float: right;
+            color: #999;
+            padding: 5px;
+            margin: -2px -5px -5px;
+            font: bold 14px/14px simsun;
+            text-shadow: 0 1px 0 #ddd;
+        }
+    </style>
 </head>
 <body class="gray-bg">
+<div class="row wrapper border-bottom white-bg page-heading animated fadeInRight">
+    <div class="col-sm-4">
+        <h2>双随机历史记录</h2>
+    </div>
+</div>
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-md-12">
@@ -76,7 +177,7 @@
                             <td width="130px;">
                                 <small>当前进度： 48%</small>
                                 <div class="progress progress-mini">
-                                <div style="width: 48%;" class="progress-bar"></div>
+                                    <div style="width: 48%;" class="progress-bar"></div>
                                 </div>
                             </td>
                             <td>万宁</td>
@@ -94,7 +195,7 @@
                             <td width="130px;">
                                 <small>当前进度： 48%</small>
                                 <div class="progress progress-mini">
-                                <div style="width: 48%;" class="progress-bar"></div>
+                                    <div style="width: 48%;" class="progress-bar"></div>
                                 </div>
                             </td>
                             <td>万宁</td>
@@ -112,7 +213,7 @@
                             <td width="130px;">
                                 <small>当前进度： 48%</small>
                                 <div class="progress progress-mini">
-                                <div style="width: 48%;" class="progress-bar"></div>
+                                    <div style="width: 48%;" class="progress-bar"></div>
                                 </div>
                             </td>
                             <td>万宁</td>
@@ -130,7 +231,7 @@
                             <td width="130px;">
                                 <small>当前进度： 48%</small>
                                 <div class="progress progress-mini">
-                                <div style="width: 48%;" class="progress-bar"></div>
+                                    <div style="width: 48%;" class="progress-bar"></div>
                                 </div>
                             </td>
                             <td>万宁</td>
@@ -148,7 +249,7 @@
                             <td width="130px;">
                                 <small>当前进度： 48%</small>
                                 <div class="progress progress-mini">
-                                <div style="width: 48%;" class="progress-bar"></div>
+                                    <div style="width: 48%;" class="progress-bar"></div>
                                 </div>
                             </td>
                             <td>万宁</td>
@@ -214,11 +315,11 @@
                                           aria-required="true"></textarea>
                             </div>
                         </div>
-                    <div class="form-group">
-                        <div class="col-sm-4 col-sm-offset-2 pb20">
-                            <a class="btn btn-primary import-action" type="submit">导入</a>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2 pb20">
+                                <a class="btn btn-primary import-action" type="submit">导入</a>
+                            </div>
                         </div>
-                    </div>
                     </form>
                 </div>
 
@@ -227,88 +328,6 @@
     </div>
 </div>
 <!--添加 E-->
-<!--查看 S-->
-<div class="modal fade" id="myModal1" tabindex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-worppar">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="h5Class">双随机任务详情</h2>
-                <a type="button" class="btn btn-primary" data-dismiss="modal"
-                   style="position:absolute; right: 31px; top: 10px;">关闭</a>
-                <div class="ibox-content">
-                    <table class="table table-bordered">
-                        <thead>
-                        <tr>
-                            <th>编号</th>
-                            <th>任务清单</th>
-                            <th>具体内容</th>
-                            <th>说明</th>
-                            <th>操作</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2_1">法律法规</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">清单</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">清单</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">清单</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">清单</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--查看 E-->
 <!--清单 S-->
 <div class="modal fade" id="myModal2" tabindex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-worppar">
@@ -318,7 +337,8 @@
                 <a type="button" class="btn btn-primary" data-dismiss="modal"
                    style="position:absolute; right: 31px; top: 10px;">关闭</a>
                 <div class="ibox-content">
-                <button class="btn btn-primary" style="margin-bottom: 8px;" type="submit" data-toggle="modal" data-target="#myModal2_0">添加
+                    <button class="btn btn-primary" style="margin-bottom: 8px;" type="submit" data-toggle="modal"
+                            data-target="#myModal2_0">添加
                     </button>
                     <table class="table table-bordered">
                         <thead>
@@ -453,112 +473,17 @@
                         </tbody>
                     </table>
                     <button class="btn btn-primary" type="submit" data-toggle="modal" data-target="#myModal2_0">确定
-                </button>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!--清单 E-->
-<style>
-    .fileWopr {
-        width: 600px;
-        height: 600px;
-    }
 
-    .wilq a {
-        font-size: 15px;
-        padding-right: 5px;
-    }
-
-    .h5Class {
-        padding: 0;
-        margin: 0;
-        height: 50px;
-        line-height: 50px;
-        text-indent: 20px;
-        font-size: 20px;
-        font-weight: 600;
-    }
-
-    .modal-worppar {
-        max-width: 1200px;
-        background: #fff;
-        border-radius: 5px;
-        margin: 30px auto;
-    }
-
-    .ibox-content table tr th,
-    .ibox-content table tr td {
-        text-align: center;
-        font-size: 14px;
-        height: 27px;
-        line-height: 27px;
-    }
-
-    .ibox-content table tr td a {
-        padding: 0 5px;
-    }
-
-    .titleCon {
-        margin-top: -10px;
-    }
-
-    .titleCon a i {
-        position: relative;
-        font-size: 25px;
-        color: #000;
-    }
-
-    .ibox-title {
-        margin-top: 10px;
-        border-width: 1px 0 0;
-    }
-
-    /*弹出框*/
-    .theme-popover-mask {
-        z-index: 9998;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #000;
-        opacity: 0.4;
-        filter: alpha(opacity=40);
-        display: none;
-    }
-
-    .theme-popover {
-        z-index: 9999;
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        margin: auto;
-        background-color: #f3f3f4;
-        display: none;
-    }
-
-    .theme-poptit {
-        border-bottom: 1px solid #eef1f6;
-        padding: 15px;
-        position: relative;
-    }
-
-    .theme-poptit .close {
-        float: right;
-        color: #999;
-        padding: 5px;
-        margin: -2px -5px -5px;
-        font: bold 14px/14px simsun;
-        text-shadow: 0 1px 0 #ddd;
-    }
-</style>
 <script src="/assets/js/jquery.min.js?v=2.1.4"></script>
 <script src="/assets/js/bootstrap.min.js?v=3.3.5"></script>
-<script src="/assets/js/content.min.js?v=1.0.0"></script>
+<script src="/assets/js/content.js?v=1.0.0"></script>
 <script src="/assets/js/jquery.pagination.js"></script>
 <script src="/assets/js/plugins/sweetalert/sweetalert.min.js"></script>
 <script src="/assets/js/plugins/chosen/chosen.jquery.min.js" type="text/javascript"></script>
@@ -590,11 +515,11 @@
     });
     $('.import-action').click(function () {
         swal({
-                title: "导入结果",
-                text: "导入成功10条双随机任务，失败20条。请修改失败条目格式后重新导入，点击下载<a href='https://github.com/normanmaurer/netty-in-action/archive/master.zip' download=''>导入失败条目文件</a>",
-                type: "success",
-                html: true,
-            });
+            title: "导入结果",
+            text: "导入成功10条双随机任务，失败20条。请修改失败条目格式后重新导入，点击下载<a href='https://github.com/normanmaurer/netty-in-action/archive/master.zip' download=''>导入失败条目文件</a>",
+            type: "success",
+            html: true,
+        });
     });
 
 </script>
