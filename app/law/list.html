@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="/assets/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="/assets/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="/assets/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/assets/css/animate.min.css" rel="stylesheet">
+    <link href="/assets/css/style.min.css?v=4.0.0" rel="stylesheet">
+    <link href="/assets/css/pagination.css" rel="stylesheet">
+    <!-- Sweet Alert -->
+    <link href="/assets/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- 引用控制层插件样式 -->
+    <link rel="stylesheet" href="/assets/css/zyUpload.css" type="text/css">
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <label style="font-size:14px">所属工商所：</label>
+                            <select style="width:150px; height:32px; margin-top:2px; margin-right: 5px;">
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                            </select>
+                            <label style="font-size:14px">执法区域：</label>
+                            <select style="width:150px; height:32px; margin-top:2px; margin-right: 5px;">
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                            </select>
+                            <label style="font-size:14px">黑白名单：</label>
+                            <select style="width:150px; height:32px; margin-top:2px; margin-right: 5px;">
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                            </select>
+                            <label style="font-size:14px">用户姓名：</label>
+                            <input type="text" style="height:32px">
+                            <button type="button" class="btn btn-primary pull-right">搜索</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <button class="btn btn-primary" type="submit" data-toggle="modal" data-target="#myModal0">添加
+                    </button>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>证件编号</th>
+                            <th>证件类型</th>
+                            <th>执法姓名</th>
+                            <th>性别</th>
+                            <th>执法机关</th>
+                            <th>执法区域</th>
+                            <th>黑白名单</th>
+                            <th>检查企业数量</th>
+                            <th>说明</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>HN-WN0806113(A)</td>
+                            <td>海南省行政执法证</td>
+                            <td>苏德存</td>
+                            <td>男</td>
+                            <td>住建局</td>
+                            <td>万宁</td>
+                            <td>白名单</td>
+                            <td>22</td>
+                            <td>正常人员</td>
+                            <td>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">修改</a>
+                                <a href="javascript:;" class="delete-action">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HN-WN0806113(A)</td>
+                            <td>海南省行政执法证</td>
+                            <td>苏德存</td>
+                            <td>男</td>
+                            <td>住建局</td>
+                            <td>万宁</td>
+                            <td>白名单</td>
+                            <td>22</td>
+                            <td>正常人员</td>
+                            <td>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">修改</a>
+                                <a href="javascript:;" class="delete-action">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HN-WN0806113(A)</td>
+                            <td>海南省行政执法证</td>
+                            <td>苏德存</td>
+                            <td>男</td>
+                            <td>住建局</td>
+                            <td>万宁</td>
+                            <td>白名单</td>
+                            <td>22</td>
+                            <td>正常人员</td>
+                            <td>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">修改</a>
+                                <a href="javascript:;" class="delete-action">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HN-WN0806113(A)</td>
+                            <td>海南省行政执法证</td>
+                            <td>苏德存</td>
+                            <td>男</td>
+                            <td>住建局</td>
+                            <td>万宁</td>
+                            <td>白名单</td>
+                            <td>22</td>
+                            <td>正常人员</td>
+                            <td>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">修改</a>
+                                <a href="javascript:;" class="delete-action">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HN-WN0806113(A)</td>
+                            <td>海南省行政执法证</td>
+                            <td>苏德存</td>
+                            <td>男</td>
+                            <td>住建局</td>
+                            <td>万宁</td>
+                            <td>白名单</td>
+                            <td>22</td>
+                            <td>正常人员</td>
+                            <td>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">修改</a>
+                                <a href="javascript:;" class="delete-action">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HN-WN0806113(A)</td>
+                            <td>海南省行政执法证</td>
+                            <td>苏德存</td>
+                            <td>男</td>
+                            <td>住建局</td>
+                            <td>万宁</td>
+                            <td>白名单</td>
+                            <td>22</td>
+                            <td>正常人员</td>
+                            <td>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">修改</a>
+                                <a href="javascript:;" class="delete-action">删除</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--分页 S-->
+                    <div class="pages clearfix">
+                        <div id="Pagination"></div>
+                        <div class="searchPage">
+                            <span class="page-sum">共<strong class="allPage">15</strong>页</span>
+                            <span class="page-go">跳转<input type="text">页</span>
+                            <a href="javascript:;" class="page-btn">GO</a>
+                        </div>
+                    </div>
+                    <!--分页 E-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--添加 S-->
+<div class="modal fade" id="myModal0" tabindex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-worppar">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="h5Class">添加执法人员信息</h2>
+                <a type="button" class="btn btn-primary" data-dismiss="modal"
+                   style="position:absolute; right: 31px; top: 10px;">关闭</a>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" novalidate="novalidate">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">姓名：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">证件编号：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">证件类型：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">所属工商局：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account">
+                                    <option></option>
+                                    <option>万宁市本局</option>
+                                    <option>地方局</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">执法区域：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account">
+                                    <option></option>
+                                    <option>万宁市</option>
+                                    <option>地方</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">黑白名单：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account">
+                                    <option></option>
+                                    <option>黑名单</option>
+                                    <option>白名单</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">联系电话：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">备注信息：</label>
+                            <div class="col-sm-10">
+                                <textarea id="comment" name="comment" class="form-control" required
+                                          aria-required="true"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-2 pb20">
+                            <a class="btn btn-primary" type="submit">保存</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--添加 E-->
+<!--查看 S-->
+<div class="modal fade" id="myModal1" tabindex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-worppar">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="h5Class">添加执法人员信息</h2>
+                <a type="button" class="btn btn-primary" data-dismiss="modal"
+                   style="position:absolute; right: 31px; top: 10px;">关闭</a>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" novalidate="novalidate">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">姓名：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">证件编号：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">证件类型：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">所属工商局：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account" disabled>
+                                    <option></option>
+                                    <option>万宁市本局</option>
+                                    <option>地方局</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">执法区域：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account" disabled>
+                                    <option></option>
+                                    <option>万宁市</option>
+                                    <option>地方</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">黑白名单：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account" disabled>
+                                    <option></option>
+                                    <option>黑名单</option>
+                                    <option>白名单</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">联系电话：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">备注信息：</label>
+                            <div class="col-sm-10">
+                                <textarea id="ccomment" name="comment" class="form-control" required
+                                          aria-required="true" disabled></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--查看 E-->
+<!--修改 S-->
+<div class="modal fade" id="myModal2" tabindex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-worppar">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="h5Class">添加执法人员信息</h2>
+                <a type="button" class="btn btn-primary" data-dismiss="modal"
+                   style="position:absolute; right: 31px; top: 10px;">关闭</a>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" novalidate="novalidate">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">姓名：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">证件编号：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">证件类型：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">所属工商局：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account">
+                                    <option></option>
+                                    <option>万宁市本局</option>
+                                    <option>地方局</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">执法区域：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account">
+                                    <option></option>
+                                    <option>万宁市</option>
+                                    <option>地方</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">黑白名单：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account">
+                                    <option></option>
+                                    <option>黑名单</option>
+                                    <option>白名单</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">联系电话：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">备注信息：</label>
+                            <div class="col-sm-10">
+                                <textarea id="comment11" name="comment" class="form-control" required
+                                          aria-required="true"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-2 pb20">
+                            <a class="btn btn-primary" type="submit">保存</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--修改 E-->
+<style>
+    .fileWopr {
+        width: 600px;
+        height: 600px;
+    }
+
+    .wilq a {
+        font-size: 15px;
+        padding-right: 5px;
+    }
+
+    .h5Class {
+        padding: 0;
+        margin: 0;
+        height: 50px;
+        line-height: 50px;
+        text-indent: 20px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .modal-worppar {
+        max-width: 1200px;
+        background: #fff;
+        border-radius: 5px;
+        margin: 30px auto;
+    }
+
+    .ibox-content table tr th,
+    .ibox-content table tr td {
+        text-align: center;
+        font-size: 14px;
+        height: 27px;
+        line-height: 27px;
+    }
+
+    .ibox-content table tr td a {
+        padding: 0 5px;
+    }
+
+    .titleCon {
+        margin-top: -10px;
+    }
+
+    .titleCon a i {
+        position: relative;
+        font-size: 25px;
+        color: #000;
+    }
+
+    .ibox-title {
+        margin-top: 10px;
+        border-width: 1px 0 0;
+    }
+
+    /*弹出框*/
+    .theme-popover-mask {
+        z-index: 9998;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.4;
+        filter: alpha(opacity=40);
+        display: none;
+    }
+
+    .theme-popover {
+        z-index: 9999;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background-color: #f3f3f4;
+        display: none;
+    }
+
+    .theme-poptit {
+        border-bottom: 1px solid #eef1f6;
+        padding: 15px;
+        position: relative;
+    }
+
+    .theme-poptit .close {
+        float: right;
+        color: #999;
+        padding: 5px;
+        margin: -2px -5px -5px;
+        font: bold 14px/14px simsun;
+        text-shadow: 0 1px 0 #ddd;
+    }
+</style>
+<script src="/assets/js/jquery.min.js?v=2.1.4"></script>
+<script src="/assets/js/bootstrap.min.js?v=3.3.5"></script>
+<script src="/assets/js/content.min.js?v=1.0.0"></script>
+<script src="/assets/js/jquery.pagination.js"></script>
+<script src="/assets/js/plugins/sweetalert/sweetalert.min.js"></script>
+<script>
+    $("#Pagination").pagination("150");
+    $('.delete-action').click(function () {
+        swal({
+                title: "您确定要删除这条信息吗",
+                text: "删除后将无法恢复，请谨慎操作！",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "是的，我要删除！",
+                cancelButtonText: "让我再考虑一下…",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function (isConfirm) {
+                if (isConfirm) {
+                    swal("删除成功！", "您已经永久删除了这条信息。", "success");
+                } else {
+                    swal("已取消", "您取消了删除操作！", "error");
+                }
+            });
+    });
+</script>
+</body>
+</html>
