@@ -13,7 +13,7 @@
     <link href="/assets/css/animate.css" rel="stylesheet">
     <link href="/assets/css/style.css?v=4.1.0" rel="stylesheet">
     <!--[if lt IE 9]>
-    <meta http-equiv="refresh" content="0;ie.html"/>
+    <meta http-equiv="refresh" content="0;/app/support/ie.html"/>
     <![endif]-->
     <script>
         if (window.top !== window.self) {
@@ -44,7 +44,7 @@
         $("#ff").submit(function () {
             var username = $("#ff").find("input[name=username]").val();
             var password = $("#ff").find("input[name=password]").val();
-            localStorage.setItem('token', 'token');
+            localStorage.setItem("token", "token");
             if (username == "admin") {
                 location.href = "/app/main/backend.html";
                 window.event.returnValue = false;
