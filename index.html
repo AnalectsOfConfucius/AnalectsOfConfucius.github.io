@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登录</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
     <link href="/assets/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
     <link href="/assets/css/font-awesome.css?v=4.4.0" rel="stylesheet">
     <link href="/assets/css/animate.css" rel="stylesheet">
@@ -14,44 +15,46 @@
     <!--[if lt IE 9]>
     <meta http-equiv="refresh" content="0;ie.html"/>
     <![endif]-->
-    <script>if (window.top !== window.self) {
-        window.top.location = window.location;
-    }</script>
-</head>
-<body class="gray-bg">
-<div class="middle-box text-center loginscreen animated fadeInDown">
-    <div>
-        <div>
-            <h1 class="logo-name">DR</h1>
-        </div>
-        <h3>欢迎使用万宁市工商管理局双随机系统!</h3>
-        <form id="ff" class="m-t" role="form" action="">
-            <div class="form-group">
-                <input type="text" name="username" class="form-control" placeholder="用户名" required="">
-            </div>
-            <div class="form-group">
-                <input type="password" name="password" class="form-control" placeholder="密码" required="">
-            </div>
-            <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
-        </form>
-    </div>
-</div>
-<!-- 全局js -->
-<script src="/assets/js/jquery.min.js?v=2.1.4"></script>
-<script src="/assets/js/bootstrap.min.js?v=3.3.6"></script>
-<script type="text/javascript">
-    $("#ff").submit(function () {
-        var username = $("#ff").find("input[name=username]").val();
-        var password = $("#ff").find("input[name=password]").val();
-        localStorage.setItem('token', 'token');
-        if (username == "admin") {
-            location.href = "/app/main/backend.html";
-            window.event.returnValue = false;
-        } else {
-            location.href = "/app/main/frontend.html";
-            window.event.returnValue = false;
+    <script>
+        if (window.top !== window.self) {
+            window.top.location = window.location;
         }
-    });
-</script>
+    </script>
+</head>
+
+<body class="gray-bg">
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            <div>
+                <h1 class="logo-name">DR</h1> </div>
+            <h3>欢迎使用万宁市工商管理局双随机系统!</h3>
+            <form id="ff" class="m-t" role="form" action="">
+                <div class="form-group">
+                    <input type="text" name="username" class="form-control" placeholder="用户名" required=""> </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control" placeholder="密码" required=""> </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
+            </form>
+        </div>
+    </div>
+    <!-- 全局js -->
+    <script src="/assets/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/assets/js/bootstrap.min.js?v=3.3.6"></script>
+    <script type="text/javascript">
+        $("#ff").submit(function () {
+            var username = $("#ff").find("input[name=username]").val();
+            var password = $("#ff").find("input[name=password]").val();
+            localStorage.setItem('token', 'token');
+            if (username == "admin") {
+                location.href = "/app/main/backend.html";
+                window.event.returnValue = false;
+            }
+            else {
+                location.href = "/app/main/frontend.html";
+                window.event.returnValue = false;
+            }
+        });
+    </script>
 </body>
+
 </html>
