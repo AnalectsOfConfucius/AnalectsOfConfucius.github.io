@@ -1,263 +1,445 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
     <style>
         table td {
             border: 1px solid #FFFFFF;
-            font-size: 30px;
-        }
-
-        table {
-            border: 1px solid #FFFFFF;
-            font-size: 30px;
         }
 
         table th {
             border: 1px solid #FFFFFF;
+
+        }
+
+        body {
+            background: black;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            color: white;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        .title {
+            line-height: 10px;
+            font-weight: bold;
+            font-size: 50px;
+        }
+
+        .title .small {
+            line-height: 10px;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .title span {
+            color: yellow;
+            font-size: 35px;
+        }
+
+        .thread {
+            margin: auto;
+        }
+
+        .thread th {
+            width: 165px;
             font-size: 30px;
             color: yellow;
         }
 
+        .tbody {
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .tbody td {
+            width: 165px;
+            max-width: 165px;
+            height: 30px;
+            font-size: 20px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .tbody td:last-child {
+            color: green;
+            font-weight: bold;
+        }
+
+        .tbody td:nth-last-child(2) {
+            color: green;
+            font-weight: bold;
+        }
+
+        .tbody td:nth-last-child(3) {
+            color: green;
+            font-weight: bold;
+        }
+
+        :-webkit-full-screen {
+            background: black;
+        }
+
+        :-moz-full-screen {
+            background: black;
+        }
+
+        :-ms-fullscreen {
+            background: black;
+        }
+
+        :fullscreen {
+            background: black;
+        }
     </style>
 </head>
-<body style="background: none repeat scroll 0% 0% rgb(0, 0, 0); text-align: center; color: white;">
-<div style="line-height: 10px; font-weight: bold; font-size: 50px;">
+<body onclick="clickBody()">
+<div class="title">
     <p>万宁市工商行政管理局本周"双随机"业务公示</p>
-    <p>本周全市处理业务</p>
+    <p class="small">本周全市处理业务双随机业务<span>20</span>件，检查出异常企业<span>5</span>家，已完成检查<span>9</span>，待检查企业<span>1</span>家。</p>
 </div>
-<table style="width: 80%; margin: auto; overflow: hidden;">
-    <thread>
+<div>
+    <table class="thread">
+        <tbody>
         <tr>
             <th>编号</th>
-            <th>方案名称</th>
-            <th>检查企业数量</th>
-            <th>执法人员数量</th>
-            <th>进度</th>
-            <th>说明</th>
-            <th>状态</th>
+            <th>监管事项</th>
+            <th>事项类别</th>
+            <th>抽查次数</th>
+            <th>主体数量</th>
+            <th>抽查比例</th>
+            <th>主体名称</th>
+            <th>执法人员</th>
+            <th>抽查结果</th>
+            <th>查处结果</th>
+            <th>整改结果</th>
         </tr>
-    </thread>
-    <tbody>
-    <div id="demohq" width="381" style="overflow:hidden; height:85%;">
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>行政执法</td>
-        <td>100</td>
-        <td>50</td>
-        <td>80%</td>
-        <td>万宁</td>
-        <td>已完成</td>
-    </tr>
-    </div>
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
+<div class="maquee">
+    <table class="tbody">
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>111</td>
+            <td>1111</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>22</td>
+            <td>222</td>
+            <td>2222</td>
+            <td>22222</td>
+            <td>222222</td>
+            <td>2222222</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>33</td>
+            <td>333</td>
+            <td>3333</td>
+            <td>33333</td>
+            <td>333333</td>
+            <td>3333333</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>44</td>
+            <td>444</td>
+            <td>4444</td>
+            <td>44444</td>
+            <td>444444</td>
+            <td>4444444</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>55</td>
+            <td>555</td>
+            <td>5555</td>
+            <td>55555</td>
+            <td>555555</td>
+            <td>5555555</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+            <td>选择具有此属性的元素</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>选择具有此属性的元素</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>33</td>
+            <td>333</td>
+            <td>3333</td>
+            <td>33333</td>
+            <td>333333</td>
+            <td>3333333</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>44</td>
+            <td>444</td>
+            <td>4444</td>
+            <td>44444</td>
+            <td>444444</td>
+            <td>4444444</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>55</td>
+            <td>555</td>
+            <td>5555</td>
+            <td>55555</td>
+            <td>555555</td>
+            <td>5555555</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+            <td>选择具有此属性的元素</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>选择具有此属性的元素</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>11111</td>
+            <td>111111</td>
+            <td>1111111</td>
+            <td>11111111</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+            <td>选择具有此属性的元素</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="/assets/js/jquery.min.js?v=2.1.4"></script>
 <script>
-    var speedhq = 60;
-    function Marqueehq() {
-        if (demohq.scrollTop == demohq1.offsetHeight) {
-            demohq.scrollTop = 0;
+    function autoScroll(obj) {
+        $(obj).find("tbody").animate({
+            marginTop: "-35px"
+        }, 500, function () {
+            $(this).css({marginTop: "0px"}).find("tr:first").appendTo(this);
+        })
+    }
+    $(function () {
+        setInterval('autoScroll(".maquee")', 2000);
+    })
+
+    function clickBody() {
+        var docElm = document.documentElement;
+        launchFullscreen(docElm);
+    }
+
+    function launchFullscreen(element) {
+        //此方法不可以在異步任務中執行，否則火狐無法全屏
+        if (element.requestFullscreen) {
+            element.requestFullscreen();
+        } else if (element.mozRequestFullScreen) {
+            element.mozRequestFullScreen();
+        } else if (element.msRequestFullscreen) {
+            element.msRequestFullscreen();
+        } else if (element.oRequestFullscreen) {
+            element.oRequestFullscreen();
+        }
+        else if (element.webkitRequestFullscreen) {
+            element.webkitRequestFullScreen();
         } else {
-            demohq.scrollTop++;
+            var docHtml = document.documentElement;
+            var docBody = document.body;
+            var videobox = document.getElementById('videobox');
+            var cssText = 'width:100%;height:100%;overflow:hidden;';
+            docHtml.style.cssText = cssText;
+            docBody.style.cssText = cssText;
+            videobox.style.cssText = cssText + ';' + 'margin:0px;padding:0px;';
+            document.IsFullScreen = true;
         }
     }
-    var MyMarhq = setInterval(Marqueehq, speedhq)
-    demohq.onmouseover = function () {
-        clearInterval(MyMarhq)
-    }
-    demohq.onmouseout = function () {
-        MyMarhq = setInterval(Marqueehq, speedhq)
-    }
+    //退出全屏
 </script>
 </body>
 </html>
