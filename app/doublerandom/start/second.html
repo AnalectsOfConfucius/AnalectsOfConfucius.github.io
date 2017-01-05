@@ -14,8 +14,106 @@
     <link href="/assets/css/pagination.css" rel="stylesheet">
     <link href="/assets/css/plugins/ionRangeSlider/ion.rangeSlider.css" rel="stylesheet">
     <link href="/assets/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <style>
+        .fileWopr {
+            width: 600px;
+            height: 600px;
+        }
+
+        .wilq a {
+            font-size: 15px;
+            padding-right: 5px;
+        }
+
+        .h5Class {
+            padding: 0;
+            margin: 0;
+            height: 50px;
+            line-height: 50px;
+            text-indent: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .modal-worppar {
+            max-width: 1200px;
+            background: #fff;
+            border-radius: 5px;
+            margin: 30px auto;
+        }
+
+        .ibox-content table tr th,
+        .ibox-content table tr td {
+            text-align: center;
+            font-size: 14px;
+            height: 27px;
+            line-height: 27px;
+        }
+
+        .ibox-content table tr td a {
+            padding: 0 5px;
+        }
+
+        .titleCon {
+            margin-top: -10px;
+        }
+
+        .titleCon a i {
+            position: relative;
+            font-size: 25px;
+            color: #000;
+        }
+
+        .ibox-title {
+            margin-top: 10px;
+            border-width: 1px 0 0;
+        }
+
+        /*弹出框*/
+        .theme-popover-mask {
+            z-index: 9998;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: 0.4;
+            filter: alpha(opacity=40);
+            display: none;
+        }
+
+        .theme-popover {
+            z-index: 9999;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            background-color: #f3f3f4;
+            display: none;
+        }
+
+        .theme-poptit {
+            border-bottom: 1px solid #eef1f6;
+            padding: 15px;
+            position: relative;
+        }
+
+        .theme-poptit .close {
+            float: right;
+            color: #999;
+            padding: 5px;
+            margin: -2px -5px -5px;
+            font: bold 14px/14px simsun;
+            text-shadow: 0 1px 0 #ddd;
+        }
+    </style>
 </head>
+
 <body class="gray-bg">
+
 <div class="row wrapper border-bottom white-bg page-heading animated fadeInRight">
     <div class="col-sm-4">
         <h2>双随机抽选</h2>
@@ -156,7 +254,6 @@
                             <th>属地监管机关</th>
                             <th>稽查状态</th>
                             <th>说明</th>
-                            <th>操作</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -169,11 +266,6 @@
                             <td>住建局</td>
                             <td>正常</td>
                             <td>企业经营正常</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">修改</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
                         </tr>
                         <tr>
                             <td>914690062014889466</td>
@@ -184,11 +276,6 @@
                             <td>住建局</td>
                             <td>正常</td>
                             <td>企业经营正常</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">修改</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
                         </tr>
                         <tr>
                             <td>914690062014889466</td>
@@ -199,11 +286,6 @@
                             <td>住建局</td>
                             <td>正常</td>
                             <td>企业经营正常</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">修改</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
                         </tr>
                         <tr>
                             <td>914690062014889466</td>
@@ -214,11 +296,6 @@
                             <td>住建局</td>
                             <td>正常</td>
                             <td>企业经营正常</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">修改</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
                         </tr>
                         <tr>
                             <td>914690062014889466</td>
@@ -229,11 +306,6 @@
                             <td>住建局</td>
                             <td>正常</td>
                             <td>企业经营正常</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">修改</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
                         </tr>
                         <tr>
                             <td>914690062014889466</td>
@@ -244,11 +316,6 @@
                             <td>住建局</td>
                             <td>正常</td>
                             <td>企业经营正常</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">修改</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
                         </tr>
                         </tbody>
                     </table>
@@ -267,103 +334,6 @@
         </div>
     </div>
 </div>
-
-<style>
-    .fileWopr {
-        width: 600px;
-        height: 600px;
-    }
-
-    .wilq a {
-        font-size: 15px;
-        padding-right: 5px;
-    }
-
-    .h5Class {
-        padding: 0;
-        margin: 0;
-        height: 50px;
-        line-height: 50px;
-        text-indent: 20px;
-        font-size: 20px;
-        font-weight: 600;
-    }
-
-    .modal-worppar {
-        max-width: 1200px;
-        background: #fff;
-        border-radius: 5px;
-        margin: 30px auto;
-    }
-
-    .ibox-content table tr th,
-    .ibox-content table tr td {
-        text-align: center;
-        font-size: 14px;
-        height: 27px;
-        line-height: 27px;
-    }
-
-    .ibox-content table tr td a {
-        padding: 0 5px;
-    }
-
-    .titleCon {
-        margin-top: -10px;
-    }
-
-    .titleCon a i {
-        position: relative;
-        font-size: 25px;
-        color: #000;
-    }
-
-    .ibox-title {
-        margin-top: 10px;
-        border-width: 1px 0 0;
-    }
-
-    /*弹出框*/
-    .theme-popover-mask {
-        z-index: 9998;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #000;
-        opacity: 0.4;
-        filter: alpha(opacity=40);
-        display: none;
-    }
-
-    .theme-popover {
-        z-index: 9999;
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        margin: auto;
-        background-color: #f3f3f4;
-        display: none;
-    }
-
-    .theme-poptit {
-        border-bottom: 1px solid #eef1f6;
-        padding: 15px;
-        position: relative;
-    }
-
-    .theme-poptit .close {
-        float: right;
-        color: #999;
-        padding: 5px;
-        margin: -2px -5px -5px;
-        font: bold 14px/14px simsun;
-        text-shadow: 0 1px 0 #ddd;
-    }
-</style>
 
 <!-- 全局js -->
 <script src="/assets/js/jquery.min.js?v=2.1.4"></script>

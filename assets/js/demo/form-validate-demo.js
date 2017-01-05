@@ -22,8 +22,14 @@
 
         //以下为官方示例
         $().ready(function () {
-            // validate the comment form when it is submitted
-            $("#commentForm").validate();
+
+            $(".next-action").click(function() {
+                // validate the comment form when it is submitted
+                $("#commentForm").validate();
+                // location.href = "second.html";
+            });
+
+
 
             // validate signup form on keyup and submit
             var icon = "<i class='fa fa-times-circle'></i> ";
