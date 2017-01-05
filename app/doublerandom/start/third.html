@@ -46,7 +46,7 @@
         <div class="col-md-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h4>抽查企业筛选条件</h4>
+                    <h4>抽查人员筛选条件</h4>
                 </div>
                 <div class="ibox-content">
                     <form class="form-horizontal m-t" novalidate="novalidate">
@@ -54,7 +54,7 @@
                             <div class="col-sm-5">
                                 <div class="form-group">
                                     <div class="row">
-                                        <label class="col-sm-4 control-label">企业名称：</label>
+                                        <label class="col-sm-4 control-label">人员名称：</label>
                                         <div class="col-sm-8">
                                             <input name="name" minlength="1" type="text" class="form-control" required
                                                    aria-required="true">
@@ -65,7 +65,7 @@
                             <div class="col-sm-5">
                                 <div class="form-group">
                                     <div class="row">
-                                        <label class="col-sm-4 control-label">所属区域：</label>
+                                        <label class="col-sm-4 control-label">所属单位：</label>
                                         <div class="col-sm-8">
                                             <select class="form-control m-b" name="account">
                                                 <option></option>
@@ -81,18 +81,7 @@
                             <div class="col-sm-5">
                                 <div class="form-group">
                                     <div class="row">
-                                        <label class="col-sm-4 control-label">企业名称：</label>
-                                        <div class="col-sm-8">
-                                            <input name="name" minlength="1" type="text" class="form-control" required
-                                                   aria-required="true">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-5">
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label class="col-sm-4 control-label">所属区域：</label>
+                                        <label class="col-sm-4 control-label">每组人数：</label>
                                         <div class="col-sm-8">
                                             <select class="form-control m-b" name="account">
                                                 <option></option>
@@ -103,50 +92,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-sm-5">
                                 <div class="form-group">
                                     <div class="row">
-                                        <label class="col-sm-4 control-label">企业名称：</label>
-                                        <div class="col-sm-8">
-                                            <input name="name" minlength="1" type="text" class="form-control" required
-                                                   aria-required="true">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-5">
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label class="col-sm-4 control-label">所属区域：</label>
-                                        <div class="col-sm-8">
-                                            <select class="form-control m-b" name="account">
-                                                <option></option>
-                                                <option>万宁市本局</option>
-                                                <option>地方局</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-5">
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label class="col-sm-4 control-label">企业名称：</label>
-                                        <div class="col-sm-8">
-                                            <input name="name" minlength="1" type="text" class="form-control" required
-                                                   aria-required="true">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-5">
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label class="col-sm-4 control-label">所属区域：</label>
+                                        <label class="col-sm-4 control-label">抽选率：</label>
                                         <div class="col-sm-8">
                                             <div id="ionrange"></div>
                                         </div>
@@ -165,37 +114,11 @@
                 <div class="ibox-title">
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
-                            <label style="font-size:14px">监管机关：</label>
-                            <select style="width:150px; height:32px; margin-top:2px; margin-right: 5px;">
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                            </select>
-                            <label style="font-size:14px">所属区域：</label>
-                            <select style="width:150px; height:32px; margin-top:2px; margin-right: 5px;">
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                            </select>
-                            <label style="font-size:14px">企业类型：</label>
-                            <select style="width:150px; height:32px; margin-top:2px; margin-right: 5px;">
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                            </select>
-                            <label style="font-size:14px">企业名称：</label>
-                            <input type="text" style="height:32px">
-                            <button type="button" class="btn btn-primary pull-right">搜索</button>
+                            <h4>人员筛选结果</h4>
                         </div>
                     </div>
                 </div>
                 <div class="ibox-content">
-                    <button class="btn btn-primary" type="submit" data-toggle="modal" data-target="#myModal0">添加
-                    </button>
                     <table class="table table-bordered">
                         <thead>
                         <tr>

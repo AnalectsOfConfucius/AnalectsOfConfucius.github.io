@@ -2088,7 +2088,7 @@ table.dataTable thead .sorting:after {
 .single-line {
     background-color: #FFFFFF;
     background-image: none;
-    border: 1px solid #e5e6e7;
+    border: 1px solid grey;
     border-radius: 1px;
     color: inherit;
     display: block;
