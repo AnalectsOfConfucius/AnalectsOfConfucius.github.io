@@ -57,7 +57,7 @@ HAAM.1.0.0/
     ├── invoice.html（单据）
     ├── invoice_print.html（单据打印）
     ├── jstree.html（树形视图）
-    ├── layer.html（web弹层组件layer）
+    ├── layer.html（web弹层组件layerui）
     ├── layerdate.html（日期选择器layerDate）
     ├── layerphoto.html（layer相册）
     ├── layouts.html（布局）
