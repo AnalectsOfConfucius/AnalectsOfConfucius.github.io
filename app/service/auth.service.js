@@ -1,6 +1,6 @@
 function login() {
-    var username = $(".m-t").find("input[name='username']").val();
-    var password = $(".m-t").find("input[name='password']").val();
+    var username = $("#ff").find("input[name=username]").val();
+    var password = $("#ff").find("input[name=password]").val();
     var rememberMe = false;
     var url = window.apiPoint + 'authenticate';
     console.log(url);
@@ -31,7 +31,8 @@ function login() {
             if (data.id_token) {
                 var token = 'Bearer ' + data.id_token;
                 localStorage.setItem('token', token);
-                location.href = "/index.html";
+                location.href = "/app/main/backend.html";
+                window.event.returnValue = false;
             }
         },
     });
@@ -39,5 +40,5 @@ function login() {
 
 function logout() {
     localStorage.removeItem('token');
-    location.href = "/app/auth/login.html";
+    location.href = "/index.html";
 }

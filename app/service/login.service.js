@@ -12,7 +12,6 @@ $(function() {
 	        type: "warning",
 		    });
 		}
-		
 	});
 
 	$('.logout-action').click(function() {

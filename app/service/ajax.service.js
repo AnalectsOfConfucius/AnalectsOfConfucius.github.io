@@ -6,14 +6,14 @@ $(function() {
 			if (localStorage.getItem('token')) {
 				xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
 			} else {
-				window.location.replace("/app/auth/login.html");
+				window.location.replace("/index.html");
 			}
 		},
 		complete: function(XMLHttpRequest, textStatus) {},
 		statusCode: {
 			401: function() {
 				alert('认证失败，请重新登陆。401');
-				window.location.replace("/app/auth/login.html");
+				window.location.replace("/index.html");
 			},
 			404: function() {
 				alert('数据获取/输入失败，没有此服务。404');

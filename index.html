@@ -38,20 +38,23 @@
     <!-- 全局js -->
     <script src="/assets/js/jquery.min.js?v=2.1.4"></script>
     <script src="/assets/js/bootstrap.min.js?v=3.3.6"></script>
-    <script type="text/javascript">
-        $("#ff").submit(function () {
-            var username = $("#ff").find("input[name=username]").val();
-            var password = $("#ff").find("input[name=password]").val();
-            localStorage.setItem("token", "token");
-            if (username == "admin") {
-                location.href = "/app/main/backend.html";
-                window.event.returnValue = false;
-            }
-            else {
-                location.href = "/app/main/frontend.html";
-                window.event.returnValue = false;
-            }
-        });
-    </script>
+    <script src="/app/service/global.service.js"></script>
+    <script src="/app/service/auth.service.js"></script>
+    <script src="/app/service/ajax.service.js"></script>
+    <!--<script type="text/javascript">-->
+        <!--$("#ff").submit(function () {-->
+            <!--var username = $("#ff").find("input[name=username]").val();-->
+            <!--var password = $("#ff").find("input[name=password]").val();-->
+            <!--localStorage.setItem("token", "token");-->
+            <!--if (username == "admin") {-->
+                <!--location.href = "/app/main/backend.html";-->
+                <!--window.event.returnValue = false;-->
+            <!--}-->
+            <!--else {-->
+                <!--location.href = "/app/main/frontend.html";-->
+                <!--window.event.returnValue = false;-->
+            <!--}-->
+        <!--});-->
+    <!--</script>-->
 </body>
 </html>
