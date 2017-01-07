@@ -1,10 +1,15 @@
 $(function () {
     var url = window.apiPoint + 'companies';
     console.log(url);
+    var data = {
+        page: 0,
+        size: 6
+    };
     $.ajax({
         url: url,
         type: 'GET',
-        // 序列化Json对象为Json字符串
+        // GET请求传递data
+        data: data,
         async: true,
         dataType: 'json',
         error: function (data) {
@@ -14,7 +19,7 @@ $(function () {
                 console.log(data.companies);
                 var tpl = document.getElementById('tpl').innerHTML;
                 var html = juicer(tpl, data);
-                $("#tContent").html(html);
+                $('#tContent').html(html);
             }
         },
     });
