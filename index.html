@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>登录</title>
-    <meta name="keywords" content="关键词">
+    <meta name="keywords" content="">
     <meta name="description" content="">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link href="/assets/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/css/font-awesome.css?v=4.4.0" rel="stylesheet">
     <link href="/assets/css/animate.css" rel="stylesheet">
-    <link href="/assets/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/login.css" rel="stylesheet">
     <!--[if lt IE 9]>
-    <meta http-equiv="refresh" content="0;/app/support/ie.html"/>
+    <meta http-equiv="refresh" content="0;/app/unsupport/ie.html" />
     <![endif]-->
     <script>
         if (window.top !== window.self) {
@@ -20,26 +19,28 @@
         }
     </script>
 </head>
-<body class="gray-bg">
-    <div class="middle-box text-center loginscreen animated fadeInDown">
-        <div>
-            <div>
-                <h1 class="logo-name">DR</h1> </div>
-            <h3>欢迎使用万宁市工商管理局双随机系统!</h3>
-            <form id="ff" class="m-t" role="form" action="">
-                <div class="form-group">
-                    <input type="text" name="username" class="form-control" placeholder="用户名" required=""> </div>
-                <div class="form-group">
-                    <input type="password" name="password" class="form-control" placeholder="密码" required=""> </div>
-                <p class="btn btn-primary block full-width m-b login-action">登 录</p>
+<body class="signin">
+<div class="signinpanel">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="login-logo text-center">
+                <img src="/assets/img/login-logo.png" alt="">
+            </div>
+            <form id="ff" method="post">
+                <div class="welcome text-center">欢迎登陆万宁双随机抽查系统！</div>
+                <input type="text" name="username" class="form-control uname" placeholder="用户名"/>
+                <input type="password" name="password" class="form-control pword m-b" placeholder="密码"/>
+                <p class="btn btn-success btn-block login-action">登录</p>
             </form>
         </div>
     </div>
-    <!-- 全局js -->
-    <script src="/assets/js/jquery.min.js?v=2.1.4"></script>
-    <script src="/assets/js/bootstrap.min.js?v=3.3.6"></script>
-    <script src="/app/service/global.service.js"></script>
-    <script src="/app/service/auth.service.js"></script>
-    <script src="/app/service/ajax.service.js"></script>
+</div>
+<!-- 全局js 开始 -->
+<script src="/assets/js/jquery.min.js?v=2.1.4"></script>
+<script src="/assets/js/bootstrap.min.js?v=3.3.6"></script>
+<!-- 全局js 结束 -->
+<script src="/app/service/global.service.js"></script>
+<script src="/app/service/auth.service.js"></script>
+<script src="/app/service/ajax.service.js"></script>
 </body>
 </html>
