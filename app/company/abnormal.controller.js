@@ -60,7 +60,7 @@ function initQuery(page, size) {
 };
 
 function initPage(page, size) {
-    var url = window.apiPoint + 'companies/normal';
+    var url = window.apiPoint + 'companies/abnormal';
     console.log(url);
     var dataQuery = {
         page: page,
