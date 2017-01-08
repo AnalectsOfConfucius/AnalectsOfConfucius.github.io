@@ -34,7 +34,7 @@ $(function () {
                         '<td>',
                         '<a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>',
                         '<a href="javascript:;" data-toggle="modal" data-target="#myModal2">修改</a>',
-                        '<a href="javascript:;" class="delete-action">删除</a>',
+                        '<a href="javascript:;" onclick="deleteOne()">删除</a>',
                         '</td>',
                         '</tr>',
                         '{@/each}'].join('');
@@ -47,9 +47,39 @@ $(function () {
                 }
             },
         });
-    }
+    };
 
     function pageSelect(page_index) {
         initPage(page_index, size);
-    }
+    };
+
+
+    $('.input-group.date').datepicker({
+        todayBtn: "linked",
+        keyboardNavigation: false,
+        forceParse: false,
+        calendarWeeks: true,
+        autoclose: true
+    });
 });
+
+function deleteOne() {
+    swal({
+            title: "您确定要删除这条信息吗",
+            text: "删除后将无法恢复，请谨慎操作！",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "是的，我要删除！",
+            cancelButtonText: "让我再考虑一下…",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+        function (isConfirm) {
+            if (isConfirm) {
+                swal("删除成功！", "您已经永久删除了这条信息。", "success");
+            } else {
+                swal("已取消", "您取消了删除操作！", "error");
+            }
+        });
+};
