@@ -1,5 +1,5 @@
 $(function () {
-    var size = 6;
+    var size = 10;
     initPage(0, size);
     function initPage(page, size) {
         var url = window.apiPoint + 'companies/normal';

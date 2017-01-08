@@ -18,6 +18,11 @@
     <link rel="stylesheet" href="/assets/css/zyUpload.css" type="text/css">
     <link href="/assets/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
     <style>
+        table {
+            word-break: keep-all;
+            white-space: nowrap;
+        }
+
         .fileWopr {
             width: 600px;
             height: 600px;
@@ -39,7 +44,7 @@
         }
 
         .modal-worppar {
-            max-width: 1200px;
+            max-width: 900px;
             background: #fff;
             border-radius: 5px;
             margin: 30px auto;
@@ -47,6 +52,8 @@
 
         .ibox-content table tr th,
         .ibox-content table tr td {
+            overflow: hidden;
+            max-width: 200px;
             text-align: center;
             font-size: 14px;
             height: 27px;
@@ -294,7 +301,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">备注信息：</label>
                             <div class="col-sm-10">
-                                <textarea id="comment" name="comment" class="form-control" required
+                                <textarea id="commenst" name="comment" class="form-control" required
                                           aria-required="true"></textarea>
                             </div>
                         </div>
@@ -413,7 +420,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group" id="data">
+                        <div class="form-group" id="data1">
                             <label class="col-sm-2 control-label">成立日期：</label>
                             <div class="col-sm-10">
                                 <div class="input-group date">
