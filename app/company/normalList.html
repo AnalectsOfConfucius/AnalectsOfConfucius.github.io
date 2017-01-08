@@ -18,10 +18,10 @@
     <link rel="stylesheet" href="/assets/css/zyUpload.css" type="text/css">
     <link href="/assets/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
     <style>
-        table {
+        /*table {
             word-break: keep-all;
             white-space: nowrap;
-        }
+        }*/
 
         .fileWopr {
             width: 600px;
@@ -52,12 +52,17 @@
 
         .ibox-content table tr th,
         .ibox-content table tr td {
-            overflow: hidden;
-            max-width: 200px;
             text-align: center;
             font-size: 14px;
             height: 27px;
             line-height: 27px;
+        }
+
+        .ibox-content table tr th,
+        .ibox-content table tr td:last-child {
+            overflow: hidden;
+            word-break: keep-all;
+            white-space: nowrap;
         }
 
         .ibox-content table tr td a {
