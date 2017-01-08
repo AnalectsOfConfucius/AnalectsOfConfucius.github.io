@@ -21,7 +21,7 @@ $(function () {
             dataType: 'json',
             success: function (data) {
                 if (data) {
-                    var token = 'Bearer ' + data.id_token;
+                    var token = 'Bearer ' + data.jwt.id_token;
                     localStorage.setItem('token', token);
                     localStorage.setItem('user', data.user);
                     if (data.authorityForAdmin) {
