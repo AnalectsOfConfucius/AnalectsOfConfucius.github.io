@@ -130,7 +130,7 @@
         <div class="title-action">
             <a href="javascript:;" onclick="javascript:history.back(-1);" class="btn btn-primary">返回</a>
             <a href="javascript:;" type="submit" class="btn btn-primary">筛选</a>
-            <a href="third.html" class="btn btn-primary">下一步</a>
+            <a href="third.html" class="btn btn-primary second-action">下一步</a>
         </div>
     </div>
 </div>
@@ -143,14 +143,14 @@
                     <h4>抽查企业筛选条件</h4>
                 </div>
                 <div class="ibox-content">
-                    <form class="form-horizontal m-t" novalidate="novalidate">
+                    <form class="form-horizontal m-t" id="second" novalidate="novalidate">
                         <div class="row">
                             <div class="col-sm-5">
                                 <div class="form-group">
                                     <div class="row">
                                         <label class="col-sm-4 control-label">企业名称：</label>
                                         <div class="col-sm-8">
-                                            <input name="name" minlength="1" type="text" class="form-control" required
+                                            <input name="doubleRandomCompanyName" minlength="1" type="text" class="form-control" required
                                                    aria-required="true">
                                         </div>
                                     </div>
@@ -161,7 +161,7 @@
                                     <div class="row">
                                         <label class="col-sm-4 control-label">所属区域：</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control m-b" name="account">
+                                            <select class="form-control m-b" name="doubleRandomCompanyArea">
                                                 <option></option>
                                                 <option>万宁市本局</option>
                                                 <option>地方局</option>
@@ -177,7 +177,7 @@
                                     <div class="row">
                                         <label class="col-sm-4 control-label">企业类型：</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control m-b" name="account">
+                                            <select class="form-control m-b" name="doubleRandomCompanyType">
                                                 <option></option>
                                                 <option>万宁市本局</option>
                                                 <option>地方局</option>
@@ -191,7 +191,7 @@
                                     <div class="row">
                                         <label class="col-sm-4 control-label">监管机关：</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control m-b" name="account">
+                                            <select class="form-control m-b" name="doubleRandomCompanySupervisory">
                                                 <option></option>
                                                 <option>万宁市本局</option>
                                                 <option>地方局</option>
@@ -207,7 +207,7 @@
                                     <div class="row">
                                         <label class="col-sm-4 control-label">行业类型：</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control m-b" name="account">
+                                            <select class="form-control m-b" name="doubleRandomCompanyIndustryType">
                                                 <option></option>
                                                 <option>万宁市本局</option>
                                                 <option>地方局</option>
@@ -221,7 +221,7 @@
                                     <div class="row">
                                         <label class="col-sm-4 control-label">抽选率：</label>
                                         <div class="col-sm-8">
-                                            <div id="ionrange"></div>
+                                            <div id="ionrange" class="doubleRandomCompanyRatio"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -357,5 +357,6 @@
 
 <!-- 自定义js -->
 <script src="/assets/js/content.js?v=1.0.0"></script>
+<script src="/app/doublerandom/doublerandom.controller.js" type="text/javascript"></script>
 </body>
 </html>

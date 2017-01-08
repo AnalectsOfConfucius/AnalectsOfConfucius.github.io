@@ -3,15 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <link rel="shortcut icon" href="/favicon.ico">
     <link href="/assets/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
     <link href="/assets/css/font-awesome.css?v=4.4.0" rel="stylesheet">
     <link href="/assets/css/animate.css" rel="stylesheet">
     <link href="/assets/css/style.css?v=4.1.0" rel="stylesheet">
-    <link href="/assets/css/plugins/chosen/chosen.min.css" rel="stylesheet">
 </head>
 
 <body class="gray-bg">
@@ -26,7 +23,7 @@
     </div>
     <div class="col-sm-8">
         <div class="title-action">
-            <a href="javascript:;" class="btn btn-primary next-action">下一步</a>
+            <a href="javascript:;" class="btn btn-primary first-action">下一步</a>
         </div>
     </div>
 </div>
@@ -39,14 +36,14 @@
                     <h4>创立抽选方案</h4>
                 </div>
                 <div class="ibox-content">
-                    <form class="form-horizontal m-t" id="commentForm" novalidate="novalidate">
+                    <form class="form-horizontal m-t" id="first" novalidate="novalidate">
                         <div class="row">
                             <div class="col-sm-5">
                                 <div class="form-group">
                                     <div class="row">
                                         <label class="col-sm-4 control-label">方案名称：</label>
                                         <div class="col-sm-8">
-                                            <input minlength="2" type="text" class="form-control" required
+                                            <input minlength="2" type="text" name="doubleRandomName" class="form-control" required
                                                    aria-required="true">
                                         </div>
                                     </div>
@@ -57,7 +54,7 @@
                                     <div class="row">
                                         <label class="col-sm-4 control-label">公证人：</label>
                                         <div class="col-sm-8">
-                                            <input minlength="2" type="text" class="form-control" required
+                                            <input minlength="2" type="text" name="doubleRandomNotary" class="form-control" required
                                                    aria-required="true">
                                         </div>
                                     </div>
@@ -70,7 +67,7 @@
                                     <div class="row">
                                         <label class="col-sm-4 control-label">检查日期：</label>
                                         <div class="col-sm-8">
-                                            <input minlength="2" type="text" class="form-control" required
+                                            <input minlength="2" type="text" name="doubleRandomDate" class="form-control" required
                                                    aria-required="true">
                                         </div>
                                     </div>
@@ -110,30 +107,6 @@
 <script src="/assets/js/plugins/validate/jquery.validate.min.js"></script>
 <script src="/assets/js/plugins/validate/messages_zh.min.js"></script>
 <script src="/assets/js/demo/form-validate-demo.js"></script>
-<script src="/assets/js/plugins/sweetalert/sweetalert.min.js"></script>
-<script src="/assets/js/plugins/chosen/chosen.jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-    $('.chosen-select').chosen({});
-    $('.delete-action').click(function () {
-        swal({
-                title: "您确定要删除这条信息吗",
-                text: "删除后将无法恢复，请谨慎操作！",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "是的，我要删除！",
-                cancelButtonText: "让我再考虑一下…",
-                closeOnConfirm: false,
-                closeOnCancel: false
-            },
-            function (isConfirm) {
-                if (isConfirm) {
-                    swal("删除成功！", "您已经永久删除了这条信息。", "success");
-                } else {
-                    swal("已取消", "您取消了删除操作！", "error");
-                }
-            });
-    });
-</script>
+<script src="/app/doublerandom/doublerandom.controller.js" type="text/javascript"></script>
 </body>
 </html>
