@@ -14,6 +14,9 @@ $(function () {
 
 function initQuery(page, size) {
     var query = $('#query').val();
+    if (query == "" || query == null) {
+        return;
+    }
     console.log(query);
     var dataQuery = {
         page: page,

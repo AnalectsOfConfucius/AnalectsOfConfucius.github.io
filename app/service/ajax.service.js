@@ -14,7 +14,6 @@ $(function () {
         statusCode: {
             400: function () {
                 alert('输入格式不对，请重新输入。400');
-                window.location.replace("/index.html");
             },
             401: function () {
                 alert('认证失败，请重新登陆。401');

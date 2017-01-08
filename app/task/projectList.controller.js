@@ -10,11 +10,47 @@ $(function () {
     $('.search-action').click(function () {
         initQuery(0, 10);
     });
+    $('.add-action').click(function () {
+        add();
+    });
 });
+
+function add() {
+    var addUrl = window.apiPoint + 'task-projects';
+    var taskProjectName = $("#add").find("input[name=taskProjectName]").val();
+    var taskProjectCheckDepartment = $("#add").find("input[name=taskProjectCheckDepartment]").val();
+    var description = $("#add").find("textarea[name=description]").val();
+    var dataPost = {
+        taskProjectName: taskProjectName,
+        taskProjectCheckDepartment: taskProjectCheckDepartment,
+        description: description
+    };
+    console.log(dataPost);
+    $.ajax({
+        url: addUrl,
+        type: 'POST',
+        // 序列化Json对象为Json字符串
+        data: JSON.stringify(dataPost),
+        async: true,
+        dataType: 'json',
+        success: function (data) {
+            if (data) {
+                initPage(0, 10);
+                $('#myModal0').modal('hide');
+                $('input[name=reset]').trigger("click");
+            }
+        },
+    });
+};
+
+function detailOne(id) {
+    location.href = "taskList.html?id=" + id;
+};
 
 function initQuery(page, size) {
     var query = $('#query').val();
     if (query == "" || query == null) {
+        initPage(0, 10);
         return;
     }
     console.log(query);
@@ -24,7 +60,7 @@ function initQuery(page, size) {
         query: query,
     };
     $.ajax({
-        url: window.apiPoint + '_search/companies',
+        url: window.apiPoint + '_search/task-projects',
         type: 'GET',
         // GET请求传递data
         data: dataQuery,
@@ -32,20 +68,16 @@ function initQuery(page, size) {
         dataType: 'json',
         success: function (data) {
             if (data) {
-                console.log(data.companies);
+                console.log(data);
                 var tpl = [
-                    '{@each companies as it,index}',
+                    '{@each taskProjects as it,index}',
                     '<tr>',
-                    '<td>${it.companyRegisterId}</td>',
-                    '<td>${it.companyName}</td>',
-                    '<td>${it.businessAddress}</td>',
-                    '<td>${it.companyOwner}</td>',
-                    '<td>${it.companyPhone}</td>',
-                    '<td>${it.companySupervisory.departmentName}</td>',
-                    '<td>${it.companyStatus}</td>',
+                    '<td>${it.id}</td>',
+                    '<td>${it.taskProjectName}</td>',
+                    '<td>${it.taskProjectCheckDepartment}</td>',
                     '<td>{@if it.description != null }${it.description}{@/if}</td>',
                     '<td>',
-                    '<a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>',
+                    '<a href="javascript:;" onclick="detailOne(${it.id})">详细清单</a>',
                     '<a href="javascript:;" data-toggle="modal" data-target="#myModal2">修改</a>',
                     '<a href="javascript:;" onclick="deleteOne(${it.id})">删除</a>',
                     '</td>',
@@ -63,7 +95,7 @@ function initQuery(page, size) {
 };
 
 function initPage(page, size) {
-    var url = window.apiPoint + 'companies/normal';
+    var url = window.apiPoint + 'task-projects';
     console.log(url);
     var dataQuery = {
         page: page,
@@ -78,20 +110,16 @@ function initPage(page, size) {
         dataType: 'json',
         success: function (data) {
             if (data) {
-                console.log(data.companies);
+                console.log(data);
                 var tpl = [
-                    '{@each companies as it,index}',
+                    '{@each taskProjects as it,index}',
                     '<tr>',
-                    '<td>${it.companyRegisterId}</td>',
-                    '<td>${it.companyName}</td>',
-                    '<td>${it.businessAddress}</td>',
-                    '<td>${it.companyOwner}</td>',
-                    '<td>${it.companyPhone}</td>',
-                    '<td>${it.companySupervisory.departmentName}</td>',
-                    '<td>${it.companyStatus}</td>',
+                    '<td>${it.id}</td>',
+                    '<td>${it.taskProjectName}</td>',
+                    '<td>${it.taskProjectCheckDepartment}</td>',
                     '<td>{@if it.description != null }${it.description}{@/if}</td>',
                     '<td>',
-                    '<a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>',
+                    '<a href="javascript:;" onclick="detailOne(${it.id})">详细清单</a>',
                     '<a href="javascript:;" data-toggle="modal" data-target="#myModal2">修改</a>',
                     '<a href="javascript:;" onclick="deleteOne(${it.id})">删除</a>',
                     '</td>',
@@ -131,7 +159,7 @@ function deleteOne(id) {
         function (isConfirm) {
             if (isConfirm) {
                 $.ajax({
-                    url: window.apiPoint + 'companies/' + id,
+                    url: window.apiPoint + 'task-projects/' + id,
                     type: 'DELETE',
                     async: true,
                     dataType: 'json',
