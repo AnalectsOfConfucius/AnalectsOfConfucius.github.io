@@ -16,11 +16,29 @@
     <link href="/assets/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
     <link href="/assets/css/animate.css" rel="stylesheet">
     <link href="/assets/css/style.css?v=4.1.0" rel="stylesheet">
-    <!-- Sweet Alert -->
     <link href="/assets/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <style>
+        #header {
+            height: 145px;
+            display: block;
+            background: url(/assets/img/banner.jpg) left top;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
 
+        #header .h-r {
+            background: url(/assets/img/icon.png) no-repeat;
+            width: 930px;
+            height: 102px;
+            display: inline-block;
+            position: absolute;
+            left: 0px;
+            top: 20px;
+        }
+    </style>
 </head>
-<body class="fixed-sidebar full-height-layout gray-bg skin-1" style="overflow:hidden">
+<body class="fixed-sidebar full-height-layout gray-bg fixed-nav" style="overflow:hidden">
     <div id="wrapper">
         <!--左侧导航开始-->
         <nav class="navbar-default navbar-static-side" role="navigation">
@@ -76,8 +94,9 @@
         <!--右侧部分开始-->
         <div id="page-wrapper" class="gray-bg dashbard-1">
             <div class="row border-bottom">
-                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-                    <div class="navbar-header"><a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="javascript:;"><i class="fa fa-bars"></i> </a>
+                <nav class="navbar navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+                    <div id="header">
+                        <div class="h-r"></div>
                     </div>
                 </nav>
             </div>

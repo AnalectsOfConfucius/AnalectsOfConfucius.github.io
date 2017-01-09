@@ -14,6 +14,102 @@
     <link href="/assets/css/pagination.css" rel="stylesheet">
     <link href="/assets/css/plugins/ionRangeSlider/ion.rangeSlider.css" rel="stylesheet">
     <link href="/assets/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <style>
+        .fileWopr {
+            width: 600px;
+            height: 600px;
+        }
+
+        .wilq a {
+            font-size: 15px;
+            padding-right: 5px;
+        }
+
+        .h5Class {
+            padding: 0;
+            margin: 0;
+            height: 50px;
+            line-height: 50px;
+            text-indent: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .modal-worppar {
+            max-width: 1200px;
+            background: #fff;
+            border-radius: 5px;
+            margin: 30px auto;
+        }
+
+        .ibox-content table tr th,
+        .ibox-content table tr td {
+            text-align: center;
+            font-size: 14px;
+            height: 27px;
+            line-height: 27px;
+        }
+
+        .ibox-content table tr td a {
+            padding: 0 5px;
+        }
+
+        .titleCon {
+            margin-top: -10px;
+        }
+
+        .titleCon a i {
+            position: relative;
+            font-size: 25px;
+            color: #000;
+        }
+
+        .ibox-title {
+            margin-top: 10px;
+            border-width: 1px 0 0;
+        }
+
+        /*弹出框*/
+        .theme-popover-mask {
+            z-index: 9998;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: 0.4;
+            filter: alpha(opacity=40);
+            display: none;
+        }
+
+        .theme-popover {
+            z-index: 9999;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            background-color: #f3f3f4;
+            display: none;
+        }
+
+        .theme-poptit {
+            border-bottom: 1px solid #eef1f6;
+            padding: 15px;
+            position: relative;
+        }
+
+        .theme-poptit .close {
+            float: right;
+            color: #999;
+            padding: 5px;
+            margin: -2px -5px -5px;
+            font: bold 14px/14px simsun;
+            text-shadow: 0 1px 0 #ddd;
+        }
+    </style>
 </head>
 
 <body class="gray-bg">
@@ -36,7 +132,7 @@
         <div class="title-action">
             <a href="javascript:;" onclick="javascript:history.back(-1);" class="btn btn-primary">返回</a>
             <a href="javascript:;" type="submit" class="btn btn-primary">筛选</a>
-            <a href="javascript:;" class="btn btn-primary start-action">开始抽选</a>
+            <a href="javascript:;" class="btn btn-primary third-action">开始抽选</a>
         </div>
     </div>
 </div>
@@ -56,7 +152,7 @@
                                     <div class="row">
                                         <label class="col-sm-4 control-label">人员名称：</label>
                                         <div class="col-sm-8">
-                                            <input name="name" minlength="1" type="text" class="form-control" required
+                                            <input name="doubleRandomManagerName" minlength="1" type="text" class="form-control" required
                                                    aria-required="true">
                                         </div>
                                     </div>
@@ -67,7 +163,7 @@
                                     <div class="row">
                                         <label class="col-sm-4 control-label">所属单位：</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control m-b" name="account">
+                                            <select class="form-control m-b" name="doubleRandomManagerDepartment">
                                                 <option></option>
                                                 <option>万宁市本局</option>
                                                 <option>地方局</option>
@@ -83,7 +179,7 @@
                                     <div class="row">
                                         <label class="col-sm-4 control-label">每组人数：</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control m-b" name="account">
+                                            <select class="form-control m-b" name="doubleRandomManagerNumber">
                                                 <option></option>
                                                 <option>万宁市本局</option>
                                                 <option>地方局</option>
@@ -97,7 +193,7 @@
                                     <div class="row">
                                         <label class="col-sm-4 control-label">抽选率：</label>
                                         <div class="col-sm-8">
-                                            <div id="ionrange"></div>
+                                            <input id="ionrange" name="doubleRandomManagerRatio"/>
                                         </div>
                                     </div>
                                 </div>
@@ -145,71 +241,11 @@
                             <td>企业经营正常</td>
                             <td>123</td>
                         </tr>
-                        <tr>
-                            <td>914690062014889466</td>
-                            <td>万宁市万城建筑公司</td>
-                            <td>万宁市万城镇镇府院内</td>
-                            <td>苏德存</td>
-                            <td>15348892928</td>
-                            <td>住建局</td>
-                            <td>正常</td>
-                            <td>企业经营正常</td>
-                            <td>123</td>
-                        </tr>
-                        <tr>
-                            <td>914690062014889466</td>
-                            <td>万宁市万城建筑公司</td>
-                            <td>万宁市万城镇镇府院内</td>
-                            <td>苏德存</td>
-                            <td>15348892928</td>
-                            <td>住建局</td>
-                            <td>正常</td>
-                            <td>企业经营正常</td>
-                            <td>123</td>
-                        </tr>
-                        <tr>
-                            <td>914690062014889466</td>
-                            <td>万宁市万城建筑公司</td>
-                            <td>万宁市万城镇镇府院内</td>
-                            <td>苏德存</td>
-                            <td>15348892928</td>
-                            <td>住建局</td>
-                            <td>正常</td>
-                            <td>企业经营正常</td>
-                            <td>123</td>
-                        </tr>
-                        <tr>
-                            <td>914690062014889466</td>
-                            <td>万宁市万城建筑公司</td>
-                            <td>万宁市万城镇镇府院内</td>
-                            <td>苏德存</td>
-                            <td>15348892928</td>
-                            <td>住建局</td>
-                            <td>正常</td>
-                            <td>企业经营正常</td>
-                            <td>123</td>
-                        </tr>
-                        <tr>
-                            <td>914690062014889466</td>
-                            <td>万宁市万城建筑公司</td>
-                            <td>万宁市万城镇镇府院内</td>
-                            <td>苏德存</td>
-                            <td>15348892928</td>
-                            <td>住建局</td>
-                            <td>正常</td>
-                            <td>企业经营正常</td>
-                            <td>123</td>
-                        </tr>
                         </tbody>
                     </table>
                     <!--分页 S-->
                     <div class="pages clearfix">
                         <div id="Pagination"></div>
-                        <div class="searchPage">
-                            <span class="page-sum">共<strong class="allPage">15</strong>页</span>
-                            <span class="page-go">跳转<input type="text">页</span>
-                            <a href="javascript:;" class="page-btn">GO</a>
-                        </div>
                     </div>
                     <!--分页 E-->
                 </div>
@@ -218,102 +254,6 @@
     </div>
 </div>
 
-<style>
-    .fileWopr {
-        width: 600px;
-        height: 600px;
-    }
-
-    .wilq a {
-        font-size: 15px;
-        padding-right: 5px;
-    }
-
-    .h5Class {
-        padding: 0;
-        margin: 0;
-        height: 50px;
-        line-height: 50px;
-        text-indent: 20px;
-        font-size: 20px;
-        font-weight: 600;
-    }
-
-    .modal-worppar {
-        max-width: 1200px;
-        background: #fff;
-        border-radius: 5px;
-        margin: 30px auto;
-    }
-
-    .ibox-content table tr th,
-    .ibox-content table tr td {
-        text-align: center;
-        font-size: 14px;
-        height: 27px;
-        line-height: 27px;
-    }
-
-    .ibox-content table tr td a {
-        padding: 0 5px;
-    }
-
-    .titleCon {
-        margin-top: -10px;
-    }
-
-    .titleCon a i {
-        position: relative;
-        font-size: 25px;
-        color: #000;
-    }
-
-    .ibox-title {
-        margin-top: 10px;
-        border-width: 1px 0 0;
-    }
-
-    /*弹出框*/
-    .theme-popover-mask {
-        z-index: 9998;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #000;
-        opacity: 0.4;
-        filter: alpha(opacity=40);
-        display: none;
-    }
-
-    .theme-popover {
-        z-index: 9999;
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        margin: auto;
-        background-color: #f3f3f4;
-        display: none;
-    }
-
-    .theme-poptit {
-        border-bottom: 1px solid #eef1f6;
-        padding: 15px;
-        position: relative;
-    }
-
-    .theme-poptit .close {
-        float: right;
-        color: #999;
-        padding: 5px;
-        margin: -2px -5px -5px;
-        font: bold 14px/14px simsun;
-        text-shadow: 0 1px 0 #ddd;
-    }
-</style>
 
 <!-- 全局js -->
 <script src="/assets/js/jquery.min.js?v=2.1.4"></script>
@@ -333,9 +273,6 @@
         prettify: false,
         hasGrid: true
     });
-    $('.finish-action').click(function() {
-        location.href = "fourth.html";
-    });
 </script>
 <script>
     function autoScroll(obj) {
@@ -348,20 +285,12 @@
     $(function () {
         setInterval('autoScroll(".maquee")', 1);
     });
-    $('.start-action').click(function() {
-        //iframe窗
-        layer.open({
-            type: 2,
-            title: '双随机抽选',
-            area: ['500px', '300px'],
-            content: '/app/doublerandom/ing.html'
-        });
-    });
 </script>
 <!-- layer javascript -->
 <script src="/assets/js/plugins/layer/layer.min.js"></script>
 
 <!-- 自定义js -->
 <script src="/assets/js/content.js?v=1.0.0"></script>
+<script src="/app/doublerandom/doublerandom.controller.js" type="text/javascript"></script>
 </body>
 </html>
