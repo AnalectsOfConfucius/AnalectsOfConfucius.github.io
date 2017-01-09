@@ -2,9 +2,11 @@ $('.first-action').click(function () {
     var doubleRandomName = $('#first').find('input[name=doubleRandomName]').val();
     var doubleRandomNotary = $('#first').find('input[name=doubleRandomNotary]').val();
     var doubleRandomDate = $('#first').find('input[name=doubleRandomDate]').val();
+    var description = $('#first').find('input[name=description]').val();
     localStorage.setItem("doubleRandomName", doubleRandomName);
     localStorage.setItem("doubleRandomNotary", doubleRandomNotary);
     localStorage.setItem("doubleRandomDate", doubleRandomDate);
+    localStorage.setItem("description", description);
     console.log(doubleRandomName);
     location.href = "second.html";
 });
@@ -39,7 +41,7 @@ $('.third-action').click(function () {
         type: 2,
         title: '双随机抽选',
         area: ['500px', '300px'],
-        content: '/app/doublerandom/ing.html'
+        content: '/app/doublerandom/start/ing.html'
     });
 });
 $('.finish-action').click(function () {

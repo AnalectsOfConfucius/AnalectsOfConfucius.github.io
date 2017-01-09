@@ -15,10 +15,10 @@
     <link href="/assets/css/plugins/ionRangeSlider/ion.rangeSlider.css" rel="stylesheet">
     <link href="/assets/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
     <style>
-        .fileWopr {
-            width: 600px;
-            height: 600px;
-        }
+        /*table {
+            word-break: keep-all;
+            white-space: nowrap;
+        }*/
 
         .wilq a {
             font-size: 15px;
@@ -36,7 +36,7 @@
         }
 
         .modal-worppar {
-            max-width: 1200px;
+            max-width: 900px;
             background: #fff;
             border-radius: 5px;
             margin: 30px auto;
@@ -50,12 +50,15 @@
             line-height: 27px;
         }
 
-        .ibox-content table tr td a {
-            padding: 0 5px;
+        .ibox-content table tr th,
+        .ibox-content table tr td:last-child {
+            overflow: hidden;
+            word-break: keep-all;
+            white-space: nowrap;
         }
 
-        .titleCon {
-            margin-top: -10px;
+        .ibox-content table tr td a {
+            padding: 0 5px;
         }
 
         .titleCon a i {
@@ -68,50 +71,8 @@
             margin-top: 10px;
             border-width: 1px 0 0;
         }
-
-        /*弹出框*/
-        .theme-popover-mask {
-            z-index: 9998;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            opacity: 0.4;
-            filter: alpha(opacity=40);
-            display: none;
-        }
-
-        .theme-popover {
-            z-index: 9999;
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            margin: auto;
-            background-color: #f3f3f4;
-            display: none;
-        }
-
-        .theme-poptit {
-            border-bottom: 1px solid #eef1f6;
-            padding: 15px;
-            position: relative;
-        }
-
-        .theme-poptit .close {
-            float: right;
-            color: #999;
-            padding: 5px;
-            margin: -2px -5px -5px;
-            font: bold 14px/14px simsun;
-            text-shadow: 0 1px 0 #ddd;
-        }
     </style>
 </head>
-
 <body class="gray-bg">
 <div class="row wrapper border-bottom white-bg page-heading animated fadeInRight">
     <div class="col-sm-4">
@@ -145,14 +106,15 @@
                     <h4>抽查人员筛选条件</h4>
                 </div>
                 <div class="ibox-content">
-                    <form class="form-horizontal m-t" novalidate="novalidate">
+                    <form class="form-horizontal m-t" id="third" novalidate="novalidate">
                         <div class="row">
                             <div class="col-sm-5">
                                 <div class="form-group">
                                     <div class="row">
                                         <label class="col-sm-4 control-label">人员名称：</label>
                                         <div class="col-sm-8">
-                                            <input name="doubleRandomManagerName" minlength="1" type="text" class="form-control" required
+                                            <input name="doubleRandomManagerName" minlength="1" type="text"
+                                                   class="form-control" required
                                                    aria-required="true">
                                         </div>
                                     </div>
@@ -229,18 +191,7 @@
                             <th>说明</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <td>914690062014889466</td>
-                            <td>万宁市万城建筑公司</td>
-                            <td>万宁市万城镇镇府院内</td>
-                            <td>苏德存</td>
-                            <td>15348892928</td>
-                            <td>住建局</td>
-                            <td>正常</td>
-                            <td>企业经营正常</td>
-                            <td>123</td>
-                        </tr>
+                        <tbody id="tContent">
                         </tbody>
                     </table>
                     <!--分页 S-->
@@ -253,44 +204,20 @@
         </div>
     </div>
 </div>
-
-
 <!-- 全局js -->
 <script src="/assets/js/jquery.min.js?v=2.1.4"></script>
 <script src="/assets/js/bootstrap.min.js?v=3.3.6"></script>
 <script src="/assets/js/jquery.pagination.js"></script>
-
 <!-- IonRangeSlider -->
 <script src="/assets/js/plugins/ionRangeSlider/ion.rangeSlider.min.js"></script>
-<script>
-    $("#Pagination").pagination("150");
-    $("#ionrange").ionRangeSlider({
-        min: 0,
-        max: 100,
-        type: 'single',
-        step: 1,
-        postfix: "%",
-        prettify: false,
-        hasGrid: true
-    });
-</script>
-<script>
-    function autoScroll(obj) {
-        $(obj).find("tbody").animate({
-            marginTop: "-45px"
-        }, 5, function () {
-            $(this).css({marginTop: "0px"}).find("tr:first").appendTo(this);
-        })
-    }
-    $(function () {
-        setInterval('autoScroll(".maquee")', 1);
-    });
-</script>
 <!-- layer javascript -->
 <script src="/assets/js/plugins/layer/layer.min.js"></script>
-
 <!-- 自定义js -->
 <script src="/assets/js/content.js?v=1.0.0"></script>
-<script src="/app/doublerandom/doublerandom.controller.js" type="text/javascript"></script>
+<script src="/app/service/global.service.js"></script>
+<script src="/assets/js/juicer-min.js"></script>
+<script src="/app/service/ajax.service.js"></script>
+<script src="/app/doublerandom/doublerandom.controller.js"></script>
+<script src="/app/doublerandom/start/third.controller.js"></script>
 </body>
 </html>

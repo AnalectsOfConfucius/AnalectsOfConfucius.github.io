@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="/assets/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/assets/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="/assets/css/animate.css" rel="stylesheet">
+    <link href="/assets/css/style.css?v=4.1.0" rel="stylesheet">
+    <style>
+        /*table {
+            word-break: keep-all;
+            white-space: nowrap;
+        }*/
+
+        .wilq a {
+            font-size: 15px;
+            padding-right: 5px;
+        }
+
+        .h5Class {
+            padding: 0;
+            margin: 0;
+            height: 50px;
+            line-height: 50px;
+            text-indent: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .modal-worppar {
+            max-width: 900px;
+            background: #fff;
+            border-radius: 5px;
+            margin: 30px auto;
+        }
+
+        .ibox-content table tr th,
+        .ibox-content table tr td {
+            text-align: center;
+            font-size: 14px;
+            height: 27px;
+            line-height: 27px;
+        }
+
+        .ibox-content table tr th,
+        .ibox-content table tr td:last-child {
+            overflow: hidden;
+            word-break: keep-all;
+            white-space: nowrap;
+        }
+
+        .ibox-content table tr td a {
+            padding: 0 5px;
+        }
+
+        .titleCon a i {
+            position: relative;
+            font-size: 25px;
+            color: #000;
+        }
+
+        .ibox-title {
+            margin-top: 10px;
+            border-width: 1px 0 0;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <form class="form-horizontal text-center" style="font-size: 20px;">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">企业随机号</label>
+                    <div class="col-sm-8">
+                        <input id="business" style="text-align:center; font-weight: bold; font-size: 25px; color: red;" type="email"
+                               value="123113******213121" class="form-control" disabled>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">人员随机号</label>
+                    <div class="col-sm-8">
+                        <input id="people" style="text-align:center; font-weight: bold; font-size: 25px; color: red;" type="text"
+                               value="123113******213121" class="form-control" disabled>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        <button class="btn btn-primary finish-action" type="submit" disabled="true">完成抽选</button>
+                        <input type="text" id="doubleRandomId" hidden>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- 全局js -->
+<script src="/assets/js/jquery.min.js?v=2.1.4"></script>
+<script src="/assets/js/bootstrap.min.js?v=3.3.6"></script>
+<!-- 自定义js -->
+<script src="/assets/js/content.js?v=1.0.0"></script>
+<script src="/app/service/global.service.js"></script>
+<script src="/app/service/ajax.service.js"></script>
+<script>
+    function autoScroll() {
+        $('#business').val(Math.floor(Math.random() * 100000) + "******" + Math.floor(Math.random() * 100000));
+        $('#people').val(Math.floor(Math.random() * 100000) + "******" + Math.floor(Math.random() * 100000));
+    }
+    $(function () {
+        var interval = setInterval('autoScroll()', 1);
+        $.ajax({
+            url: window.apiPoint + 'double-randoms/start',
+            type: 'POST',
+            async: true,
+            dataType: 'json',
+            success: function (data) {
+                if (data) {
+                    $('#doubleRandomId').val(data.id);
+                    clearInterval(interval);
+                    $('#business').val("公司抽选已完成");
+                    $('#people').val("人员抽选已完成");
+                    $('.finish-action').attr('disabled', false);
+                }
+            },
+        });
+    })
+    $('.finish-action').click(function () {
+        var doubleRandomId = $('#doubleRandomId').val();
+        parent.location.href = "/app/doublerandom/start/fourth.html?id=" + doubleRandomId;
+    });
+</script>
+</body>
+</html>

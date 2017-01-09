@@ -3,20 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <link rel="shortcut icon" href="/favicon.ico">
     <link href="/assets/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
     <link href="/assets/css/font-awesome.css?v=4.4.0" rel="stylesheet">
     <link href="/assets/css/animate.css" rel="stylesheet">
     <link href="/assets/css/pagination.css" rel="stylesheet">
     <link href="/assets/css/style.css?v=4.1.0" rel="stylesheet">
     <style>
-        .fileWopr {
-            width: 600px;
-            height: 600px;
-        }
+        /*table {
+            word-break: keep-all;
+            white-space: nowrap;
+        }*/
 
         .wilq a {
             font-size: 15px;
@@ -34,7 +32,7 @@
         }
 
         .modal-worppar {
-            max-width: 1200px;
+            max-width: 900px;
             background: #fff;
             border-radius: 5px;
             margin: 30px auto;
@@ -48,12 +46,15 @@
             line-height: 27px;
         }
 
-        .ibox-content table tr td a {
-            padding: 0 5px;
+        .ibox-content table tr th,
+        .ibox-content table tr td:last-child {
+            overflow: hidden;
+            word-break: keep-all;
+            white-space: nowrap;
         }
 
-        .titleCon {
-            margin-top: -10px;
+        .ibox-content table tr td a {
+            padding: 0 5px;
         }
 
         .titleCon a i {
@@ -66,53 +67,11 @@
             margin-top: 10px;
             border-width: 1px 0 0;
         }
-
-        /*弹出框*/
-        .theme-popover-mask {
-            z-index: 9998;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            opacity: 0.4;
-            filter: alpha(opacity=40);
-            display: none;
-        }
-
-        .theme-popover {
-            z-index: 9999;
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            margin: auto;
-            background-color: #f3f3f4;
-            display: none;
-        }
-
-        .theme-poptit {
-            border-bottom: 1px solid #eef1f6;
-            padding: 15px;
-            position: relative;
-        }
-
-        .theme-poptit .close {
-            float: right;
-            color: #999;
-            padding: 5px;
-            margin: -2px -5px -5px;
-            font: bold 14px/14px simsun;
-            text-shadow: 0 1px 0 #ddd;
-        }
     </style>
 </head>
 <body class="gray-bg">
-
 <div class="row wrapper border-bottom white-bg page-heading animated fadeInRight">
-    <div class="col-sm-4">
+    <div class="col-sm-6">
         <h2>双随机抽选</h2>
         <ol class="breadcrumb">
             <li>
@@ -129,7 +88,7 @@
             </li>
         </ol>
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-6">
         <div class="title-action">
             <a href="javascript:;" onclick="javascript:history.back(-1);" class="btn btn-primary">返回</a>
             <a href="javascript:;" type="submit" class="btn btn-primary">保存</a>
@@ -153,87 +112,15 @@
                         <thead>
                         <tr>
                             <th>编号</th>
-                            <th>方案名称</th>
-                            <th>检查企业数量</th>
-                            <th>执法人员数量</th>
-                            <th>进度</th>
+                            <th>公司名称</th>
+                            <th>公司注册号</th>
+                            <th>执法人员</th>
+                            <th>检查内容</th>
                             <th>说明</th>
                             <th>操作</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>80%</td>
-                            <td>万宁</td>
-                            <td>
-                                <a href="javascript:;" class="update-action">修改</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>80%</td>
-                            <td>万宁</td>
-                            <td>
-                                <a href="javascript:;" class="update-action">修改</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>80%</td>
-                            <td>万宁</td>
-                            <td>
-                                <a href="javascript:;" class="update-action">修改</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>80%</td>
-                            <td>万宁</td>
-                            <td>
-                                <a href="javascript:;" class="update-action">修改</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>80%</td>
-                            <td>万宁</td>
-                            <td>
-                                <a href="javascript:;" class="update-action">修改</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>80%</td>
-                            <td>万宁</td>
-                            <td>
-                                <a href="javascript:;" class="update-action">修改</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
+                        <tbody id="tContent">
                         </tbody>
                     </table>
                     <!--分页 S-->
@@ -251,11 +138,14 @@
 <script src="/assets/js/jquery.min.js?v=2.1.4"></script>
 <script src="/assets/js/bootstrap.min.js?v=3.3.6"></script>
 <script src="/assets/js/jquery.pagination.js"></script>
-<script>
-    $("#Pagination").pagination("150");
-</script>
 
 <!-- 自定义js -->
 <script src="/assets/js/content.js?v=1.0.0"></script>
+
+<script src="/app/service/global.service.js"></script>
+<script src="/assets/js/juicer-min.js"></script>
+<script src="/app/service/ajax.service.js"></script>
+<script src="/app/doublerandom/doublerandom.controller.js"></script>
+<script src="/app/doublerandom/start/fourth.controller.js"></script>
 </body>
 </html>
