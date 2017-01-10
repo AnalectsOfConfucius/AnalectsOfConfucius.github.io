@@ -3,9 +3,9 @@ html {
 }
 
 body.signin {
-    background: #18c8f6;
     height: auto;
-    background: url("../img/login-background.jpg") no-repeat center fixed;
+    background: #8d9fe9;
+    /*background: url("../img/login-background.jpg") no-repeat center fixed;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

@@ -3,17 +3,31 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <link rel="shortcut icon" href="favicon.ico">
-    <link href="/assets/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
-    <link href="/assets/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/font-awesome.css" rel="stylesheet">
     <link href="/assets/css/plugins/iCheck/custom.css" rel="stylesheet">
     <link href="/assets/css/animate.css" rel="stylesheet">
-    <link href="/assets/css/style.css?v=4.1.0" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/assets/css/plugins/webuploader/webuploader.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/demo/webuploader-demo.css">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/plugins/webuploader/webuploader.css" rel="stylesheet">
+    <link href="/assets/css/demo/webuploader-demo.css" rel="stylesheet">
+    <style>
+        .h5Class {
+            padding: 0;
+            margin: 0;
+            height: 50px;
+            line-height: 50px;
+            text-indent: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .modal-worppar {
+            max-width: 900px;
+            background: #fff;
+            border-radius: 5px;
+            margin: 30px auto;
+        }
+    </style>
 </head>
 <body class="gray-bg">
 <div class="wrapper wrapper-content">
@@ -21,7 +35,8 @@
         <div class="col-sm-12 animated fadeInRight">
             <div class="mail-box-header">
                 <div class="pull-right tooltip-demo">
-                    <a href="javascript:;" onclick="javascript:history.back(-1);" class="btn btn-white btn-sm" title="返回上一页"><i class="fa fa-reply"></i> 返回</a>
+                    <a href="javascript:;" onclick="javascript:history.back(-1);" class="btn btn-white btn-sm"
+                       title="返回上一页"><i class="fa fa-reply"></i> 返回</a>
                     <a href="mail_detail.html#" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top"
                        title="打印任务"><i class="fa fa-print"></i> 打印</a>
                 </div>
@@ -61,10 +76,12 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">结果处理：</label>
                             <div class="col-sm-10">
-                                <select class="form-control m-b" name="account">
+                                <select class="form-control m-b deal" name="account">
                                     <option></option>
-                                    <option>万宁市本局</option>
-                                    <option>地方局</option>
+                                    <option value="0">正常</option>
+                                    <option value="1">列入异常名录</option>
+                                    <option value="2">责令整改</option>
+                                    <option value="3">转案件处理</option>
                                 </select>
                             </div>
                         </div>
@@ -101,7 +118,7 @@
                                 </div>
                             </div>
                         </div>
-                    </form
+                    </form>
                 </div>
                 <div class="mail-body text-right tooltip-demo">
                     <a class="btn btn-primary" href="mail_compose.html"><i class="fa fa-arrow-right"></i> 下一步</a>
@@ -111,32 +128,389 @@
         </div>
     </div>
 </div>
+<!--列入异常名录 S-->
+<div class="modal fade" id="myModal1" tabindex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-worppar">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="h5Class">列入异常名录</h2>
+                <a type="button" class="btn btn-primary" data-dismiss="modal"
+                   style="position:absolute; right: 31px; top: 10px;">关闭</a>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" novalidate="novalidate">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">企业名称：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">注册号：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">注册地址：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">经营地址：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">所属区域：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account" disabled>
+                                    <option></option>
+                                    <option>万宁市本局</option>
+                                    <option>地方局</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">所属监管机关：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account" disabled>
+                                    <option></option>
+                                    <option>万宁市本局</option>
+                                    <option>地方局</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">公司类型：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account" disabled>
+                                    <option></option>
+                                    <option>万宁市</option>
+                                    <option>地方</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">行业类型：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account" disabled>
+                                    <option></option>
+                                    <option>万宁市</option>
+                                    <option>地方</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">法人代表：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">联系电话：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">登记状态：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account" disabled>
+                                    <option></option>
+                                    <option>黑名单</option>
+                                    <option>白名单</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" id="data">
+                            <label class="col-sm-2 control-label">成立日期：</label>
+                            <div class="col-sm-10">
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">备注信息：</label>
+                            <div class="col-sm-10">
+                                <textarea id="comment" name="comment" class="form-control" required
+                                          aria-required="true" disabled></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
 
-<!-- 全局js -->
+            </div>
+        </div>
+    </div>
+</div>
+<!--列入异常名录 E-->
+<!--责令整改 S-->
+<div class="modal fade" id="myModal2" tabindex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-worppar">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="h5Class">责令整改</h2>
+                <a type="button" class="btn btn-primary" data-dismiss="modal"
+                   style="position:absolute; right: 31px; top: 10px;">关闭</a>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" novalidate="novalidate">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">企业名称：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">注册号：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">注册地址：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">经营地址：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">所属区域：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account" disabled>
+                                    <option></option>
+                                    <option>万宁市本局</option>
+                                    <option>地方局</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">所属监管机关：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account" disabled>
+                                    <option></option>
+                                    <option>万宁市本局</option>
+                                    <option>地方局</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">公司类型：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account" disabled>
+                                    <option></option>
+                                    <option>万宁市</option>
+                                    <option>地方</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">行业类型：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account" disabled>
+                                    <option></option>
+                                    <option>万宁市</option>
+                                    <option>地方</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">法人代表：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">联系电话：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">登记状态：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account" disabled>
+                                    <option></option>
+                                    <option>黑名单</option>
+                                    <option>白名单</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" id="data">
+                            <label class="col-sm-2 control-label">成立日期：</label>
+                            <div class="col-sm-10">
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">备注信息：</label>
+                            <div class="col-sm-10">
+                                <textarea id="comment" name="comment" class="form-control" required
+                                          aria-required="true" disabled></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--责令整改 E-->
+<!--转案件处理 S-->
+<div class="modal fade" id="myModal3" tabindex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-worppar">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="h5Class">转案件处理</h2>
+                <a type="button" class="btn btn-primary" data-dismiss="modal"
+                   style="position:absolute; right: 31px; top: 10px;">关闭</a>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" novalidate="novalidate">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">企业名称：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">注册号：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">注册地址：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">经营地址：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">所属区域：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account" disabled>
+                                    <option></option>
+                                    <option>万宁市本局</option>
+                                    <option>地方局</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">所属监管机关：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account" disabled>
+                                    <option></option>
+                                    <option>万宁市本局</option>
+                                    <option>地方局</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">公司类型：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account" disabled>
+                                    <option></option>
+                                    <option>万宁市</option>
+                                    <option>地方</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">行业类型：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account" disabled>
+                                    <option></option>
+                                    <option>万宁市</option>
+                                    <option>地方</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">法人代表：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">联系电话：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">登记状态：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account" disabled>
+                                    <option></option>
+                                    <option>黑名单</option>
+                                    <option>白名单</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" id="data">
+                            <label class="col-sm-2 control-label">成立日期：</label>
+                            <div class="col-sm-10">
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">备注信息：</label>
+                            <div class="col-sm-10">
+                                <textarea id="comment" name="comment" class="form-control" required
+                                          aria-required="true" disabled></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--转案件处理 E-->
 <script src="/assets/js/jquery.min.js?v=2.1.4"></script>
 <script src="/assets/js/bootstrap.min.js?v=3.3.6"></script>
-
-<!-- 自定义js -->
 <script src="/assets/js/content.js?v=1.0.0"></script>
-
-<!-- Web Uploader -->
-<script type="text/javascript">
-    // 添加全局站点信息
-    var BASE_URL = '/assets/js/plugins/webuploader';
-</script>
 <script src="/assets/js/plugins/webuploader/webuploader.min.js"></script>
-
 <script src="/assets/js/demo/webuploader-demo.js"></script>
-
-<!-- iCheck -->
 <script src="/assets/js/plugins/iCheck/icheck.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('.i-checks').iCheck({
-            checkboxClass: 'icheckbox_square-green',
-            radioClass: 'iradio_square-green',
-        });
-    });
-</script>
 </body>
 </html>
