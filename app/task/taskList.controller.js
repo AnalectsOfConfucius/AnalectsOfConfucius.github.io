@@ -65,7 +65,7 @@ function detailOne(id) {
 };
 
 function initPage(page, size) {
-    var url = window.apiPoint + 'tasks';
+    var url = window.apiPoint + 'tasks/taskProject';
     console.log(url);
     var dataQuery = {
         page: page,
