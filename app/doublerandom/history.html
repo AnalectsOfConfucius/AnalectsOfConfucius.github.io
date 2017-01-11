@@ -107,6 +107,7 @@
                             <th>抽查序号</th>
                             <th>抽查任务名称</th>
                             <th>抽查时间</th>
+                            <th>公证人</th>
                             <th>抽查主体数量</th>
                             <th>抽查的市场主体类型</th>
                             <th>操作</th>
@@ -125,12 +126,12 @@
         </div>
     </div>
 </div>
-<!--添加 S-->
+<!--修改 S-->
 <div class="modal fade" id="myModal0" tabindex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-worppar">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="h5Class">导入双随机任务</h2>
+                <h2 class="h5Class">修改双随机抽查任务</h2>
                 <a type="button" class="btn btn-primary" data-dismiss="modal"
                    style="position:absolute; right: 31px; top: 10px;">关闭</a>
                 <div class="ibox-content">
@@ -138,8 +139,8 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">方案名称：</label>
                             <div class="col-sm-10">
-                                <input name="name" minlength="1" type="text" class="form-control" required
-                                       aria-required="true">
+                                <input name="name" minlength="1" type="text" value="${name}" class="form-control" required
+                                       aria-required="true" >
                             </div>
                         </div>
                         <div class="form-group">
@@ -147,13 +148,6 @@
                             <div class="col-sm-10">
                                 <input name="name" minlength="1" type="text" class="form-control" required
                                        aria-required="true">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">导入文件：</label>
-                            <div class="col-sm-10">
-                                <input id="file-pretty" type="file" class="form-control">
-                                <span class="help-block m-b-none"><a href="javascript:;">下载导入模板</a></span>
                             </div>
                         </div>
                         <div class="form-group">
@@ -165,7 +159,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-2 pb20">
-                                <a class="btn btn-primary import-action" type="submit">导入</a>
+                                <a class="btn btn-primary import-action" type="submit">保存</a>
                             </div>
                         </div>
                     </form>
@@ -175,7 +169,7 @@
         </div>
     </div>
 </div>
-<!--添加 E-->
+<!--修改 E-->
 <!--详情 S-->
 <div class="modal fade" id="myModal2" tabindex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-worppar">
@@ -329,6 +323,7 @@
         '<td>${it.id}</td>',
         '<td>${it.task_name}</td>',
         '<td>${it.check_time}</td>',
+        '<td>${it.check_witness}</td>',
         '<td>${it.check_market_num}</td>',
         '<td>${it.check_market_type}</td>',
         '<td>',
@@ -344,6 +339,7 @@
                 id: 1,
                 task_name:"营业执照检查",
                 check_time:"2017-01-11",
+                check_witness:"张三",
                 check_market_num:3,
                 check_market_type:"农林渔牧业",
             },
@@ -351,6 +347,7 @@
                 id: 2,
                 task_name:"营业执照检查",
                 check_time:"2017-01-11",
+                check_witness:"李四",
                 check_market_num:2,
                 check_market_type:"农林渔牧业",
             },
@@ -358,6 +355,7 @@
                 id: 3,
                 task_name:"营业执照检查",
                 check_time:"2017-01-11",
+                check_witness:"王五",
                 check_market_num:2,
                 check_market_type:"农林渔牧业",
             },
@@ -365,6 +363,7 @@
                 id: 4,
                 task_name:"营业执照检查",
                 check_time:"2017-01-11",
+                check_witness:"马六",
                 check_market_num:3,
                 check_market_type:"农林渔牧业",
             },

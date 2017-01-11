@@ -122,6 +122,50 @@
         </div>
     </div>
 </div>
+<!--修改 S-->
+<div class="modal fade" id="myModal0" tabindex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-worppar">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="h5Class">修改双随机抽查结果</h2>
+                <a type="button" class="btn btn-primary" data-dismiss="modal"
+                   style="position:absolute; right: 31px; top: 10px;">关闭</a>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" novalidate="novalidate">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">方案名称：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" value="${name}" class="form-control" required
+                                       aria-required="true" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">公正人：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">备注信息：</label>
+                            <div class="col-sm-10">
+                                <textarea id="comment" name="comment" class="form-control" required
+                                          aria-required="true"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2 pb20">
+                                <a class="btn btn-primary import-action" type="submit">保存</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--修改 E-->
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-md-12">
@@ -188,81 +232,15 @@
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th>编号</th>
-                            <th>方案名称</th>
-                            <th>检查企业数量</th>
-                            <th>执法人员数量</th>
-                            <th>进度</th>
-                            <th>说明</th>
+                            <th>序号</th>
+                            <th>任务名称</th>
+                            <th>企业名称</th>
+                            <th>执法人员名称</th>
+                            <th>检查日期</th>
                             <th>操作</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>80%</td>
-                            <td>万宁</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">清单</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>80%</td>
-                            <td>万宁</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">清单</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>80%</td>
-                            <td>万宁</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">清单</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>80%</td>
-                            <td>万宁</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">清单</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>80%</td>
-                            <td>万宁</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">清单</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
+                        <tbody id="tContent">
                         </tbody>
                     </table>
                     <!--分页 S-->
@@ -286,6 +264,7 @@
 <script src="/assets/js/jquery.min.js?v=2.1.4"></script>
 <script src="/assets/js/bootstrap.min.js?v=3.3.6"></script>
 
+<script src="/assets/js/juicer-min.js"></script>
 <script src="/assets/js/jquery.pagination.js"></script>
 <script src="/assets/js/plugins/sweetalert/sweetalert.min.js"></script>
 <script src="/assets/js/plugins/chosen/chosen.jquery.min.js" type="text/javascript"></script>
@@ -312,6 +291,58 @@
                 }
             });
     });
+
+    var tpl = [
+        '{@each companies as it,index}',
+        '<tr>',
+        '<td>${it.id}</td>',
+        '<td>${it.task_name}</td>',
+        '<td>${it.company_name}</td>',
+        '<td>${it.man_name}</td>',
+        '<td>${it.check_time}</td>',
+        '<td>',
+        '<a href="javascript:;" data-toggle="modal" data-target="#myModal0">修改</a>',
+        '<a href="javascript:;" class="delete-action">删除</a>',
+        '</td>',
+        '</tr>',
+        '{@/each}'].join('');
+    var data = {
+        companies: [
+            {
+                id: 1,
+                task_name:"营业执照检查",
+                company_name:"万宁后安汤粉",
+                man_name:"王琦，逍遥",
+                check_time:"2017-01-11",
+            },
+            {
+                id: 2,
+                task_name:"营业执照检查",
+                company_name:"万宁后安汤粉",
+                man_name:"王琦，逍遥",
+                check_time:"2017-01-11",
+            },
+            {
+                id: 3,
+                task_name:"营业执照检查",
+                company_name:"万宁后安汤粉",
+                man_name:"王琦，逍遥",
+                check_time:"2017-01-11",
+            },
+            {
+                id: 4,
+                task_name:"营业执照检查",
+                company_name:"万宁后安汤粉",
+                man_name:"王琦，逍遥",
+                check_time:"2017-01-11",
+            },
+
+        ]
+    };
+    var html = juicer(tpl, data);
+    console.log(html);
+    $('#tContent').html(html);
+
 </script>
 
 <!-- 自定义js -->
