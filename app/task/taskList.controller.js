@@ -80,11 +80,16 @@ function initPage(page, size) {
         data: dataQuery,
         async: true,
         dataType: 'json',
-        success: function (data) {
+        success: function (data, textStatus, request) {
             if (data) {
-                console.log(data);
+                var totalCount = request.getResponseHeader('X-Total-Count');
+                var totalPage = parseInt(totalCount/dataQuery.size);
+                console.log(totalPage);
+                var result = {};
+                result["its"] = data;
+                console.log(result);
                 var tpl = [
-                    '{@each tasks as it,index}',
+                    '{@each its as it,index}',
                     '<tr>',
                     '<td>${it.id}</td>',
                     '<td>${it.taskName}</td>',
@@ -97,9 +102,9 @@ function initPage(page, size) {
                     '</td>',
                     '</tr>',
                     '{@/each}'].join('');
-                var html = juicer(tpl, data);
+                var html = juicer(tpl, result);
                 $('#tContent').html(html);
-                $("#Pagination").pagination(data.totalPages, {
+                $("#Pagination").pagination(totalPage, {
                     'current_page': dataQuery.page,
                     'callback': pageSelect,
                 });

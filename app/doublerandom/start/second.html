@@ -122,12 +122,9 @@
                             <div class="col-sm-5">
                                 <div class="form-group">
                                     <div class="row">
-                                        <label class="col-sm-4 control-label">所属区域：</label>
+                                        <label class="col-sm-4 control-label">行业类型：</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control m-b" name="doubleRandomCompanyArea">
-                                                <option></option>
-                                                <option>万宁市本局</option>
-                                                <option>地方局</option>
+                                            <select class="form-control m-b" id="industry" name="doubleRandomCompanyIndustryType">
                                             </select>
                                         </div>
                                     </div>
@@ -140,10 +137,7 @@
                                     <div class="row">
                                         <label class="col-sm-4 control-label">企业类型：</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control m-b" name="doubleRandomCompanyType">
-                                                <option></option>
-                                                <option>万宁市本局</option>
-                                                <option>地方局</option>
+                                            <select class="form-control m-b" id="company" name="doubleRandomCompanyType">
                                             </select>
                                         </div>
                                     </div>
@@ -154,10 +148,7 @@
                                     <div class="row">
                                         <label class="col-sm-4 control-label">监管机关：</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control m-b" name="doubleRandomCompanySupervisory">
-                                                <option></option>
-                                                <option>万宁市本局</option>
-                                                <option>地方局</option>
+                                            <select class="form-control m-b" id="department" name="doubleRandomCompanySupervisory">
                                             </select>
                                         </div>
                                     </div>
@@ -168,13 +159,11 @@
                             <div class="col-sm-5">
                                 <div class="form-group">
                                     <div class="row">
-                                        <label class="col-sm-4 control-label">行业类型：</label>
+                                        <label class="col-sm-4 control-label">抽选说明：</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control m-b" name="doubleRandomCompanyIndustryType">
-                                                <option></option>
-                                                <option>万宁市本局</option>
-                                                <option>地方局</option>
-                                            </select>
+                                            <input minlength="2" type="text" name="companyDescription"
+                                                   class="form-control" required
+                                                   aria-required="true">
                                         </div>
                                     </div>
                                 </div>

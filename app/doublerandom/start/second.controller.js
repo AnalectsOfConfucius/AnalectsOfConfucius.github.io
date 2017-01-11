@@ -1,4 +1,58 @@
 $(function () {
+    $.ajax({
+        url: window.apiPoint + 'company-types',
+        type: 'GET',
+        async: true,
+        dataType: 'json',
+        success: function (data) {
+            var result = {};
+            result['its'] = data;
+            var tpl = [
+                '<option></option>',
+                '{@each its as it,index}',
+                '<option value="${it.id}">${it.typeName}</option>',
+                '{@/each}'].join('');
+            var html = juicer(tpl, result);
+            $('#company').html(html);
+            console.log(result);
+        }
+    });
+    $.ajax({
+        url: window.apiPoint + 'industry-types',
+        type: 'GET',
+        async: true,
+        dataType: 'json',
+        success: function (data) {
+            var result = {};
+            result['its'] = data;
+            var tpl = [
+                '<option></option>',
+                '{@each its as it,index}',
+                '<option value="${it.id}">${it.typeName}</option>',
+                '{@/each}'].join('');
+            var html = juicer(tpl, result);
+            $('#industry').html(html);
+            console.log(result);
+        }
+    });
+    $.ajax({
+        url: window.apiPoint + 'lawenforce-departments',
+        type: 'GET',
+        async: true,
+        dataType: 'json',
+        success: function (data) {
+            var result = {};
+            result['its'] = data;
+            var tpl = [
+                '<option></option>',
+                '{@each its as it,index}',
+                '<option value="${it.id}">${it.departmentName}</option>',
+                '{@/each}'].join('');
+            var html = juicer(tpl, result);
+            $('#department').html(html);
+            console.log(result);
+        }
+    });
     $("#ionrange").ionRangeSlider({
         min: 0,
         max: 100,
