@@ -104,12 +104,11 @@
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th>编号</th>
-                            <th>方案名称</th>
-                            <th>检查企业数量</th>
-                            <th>执法人员数量</th>
-                            <th>进度</th>
-                            <th>说明</th>
+                            <th>抽查序号</th>
+                            <th>抽查任务名称</th>
+                            <th>抽查时间</th>
+                            <th>抽查主体数量</th>
+                            <th>抽查的市场主体类型</th>
                             <th>操作</th>
                         </tr>
                         </thead>
@@ -282,68 +281,15 @@
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th>编号</th>
-                            <th>任务清单</th>
-                            <th>具体内容</th>
-                            <th>说明</th>
+                            <th>抽查序号</th>
+                            <th>抽查任务名称</th>
+                            <th>抽查时间</th>
+                            <th>抽查主体数量</th>
+                            <th>抽查的市场主体类型</th>
                             <th>操作</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2_1">法律法规</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">清单</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">清单</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">清单</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>行政执法</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">查看</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal2">清单</a>
-                                <a href="javascript:;" class="delete-action">删除</a>
-                            </td>
-                        </tr>
+                        <tbody id="tContent">
                         </tbody>
                     </table>
                 </div>
@@ -464,6 +410,30 @@
             html: true,
         });
     });
+    var tpl = [
+        '{@each companies as it,index}',
+        '<tr>',
+        '<td>${it.id}</td>',
+        '<td>',
+        '<a href="javascript:;" data-toggle="modal" data-target="#myModal1">详情</a>',
+        '<a href="javascript:;" data-toggle="modal" data-target="#myModal2">修改</a>',
+        '<a href="javascript:;" class="delete-action">删除</a>',
+        '</td>',
+        '</tr>',
+        '{@/each}'].join('');
+    var data = {
+        companies: [
+            {
+                id: 1
+            },
+            {
+                id: 2
+            }
+        ]
+    };
+    var html = juicer(tpl, data);
+    console.log(html);
+    $('#tContent').html(html);
 
 </script>
 </body>
