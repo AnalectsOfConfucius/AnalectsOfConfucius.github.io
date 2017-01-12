@@ -3,11 +3,71 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
     <link href="/assets/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
     <link href="/assets/css/font-awesome.css?v=4.4.0" rel="stylesheet">
     <link href="/assets/css/animate.css" rel="stylesheet">
     <link href="/assets/css/pagination.css" rel="stylesheet">
     <link href="/assets/css/style.css?v=4.1.0" rel="stylesheet">
+    <style>
+        /*table {
+            word-break: keep-all;
+            white-space: nowrap;
+        }*/
+
+        .wilq a {
+            font-size: 15px;
+            padding-right: 5px;
+        }
+
+        .h5Class {
+            padding: 0;
+            margin: 0;
+            height: 50px;
+            line-height: 50px;
+            text-indent: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .modal-worppar {
+            max-width: 900px;
+            background: #fff;
+            border-radius: 5px;
+            margin: 30px auto;
+        }
+
+        .ibox-content table tr th,
+        .ibox-content table tr td {
+            text-align: center;
+            font-size: 14px;
+            height: 27px;
+            line-height: 27px;
+        }
+
+        .ibox-content table tr th,
+        .ibox-content table tr td:last-child {
+            overflow: hidden;
+            word-break: keep-all;
+            white-space: nowrap;
+        }
+
+        .ibox-content table tr td a {
+            padding: 0 5px;
+        }
+
+        .titleCon a i {
+            position: relative;
+            font-size: 25px;
+            color: #000;
+        }
+
+        .ibox-title {
+            margin-top: 10px;
+            border-width: 1px 0 0;
+        }
+    </style>
 </head>
 <body class="gray-bg">
 <div class="row wrapper border-bottom white-bg page-heading animated fadeInRight">
@@ -31,10 +91,11 @@
     <div class="col-sm-6">
         <div class="title-action">
             <a href="javascript:;" onclick="javascript:history.back(-1);" class="btn btn-primary">返回</a>
-            <a href="javascript:;" type="submit" class="btn btn-primary">打印</a>
+            <a href="javascript:;" type="submit" class="btn btn-primary">保存</a>
         </div>
     </div>
 </div>
+
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-md-12">
@@ -72,10 +133,15 @@
         </div>
     </div>
 </div>
+
+<!-- 全局js -->
 <script src="/assets/js/jquery.min.js?v=2.1.4"></script>
 <script src="/assets/js/bootstrap.min.js?v=3.3.6"></script>
 <script src="/assets/js/jquery.pagination.js"></script>
+
+<!-- 自定义js -->
 <script src="/assets/js/content.js?v=1.0.0"></script>
+
 <script src="/app/service/global.service.js"></script>
 <script src="/assets/js/juicer-min.js"></script>
 <script src="/app/service/ajax.service.js"></script>
