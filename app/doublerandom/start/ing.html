@@ -129,6 +129,8 @@
         var doubleRandomManagerDepartment = localStorage.getItem("doubleRandomManagerDepartment");
         var doubleRandomManagerRatio = localStorage.getItem("doubleRandomManagerRatio");
         var description = companyDescription + "||" + managerDescription;
+        console.log(tasks.toString());
+        tasks = tasks.replace(/,/, "|");
         var dataPost = {
             doubleRandomName: doubleRandomName,
             doubleRandomNotary: doubleRandomNotary,
@@ -143,9 +145,10 @@
             doubleRandomManagerRatio: doubleRandomManagerRatio,
             description: description,
             doubleRandomManagerNumber: 2,
+            tasksString: tasks
         };
         $.ajax({
-            url: window.apiPoint + 'double-randoms/start?tasks=' + tasks,
+            url: window.apiPoint + 'double-randoms/start',
             type: 'POST',
             async: true,
             data: JSON.stringify(dataPost),
