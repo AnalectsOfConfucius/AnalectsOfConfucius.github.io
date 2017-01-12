@@ -1,31 +1,24 @@
 $(function () {
-    $('.input-group.date').datepicker({
-        todayBtn: "linked",
-        keyboardNavigation: false,
-        forceParse: false,
-        calendarWeeks: true,
-        autoclose: true
-    });
+    $('.chosen-select').chosen({});
     $.ajax({
-        url: window.apiPoint + 'tasks/all',
+        url: window.apiPoint + 'tasks',
         type: 'GET',
-        async: false,
+        async: true,
         dataType: 'json',
         success: function (data) {
             if (data) {
                 console.log(data);
-                var result = {};
-                result["its"] = data;
+                data["tasks"] = {}
                 var tpl = [
                     '<option value=""></option>',
-                    '{@each its as it,index}',
-                    '<option value="${it.id}">${it.taskName}</option>',
+                    '{@each doubleRandomResults as it,index}',
+                    '<optgroup label="商标检查">',
+                    '<option>商标违规</option>',
+                    '</optgroup>',
                     '{@/each}'].join('');
-                var html = juicer(tpl, result);
-                console.log(html);
+                var html = juicer(tpl, data);
                 $('#tContent').html(html);
             }
         },
     });
-    $('.chosen-select').chosen({});
 });
