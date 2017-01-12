@@ -77,16 +77,6 @@
     </style>
 </head>
 <body class="gray-bg">
-<div class="row wrapper border-bottom white-bg page-heading animated fadeInRight">
-    <div class="col-sm-4">
-        <h2>任务清单</h2>
-        <ol class="breadcrumb">
-            <li>
-                <strong>项目列表</strong>
-            </li>
-        </ol>
-    </div>
-</div>
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-md-12">
@@ -111,10 +101,9 @@
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th>编号</th>
-                            <th>项目</th>
-                            <th>检查主体</th>
-                            <th>说明</th>
+                            <th>序号</th>
+                            <th>检查项目</th>
+                            <th>备注</th>
                             <th>操作</th>
                         </tr>
                         </thead>
@@ -175,6 +164,32 @@
     </div>
 </div>
 <!--添加 E-->
+<div class="modal fade" id="myModal2" tabindex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-worppar">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="h5Class">任务详情</h2>
+                <a type="button" class="btn btn-primary" data-dismiss="modal"
+                   style="position:absolute; right: 31px; top: 10px;">关闭</a>
+                <div class="ibox-content">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>子序号</th>
+                            <th>子项目</th>
+                            <th>检查主体</th>
+                            <th>检查内容</th>
+                            <th>检查依据</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tContent1">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div
 <!--跟踪 S-->
 <div class="modal fade" id="myModal3" tabindex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-worppar">
@@ -390,6 +405,192 @@
 <script src="/assets/js/plugins/datapicker/bootstrap-datepicker.js"></script>
 <script src="/app/service/global.service.js"></script>
 <script src="/app/service/ajax.service.js"></script>
-<script src="/app/task/projectList.controller.js"></script>
+<script>
+    $ (function () {
+        $('.delete-action').click(function () {
+            swal({
+                    title: "您确定要删除这条信息吗",
+                    text: "删除后将无法恢复，请谨慎操作！",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "是的，我要删除！",
+                    cancelButtonText: "让我再考虑一下…",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function (isConfirm) {
+                    if (isConfirm) {
+                        swal("删除成功！", "您已经永久删除了这条信息。", "success");
+                    } else {
+                        swal("已取消", "您取消了删除操作！", "error");
+                    }
+                });
+        });
+        
+    });
+    var tpl = [
+        '{@each companies as it,index}',
+        '<tr>',
+        '<td>${it.id}</td>',
+        '<td>${it.check_item}</td>',
+        '<td>${it.remark}</td>',
+        '<td>',
+        '<a href="javascript:;" data-toggle="modal" data-target="#myModal2">详情</a>',
+        '<a href="javascript:;" class="delete-action">删除</a>',
+        '</td>',
+        '</tr>',
+        '{@/each}'].join('');
+    var data = {
+        companies: [
+            {
+                id: 1,
+                check_item:"直销违法行为检查",
+                remark:"针对经批准的直销企业",
+            },
+            {
+                id: 2,
+                check_item:"流通领域商品质量检查  ",
+                remark:"",
+            },
+            {
+                id: 3,
+                check_item:"侵害消费者权益行为检查",
+                remark:"",
+            },
+            {
+                id: 4,
+                check_item:"拍卖活动经营资格的检查",
+                remark:"",
+            },
+            {
+                id: 5,
+                check_item:"为非法交易野生动物等违法行为提供交易服务的检查",
+                remark:"",
+            },
+            {
+                id: 6,
+                check_item:"未经许可擅自设立文物商店等违法行为的检查",
+                remark:"",
+            },
+            {
+                id: 7,
+                check_item:"公示信息检查",
+                remark:"",
+            },
+            {
+                id: 8,
+                check_item:"登记事项检查",
+                remark:"",
+            },
+            {
+                id: 9,
+                check_item:"年度报告检查",
+                remark:"",
+            },
+            {
+                id: 10,
+                check_item:"广告违法行为检查",
+                remark:"",
+            },
+            {
+                id: 11,
+                check_item:"商标违法行为检查",
+                remark:"",
+            },
+            {
+                id: 12,
+                check_item:"奥林匹克标志、特殊标志等标志违法使用行为的检查",
+                remark:"",
+            }
+
+        ]
+    };
+    var html = juicer(tpl, data);
+    console.log(html);
+    $('#tContent').html(html);
+
+
+    var tpl1 = [
+        '{@each companies as it,index}',
+        '<tr>',
+        '<td>${it.id}</td>',
+        '<td>${it.check_item}</td>',
+        '<td>${it.check_mainBody}</td>',
+        '<td>${it.check_content}</td>',
+        '<td>${it.check_according}</td>',
+        '</tr>',
+        '{@/each}'].join('');
+    var data1 = {
+        companies: [
+            {
+                id: 1,
+                check_item:"重大变更的检查",
+                check_mainBody:"县级以上工商、市场监管部门",
+                check_content:"直销企业发生重大变更是否事先经批准",
+                check_according:"《直销管理条例》第十一条、第四十一条",
+            },
+            {
+                id: 2,
+                check_item:"超出直销产品范围从事直销经营活动的检查",
+                check_mainBody:"县级以上工商、市场监管部门",
+                check_content:"直销企业是否超出直销产品范围从事直销经营",
+                check_according:"《直销管理条例》第二条、第四十二条",
+            },
+            {
+                id: 3,
+                check_item:"宣传和推销行为的检查",
+                check_mainBody:"县级以上工商、市场监管部门",
+                check_content:"直销企业是否有欺骗、误导等宣传行为和欺骗、误导等推销行为",
+                check_according:"《直销管理条例》第五条、第四十三条",
+            },
+            {
+                id: 4,
+                check_item:"直销员招募的检查",
+                check_mainBody:"县级以上工商、市场监管部门",
+                check_content:"直销企业及其分支机构是否违规招募直销员",
+                check_according:"《直销管理条例》第十五条、第四十四条",
+            },
+            {
+                id: 5,
+                check_item:"直销员业务培训的检查",
+                check_mainBody:"县级以上工商、市场监管部门",
+                check_content:"直销企业是否有违规进行进行直销员业务培训的行为",
+                check_according:"《直销管理条例》第十八条、第十九条、第二十一条、第四十六条",
+            },
+            {
+                id: 6,
+                check_item:"直销员报酬支付的检查",
+                check_mainBody:"县级以上工商、市场监管部门",
+                check_content:"直销企业是否按规定支付直销员报酬",
+                check_according:"《直销管理条例》第二十四条、第四十九条",
+            },
+            {
+                id: 7,
+                check_item:"换货、退货的检查",
+                check_mainBody:"县级以上工商、市场监管部门",
+                check_content:"直销企业是否违反有关换货、退货规定",
+                check_according:"《直销管理条例》第二十五条、第四十九条",
+            },
+            {
+                id: 8,
+                check_item:"信息报备和披露的检查",
+                check_mainBody:"县级以上工商、市场监管部门",
+                check_content:"直销企业是否按规定进行信息报备和披露",
+                check_according:"《直销管理条例》第二十八条、第五十条",
+            },
+            {
+                id: 9,
+                check_item:"保证金规定遵守情况的检查",
+                check_mainBody:"县级以上工商、市场监管部门",
+                check_content:"直销企业是否违反有关保证金规定",
+                check_according:"《直销管理条例》第二十九条、第三十一条、第三十二条、第五十一条",
+            }
+        ]
+    };
+    var html1 = juicer(tpl1, data1);
+    console.log(html1);
+    $('#tContent1').html(html1);
+</script>
 </body>
 </html>
