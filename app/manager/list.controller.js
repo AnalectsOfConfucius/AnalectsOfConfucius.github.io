@@ -150,9 +150,13 @@ function initPage(page, size) {
         data: dataQuery,
         async: true,
         dataType: 'json',
-        success: function (data) {
+        success: function (data, status, xhr) {
             if (data) {
-                console.log(data.managers);
+                var result = {};
+                result['managers'] = data;
+                var totalCount = xhr.getResponseHeader("X-Total-Count");
+                var nowpage = parseInt(totalCount / dataQuery.size);
+                console.log(nowpage);
                 var tpl = [
                     '{@each managers as it,index}',
                     '<tr>',
@@ -172,9 +176,9 @@ function initPage(page, size) {
                     '</td>',
                     '</tr>',
                     '{@/each}'].join('');
-                var html = juicer(tpl, data);
+                var html = juicer(tpl, result);
                 $('#tContent').html(html);
-                $("#Pagination").pagination(data.totalPages, {
+                $("#Pagination").pagination(nowpage, {
                     'current_page': dataQuery.page,
                     'callback': pageSelect,
                 });

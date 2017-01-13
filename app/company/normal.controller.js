@@ -76,9 +76,14 @@ function initPage(page, size) {
         data: dataQuery,
         async: true,
         dataType: 'json',
-        success: function (data) {
+        success: function (data, status, xhr) {
             if (data) {
-                console.log(data.companies);
+                console.log(data);
+                var result = {};
+                result['companies'] = data;
+                var totalCount = xhr.getResponseHeader("X-Total-Count");
+                var nowpage = parseInt(totalCount / dataQuery.size);
+                console.log(nowpage);
                 var tpl = [
                     '{@each companies as it,index}',
                     '<tr>',
@@ -97,9 +102,9 @@ function initPage(page, size) {
                     '</td>',
                     '</tr>',
                     '{@/each}'].join('');
-                var html = juicer(tpl, data);
+                var html = juicer(tpl, result);
                 $('#tContent').html(html);
-                $("#Pagination").pagination(data.totalPages, {
+                $("#Pagination").pagination(nowpage, {
                     'current_page': dataQuery.page,
                     'callback': pageSelect,
                 });
