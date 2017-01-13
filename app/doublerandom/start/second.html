@@ -184,7 +184,8 @@
                                     <div class="row">
                                         <label class="col-sm-4 control-label">抽选率：</label>
                                         <div class="col-sm-8">
-                                            <input id="ionrange" name="doubleRandomCompanyRatio"/>
+                                            <input id="ionrange" name="doubleRandomCompanyRatio" minlength="1"/>
+                                            <span class="help-block m-b-none"><i class="fa fa-info-circle"></i>请选择抽选覆盖率</span>
                                         </div>
                                     </div>
                                 </div>
@@ -246,5 +247,73 @@
 <script src="/app/service/ajax.service.js"></script>
 <script src="/app/doublerandom/doublerandom.controller.js"></script>
 <script src="/app/doublerandom/start/second.controller.js"></script>
+<!-- jQuery Validation plugin javascript-->
+<script src="/assets/js/plugins/validate/jquery.validate.min.js"></script>
+<script src="/assets/js/plugins/validate/messages_zh.min.js"></script>
+<script src="/assets/js/demo/form-validate-demo.js"></script>
+<script type="text/javascript">
+    var tpl = [
+        '{@each companies as it,index}',
+        '<tr>',
+        '<td>${it.id}</td>',
+        '<td>${it.company_name}</td>',
+        '<td>${it.running_address}</td>',
+        '<td>${it.law_boss}</td>',
+        '<td>${it.phone_num}</td>',
+        '<td>${it.supervision_department}</td>',
+        '<td>${it.check_status}</td>',
+        '<td>${it.remark}</td>',
+        '</tr>',
+        '{@/each}'].join('');
+
+    var data = {
+        companies: [
+            {
+                id: 1,
+                company_name:"椰树集团",
+                running_address:"海口市",
+                law_boss:"张三",
+                phone_num:12345678965,
+                supervision_department:"海口市工商局",
+                check_status:"正常",
+                remark:""
+            },
+            {
+                id: 2,
+                company_name:"椰树集团",
+                running_address:"海口市",
+                law_boss:"张三",
+                phone_num:12345678965,
+                supervision_department:"海口市工商局",
+                check_status:"正常",
+                remark:""
+            },
+            {
+                id: 3,
+                company_name:"椰树集团",
+                running_address:"海口市",
+                law_boss:"张三",
+                phone_num:12345678965,
+                supervision_department:"海口市工商局",
+                check_status:"正常",
+                remark:""
+            },
+            {
+                id: 4,
+                company_name:"椰树集团",
+                running_address:"海口市",
+                law_boss:"张三",
+                phone_num:12345678965,
+                supervision_department:"海口市工商局",
+                check_status:"正常",
+                remark:""
+            },
+
+        ]
+    };
+    var html = juicer(tpl, data);
+    console.log(html);
+    $('#tContent').html(html);
+</script>
 </body>
 </html>
