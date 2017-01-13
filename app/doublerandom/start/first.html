@@ -14,9 +14,6 @@
     <div class="col-sm-4">
         <h2>双随机抽选</h2>
         <ol class="breadcrumb">
-            <li>
-                <strong>创立抽选方案</strong>
-            </li>
         </ol>
     </div>
     <div class="col-sm-8">
@@ -35,14 +32,6 @@
                 <div class="ibox-content">
                     <form class="form-horizontal m-t" id="first" novalidate="novalidate">
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">方案名称：</label>
-                            <div class="col-sm-6">
-                                <input minlength="2" type="text" name="doubleRandomName"
-                                       class="form-control" required
-                                       aria-required="true">
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label class="col-sm-2 control-label">公证人：</label>
                             <div class="col-sm-6">
                                 <input minlength="2" type="text" name="doubleRandomNotary"
@@ -53,64 +42,32 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">检查日期：</label>
                             <div class="col-sm-6">
-                                <input minlength="2" type="text" name="doubleRandomDate"
-                                       class="form-control" required
-                                       aria-required="true">
+                                <input readonly class="form-control layer-date" id="hello1">
+                                <label class="laydate-icon inline demoicon" onclick="laydate({elem: '#hello1'});"></label>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">任务清单：</label>
                             <div class="col-sm-6">
-                                <select data-placeholder="请选择任务清单" style="width:450px;" class="chosen-select" multiple
+                                <select data-placeholder="请选择检查项目" style="width:450px;" class="chosen-select" multiple
                                         tabindex="6" id="tContent">
                                     <option value=""></option>
-                                    <optgroup label="商标检查">
-                                        <option>商标违规</option>
-                                        <option>商标侵权</option>
-                                        <option>Philadelphia Eagles</option>
-                                        <option>Washington Redskins</option>
+                                    <optgroup label="直销违法行为的检查">
+                                        <option>重大变更的检查</option>
+                                        <option>超出直销产品范围从事直销经营活动的检查</option>
+                                        <option>宣传和推销行为的检查</option>
+                                        <option>直销员招募的检查</option>
+                                        <option>直销员业务培训的检查</option>
+                                        <option>直销员报酬支付的检查</option>
+                                        <option>换货、退货的检查</option>
+                                        <option>信息报备和披露的检查 </option>
+                                        <option>保证金规定遵守情况的检查</option>
                                     </optgroup>
-                                    <optgroup label="NFC NORTH">
-                                        <option>Chicago Bears</option>
-                                        <option>Detroit Lions</option>
-                                        <option>Green Bay Packers</option>
-                                        <option>Minnesota Vikings</option>
-                                    </optgroup>
-                                    <optgroup label="NFC SOUTH">
-                                        <option>Atlanta Falcons</option>
-                                        <option>Carolina Panthers</option>
-                                        <option>New Orleans Saints</option>
-                                        <option>Tampa Bay Buccaneers</option>
-                                    </optgroup>
-                                    <optgroup label="NFC WEST">
-                                        <option>Arizona Cardinals</option>
-                                        <option>St. Louis Rams</option>
-                                        <option>San Francisco 49ers</option>
-                                        <option>Seattle Seahawks</option>
-                                    </optgroup>
-                                    <optgroup label="AFC EAST">
-                                        <option>Buffalo Bills</option>
-                                        <option>Miami Dolphins</option>
-                                        <option>New England Patriots</option>
-                                        <option>New York Jets</option>
-                                    </optgroup>
-                                    <optgroup label="AFC NORTH">
-                                        <option>Baltimore Ravens</option>
-                                        <option>Cincinnati Bengals</option>
-                                        <option>Cleveland Browns</option>
-                                        <option>Pittsburgh Steelers</option>
-                                    </optgroup>
-                                    <optgroup label="AFC SOUTH">
-                                        <option>Houston Texans</option>
-                                        <option>Indianapolis Colts</option>
-                                        <option>Jacksonville Jaguars</option>
-                                        <option>Tennessee Titans</option>
-                                    </optgroup>
-                                    <optgroup label="AFC WEST">
-                                        <option>Denver Broncos</option>
-                                        <option>Kansas City Chiefs</option>
-                                        <option>Oakland Raiders</option>
-                                        <option>San Diego Chargers</option>
+                                    <optgroup label="流通领域商品质量检查">
+                                        <option>销售淘汰产品的检查</option>
+                                        <option>销售失效、变质产品的检查</option>
+                                        <option>不符合产品包装、标识要求的检查</option>
+                                        <option>服务业经营者违法行为的检查</option>
                                     </optgroup>
                                 </select>
                             </div>
@@ -121,6 +78,26 @@
         </div>
     </div>
 </div>
+<!-- layerDate plugin javascript -->
+<script src="/assets/js/plugins/layer/laydate/laydate.js"></script>
+<script>
+    //外部js调用
+    laydate({
+        elem: '#hello', //目标元素。由于laydate.js封装了一个轻量级的选择器引擎，因此elem还允许你传入class、tag但必须按照这种方式 '#id .class'
+        event: 'focus' //响应事件。如果没有传入event，则按照默认的click
+    });
+
+    //日期范围限制
+    var start = {
+        elem: '#start',
+        format: 'YYYY/MM/DD hh:mm:ss',
+        min: laydate.now(), //设定最小日期为当前日期
+        max: '2099-06-16 23:59:59', //最大日期
+        istime: true,
+        istoday: true,
+    };
+    laydate(start);
+</script>
 <script src="/assets/js/jquery.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/content.js"></script>

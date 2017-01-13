@@ -26,9 +26,9 @@
             <div class="login-logo text-center">
                 <img src="/assets/img/login-logo.png" alt="">
             </div>
-            <form id="ff" method="post">
-                <div class="welcome text-center">欢迎登陆万宁双随机抽查系统</div>
-                <input type="text" name="username" class="form-control uname" placeholder="用户名"/>
+            <form id="ff" name="form1" method="post">
+                <div class="welcome text-center">欢迎登陆工商局双随机抽查系统</div>
+                <input type="text" name="username" nValidate="{required:true,message:{required:'用户名不能为空'}}" class="form-control uname" placeholder="用户名"/>
                 <input type="password" name="password" class="form-control pword m-b" placeholder="密码"/>
                 <p class="btn btn-success btn-block login-action">登录</p>
             </form>
@@ -42,5 +42,10 @@
 <script src="/app/service/global.service.js"></script>
 <script src="/app/service/auth.service.js"></script>
 <script src="/app/service/ajax.service.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#form1").validate();
+    });
+</script>
 </body>
 </html>
