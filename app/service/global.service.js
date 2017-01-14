@@ -1,5 +1,5 @@
 $(function () {
-    window.apiPoint = 'http://localhost:8080/api/';
+    window.apiPoint = 'http://192.168.0.103:8080/api/';
 });
 function getUrlValue(name) {
     var str = window.location.search;
