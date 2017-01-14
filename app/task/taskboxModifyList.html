@@ -3,13 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <link rel="shortcut icon" href="favicon.ico">
     <link href="/assets/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
     <link href="/assets/css/font-awesome.css?v=4.4.0" rel="stylesheet">
-    <link href="/assets/css/plugins/iCheck/custom.css" rel="stylesheet">
     <link href="/assets/css/animate.css" rel="stylesheet">
     <link href="/assets/css/style.css?v=4.1.0" rel="stylesheet">
 </head>
@@ -30,7 +27,7 @@
                         </div>
                     </form>
                     <h2>
-                    执法任务跟进
+                    任务列表
                 </h2>
                     <div class="mail-tools tooltip-demo m-t-md">
                         <div class="btn-group pull-right">
@@ -40,21 +37,18 @@
                             </button>
 
                         </div>
-                        <!--<button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="left" title="刷新邮件列表"><i class="fa fa-refresh"></i> 刷新</button>-->
-                        <!--<button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="申请延期"><i class="fa fa-eye"></i>-->
-                        <!--</button>-->
+                        <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="left" title="刷新任务列表"><i class="fa fa-refresh"></i> 刷新</button>
+                        </button>
 
                     </div>
                 </div>
                 <div class="mail-box">
-
                     <table class="table table-hover table-mail">
-                        <tbody>
+                        <tbody id="tContent">
                             <tr class="read">
                                 <td class="check-mail">
-                                    <input type="checkbox" class="i-checks">
                                 </td>
-                                <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a><span class="label label-danger pull-right">红牌</span>
+                                <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a>
                                 </td>
                                 <td class="mail-subject"><a href="taskDetail.html">支付宝提醒</a>
                                 </td>
@@ -64,9 +58,9 @@
                             </tr>
                             <tr class="unread">
                                 <td class="check-mail">
-                                    <input type="checkbox" class="i-checks" checked>
+                                    <span class="label label-warning">黄牌</span>
                                 </td>
-                                <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a><span class="label label-danger pull-right">红牌</span>
+                                <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a>
                                 </td>
                                 <td class="mail-subject"><a href="taskDetail.html">支付检查</a>
                                 </td>
@@ -75,9 +69,8 @@
                             </tr>
                             <tr class="read">
                                 <td class="check-mail">
-                                    <input type="checkbox" class="i-checks" disabled>
                                 </td>
-                                <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a> <span class="label label-danger pull-right">红牌</span>
+                                <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a>
                                 </td>
                                 <td class="mail-subject"><a href="taskDetail.html">检查经营不合规</a>
                                 </td>
@@ -86,9 +79,8 @@
                             </tr>
                             <tr class="read">
                                 <td class="check-mail">
-                                    <input type="checkbox" class="i-checks">
                                 </td>
-                                <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a><span class="label label-danger pull-right">红牌</span>
+                                <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a>
                                 </td>
                                 <td class="mail-subject"><a href="taskDetail.html">商标检查，视觉检查</a>
                                 </td>
@@ -97,9 +89,9 @@
                             </tr>
                             <tr class="unread">
                                 <td class="check-mail">
-                                    <input type="checkbox" class="i-checks" disabled>
+                                    <span class="label label-danger">红牌</span>
                                 </td>
-                                <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a> <span class="label label-danger pull-right">红牌</span>
+                                <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a>
                                 </td>
                                 <td class="mail-subject"><a href="taskDetail.html">检查服务资料</a>
                                 </td>
@@ -109,29 +101,18 @@
                             </tr>
                         </tbody>
                     </table>
-
-
                 </div>
             </div>
         </div>
     </div>
-
     <!-- 全局js -->
     <script src="/assets/js/jquery.min.js?v=2.1.4"></script>
     <script src="/assets/js/bootstrap.min.js?v=3.3.6"></script>
-
+    <script src="/assets/js/juicer-min.js"></script>
     <!-- 自定义js -->
     <script src="/assets/js/content.js?v=1.0.0"></script>
-
-    <!-- iCheck -->
-    <script src="/assets/js/plugins/iCheck/icheck.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('.i-checks').iCheck({
-                checkboxClass: 'icheckbox_square-green',
-                radioClass: 'iradio_square-green',
-            });
-        });
-    </script>
+    <script src="/app/service/global.service.js"></script>
+    <script src="/app/service/ajax.service.js"></script>
+    <script src="/app/task/taskBoxList.controller.js"></script>
 </body>
 </html>
