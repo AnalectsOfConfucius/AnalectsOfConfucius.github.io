@@ -12,11 +12,105 @@
     <link href="/assets/css/animate.min.css" rel="stylesheet">
     <link href="/assets/css/style.css?v=4.1.0" rel="stylesheet">
     <link href="/assets/css/pagination.css" rel="stylesheet">
-    <!-- Sweet Alert -->
     <link href="/assets/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
-    <!-- 引用控制层插件样式 -->
-    <link rel="stylesheet" href="/assets/css/zyUpload.css" type="text/css">
+    <link href="/assets/css/zyUpload.css" type="text/css" rel="stylesheet">
     <link href="/assets/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <style>
+        .fileWopr {
+            width: 600px;
+            height: 600px;
+        }
+
+        .wilq a {
+            font-size: 15px;
+            padding-right: 5px;
+        }
+
+        .h5Class {
+            padding: 0;
+            margin: 0;
+            height: 50px;
+            line-height: 50px;
+            text-indent: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .modal-worppar {
+            max-width: 1200px;
+            background: #fff;
+            border-radius: 5px;
+            margin: 30px auto;
+        }
+
+        .ibox-content table tr th,
+        .ibox-content table tr td {
+            text-align: center;
+            font-size: 14px;
+            height: 27px;
+            line-height: 27px;
+        }
+
+        .ibox-content table tr td a {
+            padding: 0 5px;
+        }
+
+        .titleCon {
+            margin-top: -10px;
+        }
+
+        .titleCon a i {
+            position: relative;
+            font-size: 25px;
+            color: #000;
+        }
+
+        .ibox-title {
+            margin-top: 10px;
+            border-width: 1px 0 0;
+        }
+
+        /*弹出框*/
+        .theme-popover-mask {
+            z-index: 9998;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: 0.4;
+            filter: alpha(opacity=40);
+            display: none;
+        }
+
+        .theme-popover {
+            z-index: 9999;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            background-color: #f3f3f4;
+            display: none;
+        }
+
+        .theme-poptit {
+            border-bottom: 1px solid #eef1f6;
+            padding: 15px;
+            position: relative;
+        }
+
+        .theme-poptit .close {
+            float: right;
+            color: #999;
+            padding: 5px;
+            margin: -2px -5px -5px;
+            font: bold 14px/14px simsun;
+            text-shadow: 0 1px 0 #ddd;
+        }
+    </style>
 </head>
 <body class="gray-bg">
 <div class="wrapper wrapper-content animated fadeInRight">
@@ -26,7 +120,7 @@
                 <div class="ibox-title">
                     <div class="row">
                         <div class="col-md-6">
-                            <h4>事项清单</h4>
+                            <h4>已完成任务记录</h4>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group">
@@ -50,126 +144,13 @@
                             <th>检查时间</th>
                             <th>抽查结果</th>
                             <th>执法状态</th>
-                            <th>操作</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>海南省儒家酒店</td>
-                            <td>231312</td>
-                            <td>万宁工商局</td>
-                            <td>段尼</td>
-                            <td>1.商标注册情况</td>
-                            <td>2016年12月26日</td>
-                            <td>未按规定公示年报</td>
-                            <td><span class="label label-danger">红牌</span></td>
-                            <td>
-                                <a href="/app/task/taskDetail.html">执法结果录入</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>海南省儒家酒店</td>
-                            <td>231312</td>
-                            <td>万宁工商局</td>
-                            <td>段尼</td>
-                            <td>1.商标注册情况</td>
-                            <td>2016年12月26日</td>
-                            <td>未按规定公示年报</td>
-                            <td><span class="label label-warning">黄牌</span></td>
-                            <td>
-                                <a href="/app/task/taskDetail.html">执法结果录入</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>海南省儒家酒店</td>
-                            <td>231312</td>
-                            <td>万宁工商局</td>
-                            <td>段尼</td>
-                            <td>1.商标注册情况</td>
-                            <td>2016年12月26日</td>
-                            <td>未按规定公示年报</td>
-                            <td><span class="label label-success">已完成</span></td>
-                            <td>
-                            	<a href="/app/task/taskDetail.html">执法结果录入</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal0">跟踪企业状态</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>海南省儒家酒店</td>
-                            <td>231312</td>
-                            <td>万宁工商局</td>
-                            <td>段尼</td>
-                            <td>1.商标注册情况</td>
-                            <td>2016年12月26日</td>
-                            <td>未按规定公示年报</td>
-                            <td><span class="label label-info">计划中</span></td>
-                            <td>
-                                <a href="/app/task/taskDetail.html">执法结果录入</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal1">申请任务延期</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>海南省儒家酒店</td>
-                            <td>231312</td>
-                            <td>万宁工商局</td>
-                            <td>段尼</td>
-                            <td>1.商标注册情况</td>
-                            <td>2016年12月26日</td>
-                            <td>未按规定公示年报</td>
-                            <td><span class="label label-success">已完成</span></td>
-                            <td>
-                            	<a href="/app/task/taskDetail.html">执法结果录入</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal0">跟踪企业状态</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>海南省儒家酒店</td>
-                            <td>231312</td>
-                            <td>万宁工商局</td>
-                            <td>段尼</td>
-                            <td>1.商标注册情况</td>
-                            <td>2016年12月26日</td>
-                            <td>未按规定公示年报</td>
-                            <td><span class="label label-success">已完成</span></td>
-                            <td>
-                            	<a href="/app/task/taskDetail.html">执法结果录入</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal0">跟踪企业状态</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>海南省儒家酒店</td>
-                            <td>231312</td>
-                            <td>万宁工商局</td>
-                            <td>段尼</td>
-                            <td>1.商标注册情况</td>
-                            <td>2016年12月26日</td>
-                            <td>未按规定公示年报</td>
-                            <td><span class="label label-success">已完成</span></td>
-                            <td>
-                            	<a href="/app/task/taskDetail.html">执法结果录入</a>
-                                <a href="javascript:;" data-toggle="modal" data-target="#myModal0">跟踪企业状态</a>
-                            </td>
-                        </tr>
+                        <tbody id="tContent">
                         </tbody>
                     </table>
                     <!--分页 S-->
-                    <div class="pages clearfix">
-                        <div id="Pagination"></div>
-                        <div class="searchPage">
-                            <span class="page-sum">共<strong class="allPage">15</strong>页</span>
-                            <span class="page-go">跳转<input type="text">页</span>
-                            <a href="javascript:;" class="page-btn">GO</a>
-                        </div>
-                    </div>
                     <!--分页 E-->
-
                 </div>
             </div>
         </div>
@@ -381,109 +362,16 @@
     </div>
 </div>
 <!--修改 E-->
-<style>
-    .fileWopr {
-        width: 600px;
-        height: 600px;
-    }
-
-    .wilq a {
-        font-size: 15px;
-        padding-right: 5px;
-    }
-
-    .h5Class {
-        padding: 0;
-        margin: 0;
-        height: 50px;
-        line-height: 50px;
-        text-indent: 20px;
-        font-size: 20px;
-        font-weight: 600;
-    }
-
-    .modal-worppar {
-        max-width: 1200px;
-        background: #fff;
-        border-radius: 5px;
-        margin: 30px auto;
-    }
-
-    .ibox-content table tr th,
-    .ibox-content table tr td {
-        text-align: center;
-        font-size: 14px;
-        height: 27px;
-        line-height: 27px;
-    }
-
-    .ibox-content table tr td a {
-        padding: 0 5px;
-    }
-
-    .titleCon {
-        margin-top: -10px;
-    }
-
-    .titleCon a i {
-        position: relative;
-        font-size: 25px;
-        color: #000;
-    }
-
-    .ibox-title {
-        margin-top: 10px;
-        border-width: 1px 0 0;
-    }
-
-    /*弹出框*/
-    .theme-popover-mask {
-        z-index: 9998;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #000;
-        opacity: 0.4;
-        filter: alpha(opacity=40);
-        display: none;
-    }
-
-    .theme-popover {
-        z-index: 9999;
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        margin: auto;
-        background-color: #f3f3f4;
-        display: none;
-    }
-
-    .theme-poptit {
-        border-bottom: 1px solid #eef1f6;
-        padding: 15px;
-        position: relative;
-    }
-
-    .theme-poptit .close {
-        float: right;
-        color: #999;
-        padding: 5px;
-        margin: -2px -5px -5px;
-        font: bold 14px/14px simsun;
-        text-shadow: 0 1px 0 #ddd;
-    }
-</style>
 <script src="/assets/js/jquery.min.js?v=2.1.4"></script>
 <script src="/assets/js/bootstrap.min.js?v=3.3.5"></script>
 <script src="/assets/js/content.min.js?v=1.0.0"></script>
 <script src="/assets/js/jquery.pagination.js"></script>
 <script src="/assets/js/plugins/sweetalert/sweetalert.min.js"></script>
-<!-- Data picker -->
+<script src="/assets/js/juicer-min.js"></script>
 <script src="/assets/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<script src="/app/service/global.service.js"></script>
+<script src="/app/service/ajax.service.js"></script>
+<script src="/app/task/finishedList.controller.js"></script>
 <script>
 	$('.data .input-group.date').datepicker({
 		todayBtn: "linked",

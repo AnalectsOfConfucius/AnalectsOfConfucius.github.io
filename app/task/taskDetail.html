@@ -114,7 +114,7 @@
                     </form>
                 </div>
                 <div class="mail-body text-right tooltip-demo">
-                    <a class="btn btn-primary" href="mail_compose.html"><i class="fa fa-arrow-right"></i> 完成任务</a>
+                    <a class="btn btn-primary" href="mail_compose.html">完成任务<i class="fa fa-arrow-right"></i> </a>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -219,7 +219,8 @@
                             <label class="col-sm-2 control-label">整改期限：</label>
                             <div class="col-sm-6">
                                 <input readonly class="form-control layer-date" id="hello1">
-                                <label class="laydate-icon inline demoicon" onclick="laydate({elem: '#hello1'});"></label>
+                                <label class="laydate-icon inline demoicon"
+                                       onclick="laydate({elem: '#hello1'});"></label>
                             </div>
                         </div>
                         <a type="button" class="btn btn-primary" data-dismiss="modal"
@@ -283,7 +284,8 @@
                             <label class="col-sm-2 control-label">立案日期：</label>
                             <div class="col-sm-6">
                                 <input readonly class="form-control layer-date" id="hello2">
-                                <label class="laydate-icon inline demoicon" onclick="laydate({elem: '#hello2'});"></label>
+                                <label class="laydate-icon inline demoicon"
+                                       onclick="laydate({elem: '#hello2'});"></label>
                             </div>
                         </div>
                         <div class="form-group">
@@ -326,18 +328,21 @@
     //外部js调用
     laydate({
         elem: '#hello', //目标元素。由于laydate.js封装了一个轻量级的选择器引擎，因此elem还允许你传入class、tag但必须按照这种方式 '#id .class'
-        event: 'focus' //响应事件。如果没有传入event，则按照默认的click
+        event: 'focus', //响应事件。如果没有传入event，则按照默认的click
     });
+    /**TODO
+     *这里有一个length属性为定义的bug
+     */
 
-    //日期范围限制
+        //日期范围限制
     var start = {
-        elem: '#start',
-        format: 'YYYY/MM/DD hh:mm:ss',
-        min: laydate.now(), //设定最小日期为当前日期
-        max: '2099-06-16 23:59:59', //最大日期
-        istime: true,
-        istoday: true,
-    };
+            elem: '#start',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            min: laydate.now(), //设定最小日期为当前日期
+            max: '2099-06-16 23:59:59', //最大日期
+            istime: true,
+            istoday: true,
+        };
     laydate(start);
 </script>
 </body>

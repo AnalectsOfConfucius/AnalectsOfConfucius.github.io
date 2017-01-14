@@ -3,11 +3,12 @@ $(function () {
 });
 
 function initPage(page, size) {
-    var url = window.apiPoint + 'double-random-results/login/unfinish/?check=uncheck';
+    var url = window.apiPoint + 'double-random-results/login/finished';
     console.log(url);
     var dataQuery = {
         page: page,
-        size: size
+        size: size,
+        check: 'checked'
     };
     $.ajax({
         url: url,
@@ -21,21 +22,29 @@ function initPage(page, size) {
                 console.log(data);
                 var result = {};
                 result['doubleRandomResults'] = data;
+                console.log(data);
                 var tpl = [
                     '{@each doubleRandomResults as it,index}',
-                    '<tr class="{@if it.sign == null}read{@else}unread{@/if}">',
-                    '<td class="check-mail">',
+                    '<tr>',
+                    '<td>${it.id}</td>',
+                    '<td>${it.companyName}</td>',
+                    '<td>${it.companyRegisterId}</td>',
+                    '<td>${it.department}</td>',
+                    '<td>${it.people}</td>',
+                    '<td>${it.doubleRandom.doubleRandomTaskContent}</td>', ,
+                    '<td>${it.doubleRandom.doubleRandomDate}</td>',
+                    '<td>{@if it.result != null}${it.result}{@/if}</td>',
+                    '<td>',
+                    '{@if it.finishDate == null}',
                     '{@if it.sign != null}',
                     '<span class="label label-${it.sign.signCss}">${it.sign.signName}</span>',
+                    '{@else}',
+                    '<span class="label label-info">计划中</span>',
+                    '{@/if}',
+                    '{@else}',
+                    '<span class="label label-success">已完成</span>',
                     '{@/if}',
                     '</td>',
-                    '<td class="mail-ontact"><a href="taskDetail.html?id=${it.id}">${it.companyName}</a>',
-                    '</td>',
-                    '<td class="mail-subject"><a href="taskDetail.html?id=${it.id}">{@if it.doubleRandom.doubleRandomTaskContent != null }${it.doubleRandom.doubleRandomTaskContent}{@else}暂无检查任务安排{@/if}</a>',
-                    '</td>',
-                    '<td class="">',
-                    '</td>',
-                    '<td class="text-right mail-date">${it.doubleRandom.doubleRandomDate}</td>',
                     '</tr>',
                     '{@/each}'].join('');
                 var html = juicer(tpl, result);
