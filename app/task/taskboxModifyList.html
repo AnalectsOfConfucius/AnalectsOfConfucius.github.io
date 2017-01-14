@@ -3,116 +3,495 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <link href="/assets/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
-    <link href="/assets/css/font-awesome.css?v=4.4.0" rel="stylesheet">
-    <link href="/assets/css/animate.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="/assets/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="/assets/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/assets/css/animate.min.css" rel="stylesheet">
     <link href="/assets/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="/assets/css/pagination.css" rel="stylesheet">
+    <!-- Sweet Alert -->
+    <link href="/assets/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- 引用控制层插件样式 -->
+    <link rel="stylesheet" href="/assets/css/zyUpload.css" type="text/css">
+    <link href="/assets/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
 </head>
 <body class="gray-bg">
-    <div class="wrapper wrapper-content">
-        <div class="row">
-            <div class="col-sm-12 animated fadeInRight">
-                <div class="mail-box-header">
-
-                    <form method="get" action="index.html" class="pull-right mail-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control input-sm" name="search" placeholder="搜索任务标题，正文等">
-                            <div class="input-group-btn">
-                                <button type="submit" class="btn btn-sm btn-primary">
-                                    搜索
-                                </button>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>事项清单</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <input type="text" id="query" class="form-control"> <span class="input-group-btn"> <button
+                                    type="button" class="btn btn-primary search-action">搜索
+                                        </button> </span>
                             </div>
                         </div>
-                    </form>
-                    <h2>
-                    任务列表
-                </h2>
-                    <div class="mail-tools tooltip-demo m-t-md">
-                        <div class="btn-group pull-right">
-                            <button class="btn btn-white btn-sm"><i class="fa fa-arrow-left"></i>
-                            </button>
-                            <button class="btn btn-white btn-sm"><i class="fa fa-arrow-right"></i>
-                            </button>
-
-                        </div>
-                        <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="left" title="刷新任务列表"><i class="fa fa-refresh"></i> 刷新</button>
-                        </button>
-
                     </div>
                 </div>
-                <div class="mail-box">
-                    <table class="table table-hover table-mail">
-                        <tbody id="tContent">
-                            <tr class="read">
-                                <td class="check-mail">
-                                </td>
-                                <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a>
-                                </td>
-                                <td class="mail-subject"><a href="taskDetail.html">支付宝提醒</a>
-                                </td>
-                                <td class="">
-                                </td>
-                                <td class="text-right mail-date">2016年12月26号</td>
-                            </tr>
-                            <tr class="unread">
-                                <td class="check-mail">
-                                    <span class="label label-warning">黄牌</span>
-                                </td>
-                                <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a>
-                                </td>
-                                <td class="mail-subject"><a href="taskDetail.html">支付检查</a>
-                                </td>
-                                <td class=""></td>
-                                <td class="text-right mail-date">上午10:57</td>
-                            </tr>
-                            <tr class="read">
-                                <td class="check-mail">
-                                </td>
-                                <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a>
-                                </td>
-                                <td class="mail-subject"><a href="taskDetail.html">检查经营不合规</a>
-                                </td>
-                                <td class=""></td>
-                                <td class="text-right mail-date">上午9:21</td>
-                            </tr>
-                            <tr class="read">
-                                <td class="check-mail">
-                                </td>
-                                <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a>
-                                </td>
-                                <td class="mail-subject"><a href="taskDetail.html">商标检查，视觉检查</a>
-                                </td>
-                                <td class=""></td>
-                                <td class="text-right mail-date">中午12:24</td>
-                            </tr>
-                            <tr class="unread">
-                                <td class="check-mail">
-                                    <span class="label label-danger">红牌</span>
-                                </td>
-                                <td class="mail-ontact"><a href="taskDetail.html">万宁市美都酒店</a>
-                                </td>
-                                <td class="mail-subject"><a href="taskDetail.html">检查服务资料</a>
-                                </td>
-                                <td class="">
-                                </td>
-                                <td class="text-right mail-date">上午6:48</td>
-                            </tr>
+                <div class="ibox-content">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>企业名称</th>
+                            <th>检查机关</th>
+                            <th>检查人</th>
+                            <th>检查事项</th>
+                            <th>检查时间</th>
+                            <th>抽查结果</th>
+                            <th>整改内容</th>
+                            <th>整改期限</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>海南省儒家酒店</td>
+                            <td>231312</td>
+                            <td>万宁工商局</td>
+                            <td>段尼</td>
+                            <td>1.商标注册情况</td>
+                            <td>2016年12月26日</td>
+                            <td>未按规定公示年报</td>
+                            <td><span class="label label-danger">红牌</span></td>
+                            <td>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal0">整改结果</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>海南省儒家酒店</td>
+                            <td>231312</td>
+                            <td>万宁工商局</td>
+                            <td>段尼</td>
+                            <td>1.商标注册情况</td>
+                            <td>2016年12月26日</td>
+                            <td>未按规定公示年报</td>
+                            <td><span class="label label-warning">黄牌</span></td>
+                            <td>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal0">整改结果</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>海南省儒家酒店</td>
+                            <td>231312</td>
+                            <td>万宁工商局</td>
+                            <td>段尼</td>
+                            <td>1.商标注册情况</td>
+                            <td>2016年12月26日</td>
+                            <td>未按规定公示年报</td>
+                            <td><span class="label label-success">已完成</span></td>
+                            <td>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal0">整改结果</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>海南省儒家酒店</td>
+                            <td>231312</td>
+                            <td>万宁工商局</td>
+                            <td>段尼</td>
+                            <td>1.商标注册情况</td>
+                            <td>2016年12月26日</td>
+                            <td>未按规定公示年报</td>
+                            <td><span class="label label-info">计划中</span></td>
+                            <td>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal0">整改结果</a>
+                                <!--<a href="javascript:;" data-toggle="modal" data-target="#myModal1">申请任务延期</a>-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>海南省儒家酒店</td>
+                            <td>231312</td>
+                            <td>万宁工商局</td>
+                            <td>段尼</td>
+                            <td>1.商标注册情况</td>
+                            <td>2016年12月26日</td>
+                            <td>未按规定公示年报</td>
+                            <td><span class="label label-success">已完成</span></td>
+                            <td>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal0">整改结果</a>
+                                <!--<a href="javascript:;" data-toggle="modal" data-target="#myModal0">跟踪企业状态</a>-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>海南省儒家酒店</td>
+                            <td>231312</td>
+                            <td>万宁工商局</td>
+                            <td>段尼</td>
+                            <td>1.商标注册情况</td>
+                            <td>2016年12月26日</td>
+                            <td>未按规定公示年报</td>
+                            <td><span class="label label-success">已完成</span></td>
+                            <td>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal0">整改结果</a>
+                                <!--<a href="javascript:;" data-toggle="modal" data-target="#myModal0">跟踪企业状态</a>-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>海南省儒家酒店</td>
+                            <td>231312</td>
+                            <td>万宁工商局</td>
+                            <td>段尼</td>
+                            <td>1.商标注册情况</td>
+                            <td>2016年12月26日</td>
+                            <td>未按规定公示年报</td>
+                            <td><span class="label label-success">已完成</span></td>
+                            <td>
+                                <a href="javascript:;" data-toggle="modal" data-target="#myModal0">整改结果</a>
+                                <!--<a href="javascript:;" data-toggle="modal" data-target="#myModal0">跟踪企业状态</a>-->
+                            </td>
+                        </tr>
                         </tbody>
                     </table>
+                    <!--分页 S-->
+                    <div class="pages clearfix">
+                        <div id="Pagination"></div>
+                        <div class="searchPage">
+                            <span class="page-sum">共<strong class="allPage">15</strong>页</span>
+                            <span class="page-go">跳转<input type="text">页</span>
+                            <a href="javascript:;" class="page-btn">GO</a>
+                        </div>
+                    </div>
+                    <!--分页 E-->
+
                 </div>
             </div>
         </div>
     </div>
-    <!-- 全局js -->
-    <script src="/assets/js/jquery.min.js?v=2.1.4"></script>
-    <script src="/assets/js/bootstrap.min.js?v=3.3.6"></script>
-    <script src="/assets/js/juicer-min.js"></script>
-    <!-- 自定义js -->
-    <script src="/assets/js/content.js?v=1.0.0"></script>
-    <script src="/app/service/global.service.js"></script>
-    <script src="/app/service/ajax.service.js"></script>
-    <script src="/app/task/taskBoxList.controller.js"></script>
+</div>
+<!--跟踪 S-->
+<div class="modal fade" id="myModal0" tabindex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-worppar">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="h5Class">整改结果处理</h2>
+                <a type="button" class="btn btn-primary" data-dismiss="modal"
+                   style="position:absolute; right: 31px; top: 10px;">关闭</a>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" novalidate="novalidate">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">企业名称：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">整改内容：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true" disabled="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">整改结果：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account">
+                                    <option></option>
+                                    <option>正常</option>
+                                    <option>转案件处理</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">企业状态：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account">
+                                    <option></option>
+                                    <option>已整改</option>
+                                    <option>企业监管室已立案</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-2 pb20">
+                            <a class="btn btn-primary" type="submit">完成任务</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--跟踪 E-->
+<!--延期 S-->
+<div class="modal fade" id="myModal1" tabindex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-worppar">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="h5Class">申请任务延期</h2>
+                <a type="button" class="btn btn-primary" data-dismiss="modal"
+                   style="position:absolute; right: 31px; top: 10px;">关闭</a>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" novalidate="novalidate">
+                        <div class="form-group data">
+                            <label class="col-sm-2 control-label">计划检查时间：</label>
+                            <div class="col-sm-6">
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control" value="2015-12-11" disabled="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group data">
+                            <label class="col-sm-2 control-label">申请延期到：</label>
+                            <div class="col-sm-6">
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="form-group">
+                        <div class="col-sm-6 col-sm-offset-2 pb20">
+                            <a class="btn btn-primary" type="submit">提交</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--延期 E-->
+<!--修改 S-->
+<div class="modal fade" id="myModal2" tabindex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-worppar">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="h5Class">添加执法人员信息</h2>
+                <a type="button" class="btn btn-primary" data-dismiss="modal"
+                   style="position:absolute; right: 31px; top: 10px;">关闭</a>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" novalidate="novalidate">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">姓名：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">证件编号：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">证件类型：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">所属工商局：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account">
+                                    <option></option>
+                                    <option>万宁市本局</option>
+                                    <option>地方局</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">执法区域：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account">
+                                    <option></option>
+                                    <option>万宁市</option>
+                                    <option>地方</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">黑白名单：</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="account">
+                                    <option></option>
+                                    <option>黑名单</option>
+                                    <option>白名单</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">联系电话：</label>
+                            <div class="col-sm-10">
+                                <input name="name" minlength="1" type="text" class="form-control" required
+                                       aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">备注信息：</label>
+                            <div class="col-sm-10">
+                                <textarea id="comment11" name="comment" class="form-control" required
+                                          aria-required="true"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-2 pb20">
+                            <a class="btn btn-primary" type="submit">保存</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--修改 E-->
+<style>
+    .fileWopr {
+        width: 600px;
+        height: 600px;
+    }
+
+    .wilq a {
+        font-size: 15px;
+        padding-right: 5px;
+    }
+
+    .h5Class {
+        padding: 0;
+        margin: 0;
+        height: 50px;
+        line-height: 50px;
+        text-indent: 20px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .modal-worppar {
+        max-width: 1200px;
+        background: #fff;
+        border-radius: 5px;
+        margin: 30px auto;
+    }
+
+    .ibox-content table tr th,
+    .ibox-content table tr td {
+        text-align: center;
+        font-size: 14px;
+        height: 27px;
+        line-height: 27px;
+    }
+
+    .ibox-content table tr td a {
+        padding: 0 5px;
+    }
+
+    .titleCon {
+        margin-top: -10px;
+    }
+
+    .titleCon a i {
+        position: relative;
+        font-size: 25px;
+        color: #000;
+    }
+
+    .ibox-title {
+        margin-top: 10px;
+        border-width: 1px 0 0;
+    }
+
+    /*弹出框*/
+    .theme-popover-mask {
+        z-index: 9998;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.4;
+        filter: alpha(opacity=40);
+        display: none;
+    }
+
+    .theme-popover {
+        z-index: 9999;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background-color: #f3f3f4;
+        display: none;
+    }
+
+    .theme-poptit {
+        border-bottom: 1px solid #eef1f6;
+        padding: 15px;
+        position: relative;
+    }
+
+    .theme-poptit .close {
+        float: right;
+        color: #999;
+        padding: 5px;
+        margin: -2px -5px -5px;
+        font: bold 14px/14px simsun;
+        text-shadow: 0 1px 0 #ddd;
+    }
+</style>
+<script src="/assets/js/jquery.min.js?v=2.1.4"></script>
+<script src="/assets/js/bootstrap.min.js?v=3.3.5"></script>
+<script src="/assets/js/content.min.js?v=1.0.0"></script>
+<script src="/assets/js/jquery.pagination.js"></script>
+<script src="/assets/js/plugins/sweetalert/sweetalert.min.js"></script>
+<!-- Data picker -->
+<script src="/assets/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<script>
+    $('.data .input-group.date').datepicker({
+        todayBtn: "linked",
+        keyboardNavigation: false,
+        forceParse: false,
+        calendarWeeks: true,
+        autoclose: true
+    });
+    $("#Pagination").pagination("150");
+    $('.delete-action').click(function() {
+        swal({
+                title: "您确定要删除这条信息吗",
+                text: "删除后将无法恢复，请谨慎操作！",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "是的，我要删除！",
+                cancelButtonText: "让我再考虑一下…",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm) {
+                if (isConfirm) {
+                    swal("删除成功！", "您已经永久删除了这条信息。", "success");
+                } else {
+                    swal("已取消", "您取消了删除操作！", "error");
+                }
+            });
+    });
+</script>
 </body>
 </html>
