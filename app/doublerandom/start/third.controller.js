@@ -8,6 +8,26 @@ $(function () {
         prettify: false,
         hasGrid: true
     });
+    $.ajax({
+        url: window.apiPoint + 'lawenforce-departments',
+        type: 'GET',
+        async: true,
+        dataType: 'json',
+        success: function (data) {
+            if (data) {
+                console.log(data);
+                var result = {};
+                result["lawenforceDepartments"] = data;
+                var tpl = [
+                    '<option value=""></option>',
+                    '{@each lawenforceDepartments as it,index}',
+                    '<option value="${it.id}">${it.departmentName}</option>',
+                    '{@/each}'].join('');
+                var html = juicer(tpl, result);
+                $('#lawenforceDepartments').html(html);
+            }
+        },
+    });
     initQuery(0, 10);
     $('.search-action').click(function () {
         initQuery(0, 10);

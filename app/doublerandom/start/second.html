@@ -15,33 +15,6 @@
     <link href="/assets/css/plugins/ionRangeSlider/ion.rangeSlider.css" rel="stylesheet">
     <link href="/assets/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
     <style>
-        /*table {
-            word-break: keep-all;
-            white-space: nowrap;
-        }*/
-
-        .wilq a {
-            font-size: 15px;
-            padding-right: 5px;
-        }
-
-        .h5Class {
-            padding: 0;
-            margin: 0;
-            height: 50px;
-            line-height: 50px;
-            text-indent: 20px;
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        .modal-worppar {
-            max-width: 900px;
-            background: #fff;
-            border-radius: 5px;
-            margin: 30px auto;
-        }
-
         .ibox-content table tr th,
         .ibox-content table tr td {
             text-align: center;
@@ -73,9 +46,7 @@
         }
     </style>
 </head>
-
 <body class="gray-bg">
-
 <div class="row wrapper border-bottom white-bg page-heading animated fadeInRight">
     <div class="col-sm-4">
         <h2>双随机抽选</h2>
@@ -96,7 +67,6 @@
         </div>
     </div>
 </div>
-
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-md-12">
@@ -122,12 +92,9 @@
                             <div class="col-sm-5">
                                 <div class="form-group">
                                     <div class="row">
-                                        <label class="col-sm-4 control-label">所属区域：</label>
+                                        <label class="col-sm-4 control-label">行业类型：</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control m-b" name="doubleRandomCompanyArea">
-                                                <option></option>
-                                                <option>万宁市本局</option>
-                                                <option>地方局</option>
+                                            <select class="form-control m-b" id="industryTypes" name="doubleRandomCompanyIndustryType">
                                             </select>
                                         </div>
                                     </div>
@@ -140,10 +107,7 @@
                                     <div class="row">
                                         <label class="col-sm-4 control-label">企业类型：</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control m-b" name="doubleRandomCompanyType">
-                                                <option></option>
-                                                <option>万宁市本局</option>
-                                                <option>地方局</option>
+                                            <select class="form-control m-b" id="companyTypes" name="doubleRandomCompanyType">
                                             </select>
                                         </div>
                                     </div>
@@ -154,10 +118,7 @@
                                     <div class="row">
                                         <label class="col-sm-4 control-label">监管机关：</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control m-b" name="doubleRandomCompanySupervisory">
-                                                <option></option>
-                                                <option>万宁市本局</option>
-                                                <option>地方局</option>
+                                            <select class="form-control m-b" id="lawenforceDepartments" name="doubleRandomCompanySupervisory">
                                             </select>
                                         </div>
                                     </div>
@@ -165,20 +126,6 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-5">
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label class="col-sm-4 control-label">行业类型：</label>
-                                        <div class="col-sm-8">
-                                            <select class="form-control m-b" name="doubleRandomCompanyIndustryType">
-                                                <option></option>
-                                                <option>万宁市本局</option>
-                                                <option>地方局</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="col-sm-5">
                                 <div class="form-group">
                                     <div class="row">
@@ -233,24 +180,19 @@
         </div>
     </div>
 </div>
-
-<!-- 全局js -->
 <script src="/assets/js/jquery.min.js?v=2.1.4"></script>
 <script src="/assets/js/bootstrap.min.js?v=3.3.6"></script>
 <script src="/assets/js/jquery.pagination.js"></script>
-<!-- IonRangeSlider -->
-<script src="/assets/js/plugins/ionRangeSlider/ion.rangeSlider.min.js"></script>
-<!-- 自定义js -->
 <script src="/assets/js/content.js?v=1.0.0"></script>
 <script src="/app/service/global.service.js"></script>
-<script src="/assets/js/juicer-min.js"></script>
-<script src="/app/service/ajax.service.js"></script>
-<script src="/app/doublerandom/doublerandom.controller.js"></script>
-<script src="/app/doublerandom/start/second.controller.js"></script>
-<!-- jQuery Validation plugin javascript-->
+<script src="/assets/js/plugins/ionRangeSlider/ion.rangeSlider.min.js"></script>
 <script src="/assets/js/plugins/validate/jquery.validate.min.js"></script>
 <script src="/assets/js/plugins/validate/messages_zh.min.js"></script>
 <script src="/assets/js/demo/form-validate-demo.js"></script>
+<script src="/assets/js/juicer-min.js"></script>
+<script src="/app/service/ajax.service.js"></script>
+<script src="/app/doublerandom/start/doublerandom.controller.js"></script>
+<script src="/app/doublerandom/start/second.controller.js"></script>
 <script type="text/javascript">
     var tpl = [
         '{@each companies as it,index}',

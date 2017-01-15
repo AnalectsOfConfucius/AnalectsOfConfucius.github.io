@@ -2,12 +2,12 @@ $('.first-action').click(function () {
     var doubleRandomName = $('#first').find('input[name=doubleRandomName]').val();
     var doubleRandomNotary = $('#first').find('input[name=doubleRandomNotary]').val();
     var doubleRandomDate = $('#first').find('input[name=doubleRandomDate]').val();
-    var description = $('#first').find('input[name=description]').val();
+    var tasks = $('#first').find('select[name=tasks]').val();
     localStorage.setItem("doubleRandomName", doubleRandomName);
     localStorage.setItem("doubleRandomNotary", doubleRandomNotary);
     localStorage.setItem("doubleRandomDate", doubleRandomDate);
-    localStorage.setItem("description", description);
-    console.log(doubleRandomName);
+    localStorage.setItem("tasks", tasks);
+    console.log(tasks);
     location.href = "second.html";
 });
 $('.second-action').click(function () {

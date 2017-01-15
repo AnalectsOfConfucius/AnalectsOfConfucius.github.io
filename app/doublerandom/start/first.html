@@ -42,19 +42,19 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">检查日期：</label>
                             <div class="col-sm-6">
-                                <input readonly class="form-control layer-date" id="hello1">
-                                <label class="laydate-icon inline demoicon" onclick="laydate({elem: '#hello1'});"></label>
+                                <input class="form-control layer-date" name="doubleRandomDate" placeholder="YYYY-MM-DD" onclick="laydate({istime: true, format: 'YYYY-MM-DD'})">
+                                <label class="laydate-icon"></label>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">任务清单：</label>
                             <div class="col-sm-6">
-                                <select data-placeholder="请选择检查项目" style="width:450px;" class="chosen-select" multiple
+                                <select name="tasks" data-placeholder="请选择检查项目" style="width:450px;" class="chosen-select" multiple
                                         tabindex="6" id="tContent">
                                     <option value=""></option>
                                     <optgroup label="直销违法行为的检查">
-                                        <option>重大变更的检查</option>
-                                        <option>超出直销产品范围从事直销经营活动的检查</option>
+                                        <option value="1">重大变更的检查</option>
+                                        <option value="2">超出直销产品范围从事直销经营活动的检查</option>
                                         <option>宣传和推销行为的检查</option>
                                         <option>直销员招募的检查</option>
                                         <option>直销员业务培训的检查</option>
@@ -78,26 +78,6 @@
         </div>
     </div>
 </div>
-<!-- layerDate plugin javascript -->
-<script src="/assets/js/plugins/layer/laydate/laydate.js"></script>
-<script>
-    //外部js调用
-    laydate({
-        elem: '#hello', //目标元素。由于laydate.js封装了一个轻量级的选择器引擎，因此elem还允许你传入class、tag但必须按照这种方式 '#id .class'
-        event: 'focus' //响应事件。如果没有传入event，则按照默认的click
-    });
-
-    //日期范围限制
-    var start = {
-        elem: '#start',
-        format: 'YYYY/MM/DD hh:mm:ss',
-        min: laydate.now(), //设定最小日期为当前日期
-        max: '2099-06-16 23:59:59', //最大日期
-        istime: true,
-        istoday: true,
-    };
-    laydate(start);
-</script>
 <script src="/assets/js/jquery.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/content.js"></script>
@@ -106,10 +86,11 @@
 <script src="/assets/js/demo/form-validate-demo.js"></script>
 <script src="/assets/js/plugins/chosen/chosen.jquery.min.js"></script>
 <script src="/assets/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<script src="/assets/js/plugins/layer/laydate/laydate.js"></script>
 <script src="/assets/js/juicer-min.js"></script>
 <script src="/app/service/global.service.js"></script>
 <script src="/app/service/ajax.service.js"></script>
-<script src="/app/doublerandom/doublerandom.controller.js"></script>
+<script src="/app/doublerandom/start/doublerandom.controller.js"></script>
 <script src="/app/doublerandom/start/first.controller.js"></script>
 </body>
 </html>

@@ -113,8 +113,8 @@
                                     <div class="row">
                                         <label class="col-sm-4 control-label">每组人数：</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control m-b" name="doubleRandomManagerNumber">
-                                                <option></option>
+                                            <select class="form-control m-b" name="doubleRandomManagerNumber" disabled>
+                                                <option value="2">2人</option>
                                                 <option>1</option>
                                                 <option>2</option>
                                             </select>
@@ -127,10 +127,7 @@
                                     <div class="row">
                                         <label class="col-sm-4 control-label">所属单位：</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control m-b" name="doubleRandomManagerDepartment">
-                                                <option></option>
-                                                <option>万宁市本局</option>
-                                                <option>地方局</option>
+                                            <select class="form-control m-b" id="lawenforceDepartments" name="doubleRandomManagerDepartment">
                                             </select>
                                         </div>
                                     </div>
@@ -193,20 +190,16 @@
         </div>
     </div>
 </div>
-<!-- 全局js -->
 <script src="/assets/js/jquery.min.js?v=2.1.4"></script>
 <script src="/assets/js/bootstrap.min.js?v=3.3.6"></script>
 <script src="/assets/js/jquery.pagination.js"></script>
-<!-- IonRangeSlider -->
 <script src="/assets/js/plugins/ionRangeSlider/ion.rangeSlider.min.js"></script>
-<!-- layer javascript -->
 <script src="/assets/js/plugins/layer/layer.min.js"></script>
-<!-- 自定义js -->
 <script src="/assets/js/content.js?v=1.0.0"></script>
 <script src="/app/service/global.service.js"></script>
 <script src="/assets/js/juicer-min.js"></script>
 <script src="/app/service/ajax.service.js"></script>
-<script src="/app/doublerandom/doublerandom.controller.js"></script>
+<script src="/app/doublerandom/start/doublerandom.controller.js"></script>
 <script src="/app/doublerandom/start/third.controller.js"></script>
 </body>
 </html>

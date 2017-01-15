@@ -1,6 +1,6 @@
 $(function () {
     $('.chosen-select').chosen({});
-    $.ajax({
+    /*$.ajax({
         url: window.apiPoint + 'tasks',
         type: 'GET',
         async: true,
@@ -20,5 +20,5 @@ $(function () {
                 $('#tContent').html(html);
             }
         },
-    });
+    });*/
 });

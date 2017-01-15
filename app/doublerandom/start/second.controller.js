@@ -8,6 +8,86 @@ $(function () {
         prettify: false,
         hasGrid: true
     });
+    $.ajax({
+        url: window.apiPoint + 'lawenforce-departments',
+        type: 'GET',
+        async: true,
+        dataType: 'json',
+        success: function (data) {
+            if (data) {
+                console.log(data);
+                var result = {};
+                result["lawenforceDepartments"] = data;
+                var tpl = [
+                    '<option value=""></option>',
+                    '{@each lawenforceDepartments as it,index}',
+                    '<option value="${it.id}">${it.departmentName}</option>',
+                    '{@/each}'].join('');
+                var html = juicer(tpl, data);
+                $('#tContent1').html(html);
+            }
+        },
+    });
+    $.ajax({
+        url: window.apiPoint + 'lawenforce-departments',
+        type: 'GET',
+        async: true,
+        dataType: 'json',
+        success: function (data) {
+            if (data) {
+                console.log(data);
+                var result = {};
+                result["lawenforceDepartments"] = data;
+                var tpl = [
+                    '<option value=""></option>',
+                    '{@each lawenforceDepartments as it,index}',
+                    '<option value="${it.id}">${it.departmentName}</option>',
+                    '{@/each}'].join('');
+                var html = juicer(tpl, result);
+                $('#lawenforceDepartments').html(html);
+            }
+        },
+    });
+    $.ajax({
+        url: window.apiPoint + 'industry-types',
+        type: 'GET',
+        async: true,
+        dataType: 'json',
+        success: function (data) {
+            if (data) {
+                console.log(data);
+                var result = {};
+                result["industryTypes"] = data;
+                var tpl = [
+                    '<option value=""></option>',
+                    '{@each industryTypes as it,index}',
+                    '<option value="${it.id}">${it.typeName}</option>',
+                    '{@/each}'].join('');
+                var html = juicer(tpl, result);
+                $('#industryTypes').html(html);
+            }
+        },
+    });
+    $.ajax({
+        url: window.apiPoint + 'company-types',
+        type: 'GET',
+        async: true,
+        dataType: 'json',
+        success: function (data) {
+            if (data) {
+                console.log(data);
+                var result = {};
+                result["companyTypes"] = data;
+                var tpl = [
+                    '<option value=""></option>',
+                    '{@each companyTypes as it,index}',
+                    '<option value="${it.id}">${it.typeName}</option>',
+                    '{@/each}'].join('');
+                var html = juicer(tpl, result);
+                $('#companyTypes').html(html);
+            }
+        },
+    });
     initQuery(0, 10);
     $('.search-action').click(function () {
         initQuery(0, 10);
