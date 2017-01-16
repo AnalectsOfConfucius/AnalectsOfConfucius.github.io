@@ -43,28 +43,49 @@
         }
 
         .thread th {
-            width: 165px;
+            width: 350px;
+            font-size: 20px;
+            color: yellow;
+        }
+
+        .thread th:first-child {
+            width: 50px;
+            max-width: 50px;
+            font-size: 20px;
+            color: yellow;
+        }
+
+        .thread th:nth-child(3) {
+            width: 400px;
+            max-width: 400px;
+            font-size: 20px;
+            color: yellow;
+        }
+
+        .thread th:nth-child(4) {
+            width: 250px;
+            max-width: 300px;
             font-size: 20px;
             color: yellow;
         }
 
         .thread th:last-child {
-            width: 50px;
-            max-width: 50px;
+            width: 100px;
+            max-width: 100px;
             font-size: 20px;
             color: yellow;
         }
 
         .thread th:nth-last-child(2) {
-            width: 50px;
-            max-width: 50px;
+            width: 100px;
+            max-width: 100px;
             font-size: 20px;
             color: yellow;
         }
 
         .thread th:nth-last-child(3) {
-            width: 50px;
-            max-width: 50px;
+            width: 100px;
+            max-width: 100px;
             font-size: 20px;
             color: yellow;
         }
@@ -89,31 +110,49 @@
         }
 
         .tbody td {
-            width: 165px;
-            max-width: 165px;
+            width: 350px;
+            max-width: 350px;
             height: 30px;
             font-size: 20px;
             white-space: nowrap;
             overflow: hidden;
         }
 
-        .tbody td:last-child {
+        .tbody td:first-child {
             width: 50px;
             max-width: 50px;
+            font-weight: bold;
+        }
+
+        .tbody td:nth-child(3) {
+            width: 400px;
+            max-width: 400px;
+            font-weight: bold;
+        }
+
+        .tbody td:nth-child(4) {
+            width: 250px;
+            max-width: 250px;
+            font-weight: bold;
+        }
+
+        .tbody td:last-child {
+            width: 100px;
+            max-width: 100px;
             color: green;
             font-weight: bold;
         }
 
         .tbody td:nth-last-child(2) {
-            width: 50px;
-            max-width: 50px;
+            width: 100px;
+            max-width: 100px;
             color: green;
             font-weight: bold;
         }
 
         .tbody td:nth-last-child(3) {
-            width: 50px;
-            max-width: 50px;
+            width: 100px;
+            max-width: 100px;
             color: green;
             font-weight: bold;
         }
@@ -156,12 +195,9 @@
         <tr>
             <th>编号</th>
             <th>监管事项</th>
-            <th>事项类别</th>
-            <th>抽查次数</th>
-            <th>主体数量</th>
-            <th>抽查比例</th>
-            <th>主体名称</th>
-            <th>执法人员</th>
+            <th>企业名称</th>
+            <th>企业注册号</th>
+            <th>抽查时间</th>
             <th>抽查结果</th>
             <th>查处结果</th>
             <th>整改结果</th>
@@ -171,313 +207,14 @@
 </div>
 <div class="maquee">
     <table class="tbody">
-        <tbody>
-        <tr>
-            <td>1</td>
-            <td>111</td>
-            <td>1111</td>
-            <td>11111</td>
-            <td>111111</td>
-            <td>1111111</td>
-            <td>11111111</td>
-            <td>11111</td>
-            <td>111111</td>
-            <td>1111111</td>
-            <td>11111111</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>222</td>
-            <td>2222</td>
-            <td>22222</td>
-            <td>222222</td>
-            <td>2222222</td>
-            <td>22222222</td>
-            <td>222222222</td>
-            <td>2222222222</td>
-            <td>22222222222</td>
-            <td>222222222222</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>33</td>
-            <td>33</td>
-            <td>33</td>
-            <td>33</td>
-            <td>333</td>
-            <td>333333</td>
-            <td>33</td>
-            <td>33</td>
-            <td>333</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>44</td>
-            <td>114411</td>
-            <td>44</td>
-            <td>44</td>
-            <td>44444</td>
-            <td>4444</td>
-            <td>44</td>
-            <td>4</td>
-            <td>4</td>
-            <td>44</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>111</td>
-            <td>1111</td>
-            <td>11111</td>
-            <td>111111</td>
-            <td>1111111</td>
-            <td>11111111</td>
-            <td>11111</td>
-            <td>111111</td>
-            <td>1111111</td>
-            <td>11111111</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>222</td>
-            <td>2222</td>
-            <td>22222</td>
-            <td>222222</td>
-            <td>2222222</td>
-            <td>22222222</td>
-            <td>222222222</td>
-            <td>2222222222</td>
-            <td>22222222222</td>
-            <td>222222222222</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>33</td>
-            <td>33</td>
-            <td>33</td>
-            <td>33</td>
-            <td>333</td>
-            <td>333333</td>
-            <td>33</td>
-            <td>33</td>
-            <td>333</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>44</td>
-            <td>114411</td>
-            <td>44</td>
-            <td>44</td>
-            <td>44444</td>
-            <td>4444</td>
-            <td>44</td>
-            <td>4</td>
-            <td>4</td>
-            <td>44</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>111</td>
-            <td>1111</td>
-            <td>11111</td>
-            <td>111111</td>
-            <td>1111111</td>
-            <td>11111111</td>
-            <td>11111</td>
-            <td>111111</td>
-            <td>1111111</td>
-            <td>11111111</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>222</td>
-            <td>2222</td>
-            <td>22222</td>
-            <td>222222</td>
-            <td>2222222</td>
-            <td>22222222</td>
-            <td>222222222</td>
-            <td>2222222222</td>
-            <td>22222222222</td>
-            <td>222222222222</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>33</td>
-            <td>33</td>
-            <td>33</td>
-            <td>33</td>
-            <td>333</td>
-            <td>333333</td>
-            <td>33</td>
-            <td>33</td>
-            <td>333</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>44</td>
-            <td>114411</td>
-            <td>44</td>
-            <td>44</td>
-            <td>44444</td>
-            <td>4444</td>
-            <td>44</td>
-            <td>4</td>
-            <td>4</td>
-            <td>44</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>111</td>
-            <td>1111</td>
-            <td>11111</td>
-            <td>111111</td>
-            <td>1111111</td>
-            <td>11111111</td>
-            <td>11111</td>
-            <td>111111</td>
-            <td>1111111</td>
-            <td>11111111</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>222</td>
-            <td>2222</td>
-            <td>22222</td>
-            <td>222222</td>
-            <td>2222222</td>
-            <td>22222222</td>
-            <td>222222222</td>
-            <td>2222222222</td>
-            <td>22222222222</td>
-            <td>222222222222</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>33</td>
-            <td>33</td>
-            <td>33</td>
-            <td>33</td>
-            <td>333</td>
-            <td>333333</td>
-            <td>33</td>
-            <td>33</td>
-            <td>333</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>44</td>
-            <td>114411</td>
-            <td>44</td>
-            <td>44</td>
-            <td>44444</td>
-            <td>4444</td>
-            <td>44</td>
-            <td>4</td>
-            <td>4</td>
-            <td>44</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>111</td>
-            <td>1111</td>
-            <td>11111</td>
-            <td>111111</td>
-            <td>1111111</td>
-            <td>11111111</td>
-            <td>11111</td>
-            <td>111111</td>
-            <td>1111111</td>
-            <td>11111111</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>222</td>
-            <td>2222</td>
-            <td>22222</td>
-            <td>222222</td>
-            <td>2222222</td>
-            <td>22222222</td>
-            <td>222222222</td>
-            <td>2222222222</td>
-            <td>22222222222</td>
-            <td>222222222222</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>33</td>
-            <td>33</td>
-            <td>33</td>
-            <td>33</td>
-            <td>333</td>
-            <td>333333</td>
-            <td>33</td>
-            <td>33</td>
-            <td>333</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>44</td>
-            <td>114411</td>
-            <td>44</td>
-            <td>44</td>
-            <td>44444</td>
-            <td>4444</td>
-            <td>44</td>
-            <td>4</td>
-            <td>4</td>
-            <td>44</td>
-        </tr>
+        <tbody id="tContent">
         </tbody>
     </table>
 </div>
-<script src="/assets/js/jquery.min.js?v=2.1.4"></script>
-<script>
-    function autoScroll(obj) {
-        $(obj).find("tbody").animate({
-            marginTop: "-35px"
-        }, 500, function () {
-            $(this).css({marginTop: "0px"}).find("tr:first").appendTo(this);
-        })
-    }
-    $(function () {
-        setInterval('autoScroll(".maquee")', 2000);
-    })
-
-    function clickBody() {
-        var docElm = document.documentElement;
-        launchFullscreen(docElm);
-    }
-
-    function launchFullscreen(element) {
-        //此方法不可以在異步任務中執行，否則火狐無法全屏
-        if (element.requestFullscreen) {
-            element.requestFullscreen();
-        } else if (element.mozRequestFullScreen) {
-            element.mozRequestFullScreen();
-        } else if (element.msRequestFullscreen) {
-            element.msRequestFullscreen();
-        } else if (element.oRequestFullscreen) {
-            element.oRequestFullscreen();
-        }
-        else if (element.webkitRequestFullscreen) {
-            element.webkitRequestFullScreen();
-        } else {
-            var docHtml = document.documentElement;
-            var docBody = document.body;
-            var videobox = document.getElementById('videobox');
-            var cssText = 'width:100%;height:100%;overflow:hidden;';
-            docHtml.style.cssText = cssText;
-            docBody.style.cssText = cssText;
-            videobox.style.cssText = cssText + ';' + 'margin:0px;padding:0px;';
-            document.IsFullScreen = true;
-        }
-    }
-    //退出全屏
-</script>
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/juicer-min.js"></script>
+<script src="/app/service/global.service.js"></script>
+<script src="/app/service/ajax.service.js"></script>
+<script src="/app/publicity/publicity.controller.js"></script>
 </body>
 </html>
