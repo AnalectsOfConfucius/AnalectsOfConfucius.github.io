@@ -3,25 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <link rel="shortcut icon" href="favicon.ico">
-    <link href="/assets/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
-    <link href="/assets/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/font-awesome.css" rel="stylesheet">
     <link href="/assets/css/plugins/iCheck/custom.css" rel="stylesheet">
     <link href="/assets/css/pagination.css" rel="stylesheet">
     <link href="/assets/css/animate.css" rel="stylesheet">
-    <link href="/assets/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
     <link href="/assets/css/plugins/chosen/chosen.min.css" rel="stylesheet">
-    <!-- Sweet Alert -->
     <link href="/assets/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
     <style>
-        .fileWopr {
-            width: 600px;
-            height: 600px;
-        }
-
         .wilq a {
             font-size: 15px;
             padding-right: 5px;
@@ -56,10 +46,6 @@
             padding: 0 5px;
         }
 
-        .titleCon {
-            margin-top: -10px;
-        }
-
         .titleCon a i {
             position: relative;
             font-size: 25px;
@@ -69,38 +55,6 @@
         .ibox-title {
             margin-top: 10px;
             border-width: 1px 0 0;
-        }
-
-        /*弹出框*/
-        .theme-popover-mask {
-            z-index: 9998;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            opacity: 0.4;
-            filter: alpha(opacity=40);
-            display: none;
-        }
-
-        .theme-popover {
-            z-index: 9999;
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            margin: auto;
-            background-color: #f3f3f4;
-            display: none;
-        }
-
-        .theme-poptit {
-            border-bottom: 1px solid #eef1f6;
-            padding: 15px;
-            position: relative;
         }
 
         .theme-poptit .close {
@@ -118,9 +72,36 @@
     <div class="col-sm-4">
         <h2>双随机结果列表</h2>
     </div>
-    <div class="col-sm-8">
-        <div class="title-action">
-            <a href="javascript:;" onclick="javascript:history.back(-1);" class="btn btn-primary">返回</a>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>双随机结果</h5>
+                </div>
+                <div class="ibox-content">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>任务名称</th>
+                            <th>企业名称</th>
+                            <th>执法人员名称</th>
+                            <th>检查日期</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tContent">
+                        </tbody>
+                    </table>
+                    <!--分页 S-->
+                    <div class="pages clearfix">
+                        <div id="Pagination"></div>
+                    </div>
+                    <!--分页 E-->
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -168,131 +149,14 @@
     </div>
 </div>
 <!--修改 E-->
-<div class="wrapper wrapper-content animated fadeInRight">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="ibox float-e-margins">
-                <div class="ibox-title">
-                    <h5>双随机结果</h5>
-                </div>
-                <div class="ibox-content">
-                    <table class="table table-bordered">
-                        <thead>
-                        <tr>
-                            <th>序号</th>
-                            <th>任务名称</th>
-                            <th>企业名称</th>
-                            <th>执法人员名称</th>
-                            <th>检查日期</th>
-                            <th>操作</th>
-                        </tr>
-                        </thead>
-                        <tbody id="tContent">
-                        </tbody>
-                    </table>
-                    <!--分页 S-->
-                    <div class="pages clearfix">
-                        <div id="Pagination"></div>
-                        <div class="searchPage">
-                            <span class="page-sum">共<strong class="allPage">15</strong>页</span>
-                            <span class="page-go">跳转<input type="text">页</span>
-                            <a href="javascript:;" class="page-btn">GO</a>
-                        </div>
-                    </div>
-                    <!--分页 E-->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- 全局js -->
-<script src="/assets/js/jquery.min.js?v=2.1.4"></script>
-<script src="/assets/js/bootstrap.min.js?v=3.3.6"></script>
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/juicer-min.js"></script>
 <script src="/assets/js/jquery.pagination.js"></script>
 <script src="/assets/js/plugins/sweetalert/sweetalert.min.js"></script>
-<script src="/assets/js/plugins/chosen/chosen.jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-    $(function () {
-    $('.chosen-select').chosen({});
-    $("#Pagination").pagination("150");
-    $('.delete-action').click(function () {
-        swal({
-                title: "您确定要删除这条信息吗",
-                text: "删除后将无法恢复，请谨慎操作！",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "是的，我要删除！",
-                cancelButtonText: "让我再考虑一下…",
-                closeOnConfirm: false,
-                closeOnCancel: false
-            },
-            function (isConfirm) {
-                if (isConfirm) {
-                    swal("删除成功！", "您已经永久删除了这条信息。", "success");
-                } else {
-                    swal("已取消", "您取消了删除操作！", "error");
-                }
-            });
-    });
-    });
-
-    var tpl = [
-        '{@each companies as it,index}',
-        '<tr>',
-        '<td>${it.id}</td>',
-        '<td>${it.task_name}</td>',
-        '<td>${it.company_name}</td>',
-        '<td>${it.man_name}</td>',
-        '<td>${it.check_time}</td>',
-        '<td>',
-        '<a href="javascript:;" data-toggle="modal" data-target="#myModal0">修改</a>',
-        '<a href="javascript:;" class="delete-action">删除</a>',
-        '</td>',
-        '</tr>',
-        '{@/each}'].join('');
-    var data = {
-        companies: [
-            {
-                id: 1,
-                task_name:"营业执照检查",
-                company_name:"万宁后安汤粉",
-                man_name:"王琦，逍遥",
-                check_time:"2017-01-11",
-            },
-            {
-                id: 2,
-                task_name:"营业执照检查",
-                company_name:"万宁后安汤粉",
-                man_name:"王琦，逍遥",
-                check_time:"2017-01-11",
-            },
-            {
-                id: 3,
-                task_name:"营业执照检查",
-                company_name:"万宁后安汤粉",
-                man_name:"王琦，逍遥",
-                check_time:"2017-01-11",
-            },
-            {
-                id: 4,
-                task_name:"营业执照检查",
-                company_name:"万宁后安汤粉",
-                man_name:"王琦，逍遥",
-                check_time:"2017-01-11",
-            },
-
-        ]
-    };
-    var html = juicer(tpl, data);
-    console.log(html);
-    $('#tContent').html(html);
-
-</script>
-
-<!-- 自定义js -->
-<script src="/assets/js/content.js?v=1.0.0"></script>
+<script src="/assets/js/plugins/chosen/chosen.jquery.min.js"></script>
+<script src="/app/service/ajax.service.js"></script>
+<script src="/app/service/global.service.js"></script>
+<script src="/app/doublerandom/result.controller.js"></script>
 </body>
 </html>

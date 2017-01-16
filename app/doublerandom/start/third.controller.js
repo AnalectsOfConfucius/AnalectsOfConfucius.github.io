@@ -37,28 +37,31 @@ $(function () {
 function initQuery(page, size) {
     var doubleRandomManagerName = $('#third').find('input[name=doubleRandomManagerName]').val();
     var doubleRandomManagerNumber = $('#third').find('select[name=doubleRandomManagerNumber]').val();
-    var doubleRandomManagerDepartment = $('#third').find('select[name=doubleRandomManagerDepartment]').val();
+    var doubleRandomManagerDepartment = $('#third').find('select[name=doubleRandomManagerDepartment]').find("option:selected").text();
     var doubleRandomManagerRatio = $('#third').find('input[name=doubleRandomManagerRatio]').val();
-    var query = doubleRandomManagerName;
-    if (query == "" || query == null) {
+    var query = doubleRandomManagerDepartment;
+    /*if (query == "" || query == null) {
         return;
-    }
-    console.log(query);
+    }*/
     var dataQuery = {
         page: page,
         size: size,
         query: query,
     };
     $.ajax({
-        url: url,
+        url: window.apiPoint + '_search/managers',
         type: 'GET',
         // GET请求传递data
         data: dataQuery,
         async: true,
         dataType: 'json',
-        success: function (data) {
-            if (data) {
-                console.log(data.managers);
+        success: function (data, status, xhr) {
+            if (data && data.length > 0) {
+                $('.third-action').show();
+                var result = {};
+                result['managers'] = data;
+                var totalCount = xhr.getResponseHeader("X-Total-Count");
+                var nowpage = parseInt(totalCount / dataQuery.size);
                 var tpl = [
                     '{@each managers as it,index}',
                     '<tr>',
@@ -73,9 +76,9 @@ function initQuery(page, size) {
                     '<td>{@if it.description != null }${it.description}{@/if}</td>',
                     '</tr>',
                     '{@/each}'].join('');
-                var html = juicer(tpl, data);
+                var html = juicer(tpl, result);
                 $('#tContent').html(html);
-                $("#Pagination").pagination(data.totalPages, {
+                $("#Pagination").pagination(nowpage, {
                     'current_page': dataQuery.page,
                     'callback': pageQuery,
                 });

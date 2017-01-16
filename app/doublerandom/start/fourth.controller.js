@@ -1,12 +1,14 @@
 var doubleRandomId;
 $(function () {
     doubleRandomId = getUrlValue("id");
+
     console.log(doubleRandomId);
+
     initPage(0, 10);
 });
 
 function initPage(page, size) {
-    var url = window.apiPoint + 'double-random-results';
+    var url = window.apiPoint + 'double-random-results/doubleRandom';
     console.log(url);
     var dataQuery = {
         page: page,
@@ -38,7 +40,6 @@ function initPage(page, size) {
                     '<td>{@if it.doubleRandom.doubleRandomTaskContent != null }${it.doubleRandom.doubleRandomTaskContent}{@/if}</td>',
                     '<td>{@if it.description != null }${it.description}{@/if}</td>',
                     '<td>',
-                    '<a href="javascript:;" onclick="detailOne(${it.id})" data-toggle="modal" data-target="#myModal1">法律法规</a>',
                     '<a href="javascript:;" data-toggle="modal" data-target="#myModal2">修改</a>',
                     '<a href="javascript:;" onclick="deleteOne(${it.id})">删除</a>',
                     '</td>',

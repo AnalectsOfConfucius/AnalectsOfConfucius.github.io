@@ -96,15 +96,14 @@ $(function () {
 
 function initQuery(page, size) {
     var doubleRandomCompanyName = $('#second').find('input[name=doubleRandomCompanyName]').val();
-    var doubleRandomCompanyArea = $('#second').find('select[name=doubleRandomCompanyArea]').val();
-    var doubleRandomCompanyType = $('#second').find('select[name=doubleRandomCompanyType]').val();
-    var doubleRandomCompanySupervisory = $('#second').find('select[name=doubleRandomCompanySupervisory]').val();
-    var doubleRandomCompanyIndustryType = $('#second').find('select[name=doubleRandomCompanyIndustryType]').val();
+    var doubleRandomCompanyType = $('#second').find('select[name=doubleRandomCompanyType]').find("option:selected").text();
+    var doubleRandomCompanySupervisory = $('#second').find('select[name=doubleRandomCompanySupervisory]').find("option:selected").text();
+    var doubleRandomCompanyIndustryType = $('#second').find('select[name=doubleRandomCompanyIndustryType]').find("option:selected").text();
     var doubleRandomCompanyRatio = $('#second').find('input[name=doubleRandomCompanyRatio]').val();
-    var query = doubleRandomCompanyName;
-    if (query == "" || query == null) {
+    var query = doubleRandomCompanyName + doubleRandomCompanyType + doubleRandomCompanySupervisory + doubleRandomCompanyIndustryType;
+    /*if (query == "" || query == null) {
         return;
-    }
+    }*/
     console.log(query);
     var dataQuery = {
         page: page,
@@ -118,9 +117,13 @@ function initQuery(page, size) {
         data: dataQuery,
         async: true,
         dataType: 'json',
-        success: function (data) {
-            if (data) {
-                console.log(data.companies);
+        success: function (data, status, xhr) {
+            if (data && data.length > 0) {
+                $('.second-action').show();
+                var result = {};
+                result['companies'] = data;
+                var totalCount = xhr.getResponseHeader("X-Total-Count");
+                var nowpage = parseInt(totalCount / dataQuery.size);
                 var tpl = [
                     '{@each companies as it,index}',
                     '<tr>',
@@ -134,9 +137,9 @@ function initQuery(page, size) {
                     '<td>{@if it.description != null }${it.description}{@/if}</td>',
                     '</tr>',
                     '{@/each}'].join('');
-                var html = juicer(tpl, data);
+                var html = juicer(tpl, result);
                 $('#tContent').html(html);
-                $("#Pagination").pagination(data.totalPages, {
+                $("#Pagination").pagination(nowpage, {
                     'current_page': dataQuery.page,
                     'callback': pageQuery,
                 });

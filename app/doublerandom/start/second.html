@@ -63,7 +63,7 @@
         <div class="title-action">
             <a href="javascript:;" onclick="javascript:history.back(-1);" class="btn btn-primary">返回</a>
             <a href="javascript:;" type="submit" class="btn btn-primary search-action">筛选</a>
-            <a href="third.html" class="btn btn-primary second-action">下一步</a>
+            <a href="third.html" class="btn btn-primary second-action" style="display: none;">下一步</a>
         </div>
     </div>
 </div>
@@ -193,69 +193,5 @@
 <script src="/app/service/ajax.service.js"></script>
 <script src="/app/doublerandom/start/doublerandom.controller.js"></script>
 <script src="/app/doublerandom/start/second.controller.js"></script>
-<script type="text/javascript">
-    var tpl = [
-        '{@each companies as it,index}',
-        '<tr>',
-        '<td>${it.id}</td>',
-        '<td>${it.company_name}</td>',
-        '<td>${it.running_address}</td>',
-        '<td>${it.law_boss}</td>',
-        '<td>${it.phone_num}</td>',
-        '<td>${it.supervision_department}</td>',
-        '<td>${it.check_status}</td>',
-        '<td>${it.remark}</td>',
-        '</tr>',
-        '{@/each}'].join('');
-
-    var data = {
-        companies: [
-            {
-                id: 1,
-                company_name:"椰树集团",
-                running_address:"海口市",
-                law_boss:"张三",
-                phone_num:12345678965,
-                supervision_department:"海口市工商局",
-                check_status:"正常",
-                remark:""
-            },
-            {
-                id: 2,
-                company_name:"椰树集团",
-                running_address:"海口市",
-                law_boss:"张三",
-                phone_num:12345678965,
-                supervision_department:"海口市工商局",
-                check_status:"正常",
-                remark:""
-            },
-            {
-                id: 3,
-                company_name:"椰树集团",
-                running_address:"海口市",
-                law_boss:"张三",
-                phone_num:12345678965,
-                supervision_department:"海口市工商局",
-                check_status:"正常",
-                remark:""
-            },
-            {
-                id: 4,
-                company_name:"椰树集团",
-                running_address:"海口市",
-                law_boss:"张三",
-                phone_num:12345678965,
-                supervision_department:"海口市工商局",
-                check_status:"正常",
-                remark:""
-            },
-
-        ]
-    };
-    var html = juicer(tpl, data);
-    console.log(html);
-    $('#tContent').html(html);
-</script>
 </body>
 </html>
