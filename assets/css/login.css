@@ -4,8 +4,8 @@ html {
 
 body.signin {
     height: auto;
-    background: #8d9fe9;
-    /*background: url("../img/login-background.jpg") no-repeat center fixed;*/
+    /*background: #292d76;*/
+    background: url("../img/login-background.jpg") no-repeat center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
